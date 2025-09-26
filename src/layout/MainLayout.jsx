@@ -3,36 +3,32 @@ import Sidebar from './Sidebar';
 import ChannelSidebar from './ChannelSidebar';
 import ChatArea from './ChatArea';
 
-interface MainLayoutProps {
-  children: React.ReactNode;
-}
-
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout = ({ children }) => {
   const [activeSection, setActiveSection] = useState('about');
   const [activeChannel, setActiveChannel] = useState('general');
 
   // Configuración de canales por sección
   const sectionChannels = {
     about: [
-      { id: 'general', name: 'general', type: 'text' as const },
-      { id: 'biografia', name: 'biografía', type: 'text' as const },
-      { id: 'experiencia', name: 'experiencia', type: 'text' as const },
+      { id: 'general', name: 'general', type: 'text' },
+      { id: 'biografia', name: 'biografía', type: 'text' },
+      { id: 'experiencia', name: 'experiencia', type: 'text' },
     ],
     projects: [
-      { id: 'general', name: 'general', type: 'text' as const },
-      { id: 'web-apps', name: 'web-apps', type: 'text' as const },
-      { id: 'mobile', name: 'mobile', type: 'text' as const },
-      { id: 'apis', name: 'apis', type: 'text' as const },
+      { id: 'general', name: 'general', type: 'text' },
+      { id: 'web-apps', name: 'web-apps', type: 'text' },
+      { id: 'mobile', name: 'mobile', type: 'text' },
+      { id: 'apis', name: 'apis', type: 'text' },
     ],
     skills: [
-      { id: 'general', name: 'general', type: 'text' as const },
-      { id: 'frontend', name: 'frontend', type: 'text' as const },
-      { id: 'backend', name: 'backend', type: 'text' as const },
-      { id: 'database', name: 'database', type: 'text' as const },
+      { id: 'general', name: 'general', type: 'text' },
+      { id: 'frontend', name: 'frontend', type: 'text' },
+      { id: 'backend', name: 'backend', type: 'text' },
+      { id: 'database', name: 'database', type: 'text' },
     ],
     contact: [
-      { id: 'general', name: 'general', type: 'text' as const },
-      { id: 'redes', name: 'redes-sociales', type: 'text' as const },
+      { id: 'general', name: 'general', type: 'text' },
+      { id: 'redes', name: 'redes-sociales', type: 'text' },
     ],
   };
 
@@ -43,7 +39,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     contact: 'Contacto',
   };
 
-  const handleSectionChange = (sectionId: string) => {
+  const handleSectionChange = (sectionId) => {
     setActiveSection(sectionId);
     setActiveChannel('general'); // Reset al canal general
   };
@@ -58,8 +54,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       
       {/* Sidebar de canales */}
       <ChannelSidebar
-        serverName={sectionNames[activeSection as keyof typeof sectionNames]}
-        channels={sectionChannels[activeSection as keyof typeof sectionChannels]}
+        serverName={sectionNames[activeSection]}
+        channels={sectionChannels[activeSection]}
         activeChannel={activeChannel}
         onChannelSelect={setActiveChannel}
       />
