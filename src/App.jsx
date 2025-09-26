@@ -1,11 +1,16 @@
 import Bubble from './components/Bubble';
-import { MainLayout } from './layout';
+import { MainLayout, Sidebar } from './layout';
 
 function App() {
   return (
     <div className="bg-gray-800 min-h-screen min-w-fit">
       <MainLayout>
-        <Bubble />
+        <Sidebar>
+          <Bubble icon={"👤"} tooltip={"Sobre mí"} />
+          <Bubble icon={"💼"} tooltip={"Proyectos"} />
+          <Bubble icon={"🛠️"} tooltip={"Habilidades"} />
+          <Bubble icon={"📞"} tooltip={"Contacto"} />
+        </Sidebar>
       </MainLayout>
     </div>
   );
