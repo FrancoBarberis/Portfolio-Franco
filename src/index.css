@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tooltip-slide {
+  animation: slideInLeft 300ms ease-out forwards;
+}
