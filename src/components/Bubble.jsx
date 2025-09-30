@@ -8,7 +8,7 @@ function Bubble({ icon, tooltip, id }) {
       data-tooltip-content={tooltip}
       className="relative w-auto h-auto p-3.5 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg hover:cursor-pointer"
     >
-      <span className="text-2xl text-white">{icon}</span>
+      <span className="text-m text-white">{icon}</span>
 
       <Tooltip
         id={id}

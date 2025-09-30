@@ -1,5 +1,5 @@
 import Bubble from './components/Bubble';
-import { MainLayout, Sidebar } from './layout';
+import { MainLayout, Sidebar, ChannelSidebar } from './layout';
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
           <Bubble icon={"🛠️"} tooltip={"Habilidades"} id={"tooltip-3"} />
           <Bubble icon={"📞"} tooltip={"Contacto"} id = {"tooltip-4"} />
         </Sidebar>
+        <ChannelSidebar>
+          <h1>HOLA MUNDO</h1>
+        </ChannelSidebar>
       </MainLayout>
     </div>
   );
