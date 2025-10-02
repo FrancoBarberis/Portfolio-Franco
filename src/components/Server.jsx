@@ -1,7 +1,7 @@
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
-function Bubble({ icon, tooltip, id }) {
+function Server({ icon, tooltip, id, channels }) {
   return (
     <div
       data-tooltip-id={id}
@@ -20,4 +20,4 @@ function Bubble({ icon, tooltip, id }) {
   );
 }
 
-export default Bubble;
+export default Server;
