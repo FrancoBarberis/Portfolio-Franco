@@ -1,11 +1,9 @@
-import Bubble from './components/Server';
-import { MainLayout, Sidebar, ChannelSidebar } from './layout';
-
+import { MainLayout} from "./layout";
+// CUANDO TOQUE UN BOTON DE SERVER, SE ACTUALIZAN LOS CANALES DISPONIBLES
+// CUANDO TOQUE UN BOTON DE CANAL, SE ACTUALIZA EL CHAT
 function App() {
   return (
-    <MainLayout>
-      
-    </MainLayout>
+    <MainLayout></MainLayout>
   );
 }
 

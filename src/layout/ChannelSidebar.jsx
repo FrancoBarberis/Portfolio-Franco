@@ -1,9 +1,11 @@
-function ChannelSidebar({children}){
+function ChannelSidebar({channels}){
     return (
-        <div className="bg-amber-300 flex-1">
-            {children}
+        <div className="bg-red-800">
+            {channels.map(channel => (
+                <button>{channel.channelName}</button>
+            ))}
         </div>
     )
 }
 
-export default ChannelSidebar;  
+export default ChannelSidebar;      

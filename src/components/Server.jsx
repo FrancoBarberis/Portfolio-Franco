@@ -10,12 +10,7 @@ function Server({ icon, tooltip, id, channels }) {
     >
       <span className="text-m text-white">{icon}</span>
 
-      <Tooltip
-        id={id}
-        place="right"
-        delayShow={50}
-        className="tooltip-slide"
-      />
+      <Tooltip id={id} place="right" delayShow={50} className="tooltip-slide" />
     </div>
   );
 }
