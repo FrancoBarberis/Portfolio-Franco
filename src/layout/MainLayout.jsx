@@ -102,24 +102,34 @@ function MainLayout() {
 
   const handleChannelChange = (channel) => {
     setSelectedChannel(channel);
-    setIsChannelSidebarOpen(false); // Colapsar en mobile después de seleccionar canal
+    setIsChannelSidebarOpen(false);
   }
 
   const handleServerChange = (server) => {
-    setSelectedServer(server);
-    
-    // Solo cambiar al primer canal si es un servidor diferente
-    if (selectedServer.id !== server.id) {
-      setSelectedChannel(server.channels[0]);
+    if (selectedServer.id === server.id && isChannelSidebarOpen) {
+      // Si es el mismo servidor y la sidebar está abierta, colapsar
+      setIsChannelSidebarOpen(false);
+    } else {
+      // Si es un servidor diferente, comportamiento normal
+      if (selectedServer.id !== server.id) {
+        setSelectedServer(server);
+        setSelectedChannel(server.channels[0]);
+      } else {
+        setSelectedServer(server);
+        // Mantener el canal actual si es el mismo servidor
+      }
+      
+      setIsChannelSidebarOpen(true);
     }
-    // Si es el mismo servidor, NO cambiar el canal
-    
-    setIsChannelSidebarOpen(true);
   };
 
   return (
-    <div className="bg-blue-950 min-h-screen flex flex-row">
-      <ServerSidebar servers={servidores} onServerSelect={handleServerChange} />
+    <div className="bg-blue-950 h-screen flex flex-row overflow-hidden">
+      <ServerSidebar 
+        servers={servidores} 
+        onServerSelect={handleServerChange}
+        selectedServer={selectedServer} 
+      />
       
       <ChannelSidebar 
         channels={selectedServer.channels} 
