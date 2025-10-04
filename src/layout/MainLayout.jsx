@@ -13,6 +13,10 @@ function MainLayout() {
           channelName: "Sobre mí",
           chat: "Componente de chat",
         },
+        {
+          id: 12,
+          channelName: "Habilidades",
+          chat: "Componente de chat",}
       ],
     },
     {
@@ -30,8 +34,9 @@ function MainLayout() {
   ];
 
   return (
-    <div className="bg-blue-950 min-h-screen">
+    <div className="bg-blue-950 min-h-screen flex flex-row">
       <ServerSidebar servers={servidores} />
+      <ChannelSidebar channels={servidores[0].channels} />
     </div>
   );
 }
