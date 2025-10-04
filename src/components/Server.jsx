@@ -1,17 +1,20 @@
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
-function Server({ icon, tooltip, id, channels }) {
-  return (
-    <div
-      data-tooltip-id={String(id)}
-      data-tooltip-content={tooltip}
-      className="relative w-auto h-auto p-3.5 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg hover:cursor-pointer"
-    >
-      <span className="text-m text-white">{icon}</span>
 
-      <Tooltip id={String(id)} place="right" delayShow={50} className="tooltip-slide" />
-    </div>
+function Server({ id, icon, tooltip, onClick }) {
+  return (
+    <>
+      <div
+        className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg cursor-pointer hover:bg-blue-600 transition-colors"
+        data-tooltip-id={String(id)}
+        data-tooltip-content={tooltip}
+        onClick={onClick} // ← Agregar esta línea
+      >
+        <span className="text-white text-2xl font-bold">{icon}</span>
+      </div>
+      <Tooltip id={String(id)} />
+    </>
   );
 }
 

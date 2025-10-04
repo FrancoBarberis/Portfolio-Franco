@@ -1,5 +1,6 @@
 import ServerSidebar from "./ServerSidebar";
 import ChannelSidebar from "./ChannelSidebar";
+import { useState } from 'react';
 
 function MainLayout() {
   const servidores = [
@@ -32,11 +33,12 @@ function MainLayout() {
       ],
     },
   ];
+  const [selectedServer, setSelectedServer] = useState(servidores[0]);
 
   return (
     <div className="bg-blue-950 min-h-screen flex flex-row">
-      <ServerSidebar servers={servidores} />
-      <ChannelSidebar channels={servidores[0].channels} />
+      <ServerSidebar servers={servidores} onServerSelect={setSelectedServer} />
+      <ChannelSidebar channels={selectedServer.channels} />
     </div>
   );
 }
