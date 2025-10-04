@@ -107,8 +107,14 @@ function MainLayout() {
 
   const handleServerChange = (server) => {
     setSelectedServer(server);
-    setSelectedChannel(server.channels[0]);
-    setIsChannelSidebarOpen(true); // Expandir sidebar cuando se selecciona nuevo servidor
+    
+    // Solo cambiar al primer canal si es un servidor diferente
+    if (selectedServer.id !== server.id) {
+      setSelectedChannel(server.channels[0]);
+    }
+    // Si es el mismo servidor, NO cambiar el canal
+    
+    setIsChannelSidebarOpen(true);
   };
 
   return (
