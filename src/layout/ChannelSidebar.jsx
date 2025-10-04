@@ -1,41 +1,42 @@
 function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName}) {
     return (
         <div className={`
-            flex flex-col gap-2 bg-slate-600 text-white p-4
+            flex flex-col gap-2 bg-slate-600 text-white
             transition-all duration-300 ease-in-out
             ${isOpen 
-                ? 'w-80 md:w-52' 
-                : 'w-0 md:w-52 overflow-hidden md:overflow-visible'
+                ? 'flex-shrink-0 flex-grow-0 min-w-60 p-4' // Padding solo cuando abierto
+                : 'flex-shrink w-0 min-w-0 overflow-hidden p-0' // Se colapsa completamente
             }
         `}>
-            <h2 className="text-lg font-semibold mb-4">{serverName}</h2>
-            {/* Header con botón cerrar solo en mobile cuando está abierto */}
             {isOpen && (
-                <div className="flex justify-between items-center mb-4 md:hidden">
-                    <h3 className="text-lg font-semibold">Canales</h3>
-                    <button 
-                        onClick={onToggle}
-                        className="text-white hover:text-gray-300"
-                    >
-                        ✕
-                    </button>
-                </div>
+                <>
+                    <h2 className="text-lg font-semibold mb-4">{serverName}</h2>
+                    
+                    <div className="flex justify-between items-center mb-4 md:hidden">
+                        <h3 className="text-lg font-semibold">Canales</h3>
+                        <button 
+                            onClick={onToggle}
+                            className="text-white hover:text-gray-300"
+                        >
+                            ✕
+                        </button>
+                    </div>
+                    
+                    {channels.map(channel => (
+                        <button 
+                            key={channel.id}
+                            onClick={() => onChannelSelect(channel)}
+                            className={`text-left p-2 rounded ${
+                                selectedChannel?.id === channel.id 
+                                  ? 'bg-blue-600' 
+                                  : 'hover:bg-slate-500'
+                            }`}
+                        >
+                            {channel.channelName}
+                        </button>
+                    ))}
+                </>
             )}
-            
-            {/* Lista de canales */}
-            {channels.map(channel => (
-                <button 
-                    key={channel.id}
-                    onClick={() => onChannelSelect(channel)}
-                    className={`text-left p-2 rounded ${
-                        selectedChannel?.id === channel.id 
-                          ? 'bg-blue-600' 
-                          : 'hover:bg-slate-500'
-                    }`}
-                >
-                    {channel.channelName}
-                </button>
-            ))}
         </div>
     );
 }
