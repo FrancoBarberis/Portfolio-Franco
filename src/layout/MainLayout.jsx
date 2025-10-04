@@ -5,7 +5,7 @@ function MainLayout() {
   const servidores = [
     {
       id: 1,
-      icon: "",
+      icon: "👤",
       tooltip: "Sobre mí",
       channels: [
         {
@@ -17,7 +17,7 @@ function MainLayout() {
     },
     {
       id: 2,
-      icon: "",
+      icon: "💼",
       tooltip: "Proyectos",
       channels: [
         {
@@ -30,7 +30,7 @@ function MainLayout() {
   ];
 
   return (
-    <div className="bg-blue-950">
+    <div className="bg-blue-950 min-h-screen">
       <ServerSidebar servers={servidores} />
     </div>
   );
