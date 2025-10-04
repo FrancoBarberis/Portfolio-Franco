@@ -1,6 +1,4 @@
-import ServerSidebar from "./ServerSidebar";
-import ChannelSidebar from "./ChannelSidebar";
-import ChatArea from "./ChatArea";
+import { ServerSidebar, ChannelSidebar, ChatArea } from './';
 import { useState } from 'react';
 
 function MainLayout() {
