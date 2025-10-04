@@ -15,7 +15,7 @@ function MainLayout() {
             <div>
               <h3 className="text-2xl font-bold mb-4">¡Hola! Soy Franco</h3>
               <p className="mb-4">
-                Desarrollador full-stack con <strong>3 años de experiencia</strong> 
+                Desarrollador full-stack con <strong>3 años de experiencia </strong> 
                 especializado en React y Node.js.
               </p>
               <ul className="list-disc ml-6 mb-4">
