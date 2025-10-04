@@ -2,7 +2,7 @@ import { Server } from "../components";
 
 function ServerSidebar({servers, onServerSelect, selectedServer}) {
   return (
-    <div className="flex flex-col bg-blue-950 p-4 pt-24 gap-4">
+      <div className="flex flex-col bg-gray-900 p-4 pt-24 gap-4">
       {servers.map((server) => (
         <Server
           id={server.id}

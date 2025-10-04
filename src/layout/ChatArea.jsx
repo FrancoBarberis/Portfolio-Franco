@@ -16,9 +16,9 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
   }, [channel]);
 
   return (
-    <div className="flex-1 flex flex-col bg-gray-700 min-w-0"> {/* Agregado min-w-0 */}
+    <div className="flex-1 flex flex-col bg-gray-600 min-w-0"> {/* Agregado min-w-0 */}
       {/* Header del canal */}
-      <header className="bg-gray-800 p-4 border-b border-gray-600 flex-shrink-0">
+      <header className="bg-gray-700 p-4 border-b border-gray-800 flex-shrink-0 shadow-sm">
         <div className="flex items-center gap-2">
           {!isChannelSidebarOpen && (
             <button 
@@ -58,8 +58,8 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
       </div>
       
       {/* Footer opcional */}
-      <div className="p-4 bg-gray-800 flex-shrink-0">
-        <div className="bg-gray-600 rounded-lg p-3">
+      <div className="p-4 bg-gray-700 flex-shrink-0">
+        <div className="bg-gray-800 rounded-lg p-3">
           <p className="text-gray-400 text-sm">
             💬 Escríbeme un mensaje... (solo decorativo)
           </p>
