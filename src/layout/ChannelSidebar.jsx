@@ -1,7 +1,7 @@
 function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName}) {
     return (
         <div className={`
-            flex flex-col bg-gray-800 text-white overflow-hidden
+            flex flex-col bg-gray-900 text-white overflow-hidden border-r border-gray-700
             transition-all duration-300 ease-in-out
             ${isOpen 
                 ? 'w-full max-w-xs md:w-60' 

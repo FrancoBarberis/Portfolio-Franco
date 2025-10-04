@@ -98,7 +98,7 @@ function MainLayout() {
   ];
   const [selectedServer, setSelectedServer] = useState(servidores[0]);
   const [selectedChannel, setSelectedChannel] = useState(servidores[0].channels[0]);
-  const [isChannelSidebarOpen, setIsChannelSidebarOpen] = useState(true);
+  const [isChannelSidebarOpen, setIsChannelSidebarOpen] = useState(false);
 
   const handleChannelChange = (channel) => {
     setSelectedChannel(channel);
