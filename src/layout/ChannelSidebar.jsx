@@ -1,4 +1,4 @@
-function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle}) {
+function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName}) {
     return (
         <div className={`
             flex flex-col gap-2 bg-slate-600 text-white p-4
@@ -8,6 +8,7 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                 : 'w-0 md:w-52 overflow-hidden md:overflow-visible'
             }
         `}>
+            <h2 className="text-lg font-semibold mb-4">{serverName}</h2>
             {/* Header con botón cerrar solo en mobile cuando está abierto */}
             {isOpen && (
                 <div className="flex justify-between items-center mb-4 md:hidden">

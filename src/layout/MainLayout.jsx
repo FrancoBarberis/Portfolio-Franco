@@ -123,6 +123,7 @@ function MainLayout() {
         selectedChannel={selectedChannel}
         isOpen={isChannelSidebarOpen}
         onToggle={() => setIsChannelSidebarOpen(!isChannelSidebarOpen)}
+        serverName={selectedServer.tooltip}
       />
       
       <ChatArea 
