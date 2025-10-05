@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { UserProfile } from '../components';
 
 function DiscordWindow({ children, userName = "Franco Barberis", userAvatar = "🚀", userStatus = "open to work" }) {
+  const [audioEnabled, setAudioEnabled] = useState(true);
+
   return (
     <div className="h-screen w-full bg-gray-800 flex flex-col overflow-hidden">
       {/* Barra de título vacía */}
@@ -11,30 +14,31 @@ function DiscordWindow({ children, userName = "Franco Barberis", userAvatar = "�
         {children}
       </div>
 
-      {/* Barra inferior: en desktop usa grid para alinear el input con el inicio del ChatArea */}
+      {/* Barra inferior */}
       <div className="bg-gray-900 border-t border-gray-700 flex items-center gap-2 flex-shrink-0
                       px-2 py-2 md:px-0 md:py-3 md:pr-4
                       md:grid md:grid-cols-[5rem_15rem_1fr]">
-        {/* Perfil: en desktop ocupa las 2 primeras columnas (ServerSidebar 5rem + ChannelSidebar 15rem) */}
+        {/* Perfil: ocupa las 2 primeras columnas en desktop; en mobile, usa todo el ancho disponible */}
         <div className="px-2 md:px-4 md:col-span-2">
           <UserProfile 
             name={userName}
             avatar={userAvatar}
             status={userStatus}
+            audioEnabled={audioEnabled}
+            onToggleAudio={() => setAudioEnabled(v => !v)}
+            onOpenSettings={() => {/* abrir modal/config */}}
           />
         </div>
 
-        {/* Input alineado exactamente con el inicio del ChatArea en desktop */}
-        <div className="flex-1 md:col-start-3 md:px-0">
-          <div className="bg-gray-800 rounded-lg px-3 py-3 md:px-4 md:py-3 flex items-center gap-1 md:gap-3">
-            <span className="text-gray-500 text-xs md:text-sm hidden md:inline">💬</span>
+        {/* Input solo en desktop, con aclaración de demo y emoji */}
+        <div className="hidden md:block md:col-start-3 md:px-0">
+          <div className="bg-gray-800 rounded-lg px-4 py-3 flex items-center gap-3" title="Demo: no envía mensajes">
+            <span className="text-gray-500 text-sm">💬</span>
             <input 
               type="text" 
-              placeholder="Mensaje..."
-              className="flex-1 bg-transparent text-white placeholder-gray-400 outline-none text-xs md:text-sm"
+              placeholder="Puedes probar escribir un mensaje (aunque realmente no funciona 😅)"
+              className="flex-1 bg-transparent text-white placeholder-gray-400 outline-none text-sm"
             />
-            <button className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm hidden md:inline">📎</button>
-            <button className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">😊</button>
           </div>
         </div>
       </div>
