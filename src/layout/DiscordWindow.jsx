@@ -7,7 +7,7 @@ function DiscordWindow({
   userAvatar = "🚀", 
   userAvatarGif = null,
   userBanner = null,
-  userBio = "Full Stack Developer",
+  userBio = "Frontend Developer",
   userStatus = "open to work", 
   githubName = "FrancoBarberis" 
 }) {

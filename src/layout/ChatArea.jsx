@@ -23,16 +23,16 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
           {!isChannelSidebarOpen && (
             <button 
               onClick={onMenuClick}
-              className="md:hidden text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-gray-300 mr-2 transition-colors duration-200"
+              className="md:hidden text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-gray-300 mr-2 transition-colors duration-200 text-lg md:text-xl"
               title="Mostrar canales"
               aria-label="Mostrar canales"
             >
               ☰
             </button>
           )}
-          <span className="text-gray-500 dark:text-gray-400">#</span>
-          <h1 className="text-gray-900 dark:text-white text-base font-semibold truncate">{channel?.channelName || 'general'}</h1>
-          <div className="ml-4 text-gray-500 dark:text-gray-400 text-sm truncate">
+          <span className="text-gray-500 dark:text-gray-400 text-sm md:text-base">#</span>
+          <h1 className="text-gray-900 dark:text-white text-sm md:text-base font-semibold truncate">{channel?.channelName || 'general'}</h1>
+          <div className="ml-4 text-gray-500 dark:text-gray-400 text-xs md:text-sm truncate">
             {serverName}
           </div>
         </div>
