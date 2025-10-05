@@ -21,7 +21,9 @@ function Server({ id, icon, tooltip, onClick, isSelected }) {
   const classes = [
     "w-full aspect-square rounded-xl flex items-center justify-center",
     "shadow-lg cursor-pointer transition-colors",
-    isSelected ? "bg-indigo-400 ring-2 ring-inset ring-indigo-300" : "bg-gray-700 hover:bg-indigo-500",
+    isSelected
+      ? "bg-indigo-400 ring-2 ring-inset ring-indigo-300"
+      : "bg-gray-300 dark:bg-gray-700 hover:bg-indigo-400/50 dark:hover:bg-indigo-500",
   ].join(" ");
 
   return (
@@ -32,7 +34,7 @@ function Server({ id, icon, tooltip, onClick, isSelected }) {
         data-tooltip-content={showTooltip ? tooltip : undefined}
         onClick={onClick}
       >
-        <span className="text-white text-2xl font-bold">{icon}</span>
+  <span className="text-gray-900 dark:text-white text-2xl font-bold">{icon}</span>
       </div>
 
       {showTooltip && <Tooltip id={tooltipId} place="right" />}

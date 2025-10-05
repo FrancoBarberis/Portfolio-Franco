@@ -1,7 +1,7 @@
 function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName}) {
     return (
         <div className={`
-            flex flex-col bg-gray-900 text-white overflow-hidden border-r border-gray-700
+            flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden border-r border-gray-300 dark:border-gray-700
             transition-all duration-300 ease-in-out h-full flex-shrink-0
             md:w-60
             ${isOpen 
@@ -20,8 +20,8 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                 }
             `}>
                 {/* Header */}
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-gray-700 pr-16 md:pr-0">
-                    <h2 className="text-base font-semibold truncate flex-1 min-w-0 text-white">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-gray-300 dark:border-gray-700 pr-16 md:pr-0">
+                    <h2 className="text-base font-semibold truncate flex-1 min-w-0">
                         {serverName}
                     </h2>
 
@@ -51,12 +51,12 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                                 transition-all duration-150 ease-in-out
                                 flex items-center gap-2 min-w-0
                                 ${selectedChannel?.id === channel.id 
-                                    ? 'bg-gray-600 text-white' 
-                                    : 'text-gray-400 hover:bg-gray-700 hover:text-gray-300'
+                                    ? 'bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-white' 
+                                    : 'text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-300'
                                 }
                             `}
                         >
-                            <span className="text-gray-500 flex-shrink-0 text-sm">#</span>
+                            <span className="text-gray-500 dark:text-gray-500 flex-shrink-0 text-sm">#</span>
                             <span className="truncate min-w-0 text-sm font-medium">{channel.channelName}</span>
                         </button>
                     ))}

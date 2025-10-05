@@ -1,3 +1,5 @@
+/* Tailwind v4: usar clase `.dark` para la variante `dark:` (debe ir antes del import) */
+@custom-variant dark (.dark &);
 @import "tailwindcss";
 
 @keyframes slideInLeft {
