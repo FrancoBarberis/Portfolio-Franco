@@ -41,14 +41,12 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
       {/* Área de contenido principal con scroll controlado */}
       <div className="flex-1 overflow-y-auto overflow-x-hidden">
         <div className="px-6 py-4 min-h-0">
-          <div 
+          <div
             className={`
-              max-w-none w-full
-              transition-all duration-400 ease-in-out transform
-              ${isSliding 
-                ? 'translate-x-4 opacity-0 scale-95' 
-                : 'translate-x-0 opacity-100 scale-100'
-              }
+              w-full
+              transition-opacity duration-200 ease-out
+              motion-reduce:transition-none
+              ${isSliding ? 'opacity-0' : 'opacity-100'}
             `}
           >
             <div className="break-words">
