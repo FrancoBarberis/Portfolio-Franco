@@ -1,6 +1,5 @@
-import { ServerSidebar, ChannelSidebar, ChatArea } from './';
-import { DiscordWindow } from '../components';
-import { useState } from 'react';
+import { ServerSidebar, ChannelSidebar, ChatArea, DiscordWindow } from './';
+import { useState, useEffect } from 'react';
 
 function MainLayout() {
   const servidores = [
@@ -129,11 +128,11 @@ function MainLayout() {
 
   return (
     <DiscordWindow>
-      <div className="flex flex-row h-full overflow-hidden w-full min-h-0">
+      <div className="flex flex-row h-full overflow-hidden w-full">
         <ServerSidebar 
           servers={servidores} 
           onServerSelect={handleServerChange}
-          selectedServer={selectedServer} 
+          selectedServer={selectedServer}
         />
         
         <ChannelSidebar 

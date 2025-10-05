@@ -2,31 +2,35 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
     return (
         <div className={`
             flex flex-col bg-gray-900 text-white overflow-hidden border-r border-gray-700
-            transition-all duration-300 ease-in-out h-full
-            md:w-60 md:flex-shrink-0
+            transition-all duration-300 ease-in-out h-full flex-shrink-0
+            md:w-60
             ${isOpen 
-                ? 'w-full max-w-xs flex-shrink-0' 
+                ? 'w-full md:w-60' 
                 : 'w-0 md:w-60'
             }
         `}>
             <div className={`
                 flex flex-col gap-2 h-full min-w-0
                 p-3 md:p-4
-                transition-opacity duration-300 ease-in-out
+                transition-opacity duration-200 ease-in-out
                 md:opacity-100
                 ${isOpen 
-                    ? 'opacity-100 delay-150'
+                    ? 'opacity-100'
                     : 'opacity-0 md:opacity-100'
                 }
             `}>
-                <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-700">
-                    <h2 className="text-base font-semibold truncate flex-1 min-w-0 text-white">{serverName}</h2>
-                    
+                {/* Header */}
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-gray-700 pr-16 md:pr-0">
+                    <h2 className="text-base font-semibold truncate flex-1 min-w-0 text-white">
+                        {serverName}
+                    </h2>
+
+                    {/* X solo en mobile, a la derecha */}
                     <button 
                         onClick={onToggle}
-                        className="text-gray-400 hover:text-white cursor-pointer transition-colors duration-200 
-                                 flex-shrink-0 ml-2 text-lg w-6 h-6 flex items-center justify-center rounded hover:bg-gray-700
-                                 md:hidden"
+                        className="md:hidden text-white hover:text-gray-300 transition-colors duration-150
+                                   text-xl leading-none w-8 h-8 flex items-center justify-center flex-shrink-0"
+                        aria-label="Ocultar sidebar"
                         title="Ocultar sidebar"
                     >
                         ✕

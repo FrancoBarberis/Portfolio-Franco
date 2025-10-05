@@ -1,34 +1,32 @@
-import { UserProfile } from './';
+import { UserProfile } from '../components';
 
 function DiscordWindow({ children }) {
   return (
     <div className="h-screen w-full bg-gray-800 flex flex-col overflow-hidden">
-      {/* Barra de título vacía - más pequeña en móvil */}
-      <div className="bg-gray-900 h-6 md:h-8 border-b border-gray-700 flex-shrink-0">
-      </div>
+      {/* Barra de título vacía */}
+      <div className="bg-gray-900 h-6 md:h-8 border-b border-gray-700 flex-shrink-0" />
 
-      {/* Contenido principal de la aplicación */}
+      {/* Contenido principal */}
       <div className="flex-1 flex overflow-hidden w-full min-h-0">
         {children}
       </div>
 
-      {/* Barra inferior con perfil de usuario e input - responsive */}
-      <div className="bg-gray-900 px-2 py-2 md:px-0 md:py-3 border-t border-gray-700 flex items-center gap-2 md:gap-0 flex-shrink-0">
-        {/* Perfil de usuario - completo en ambas versiones */}
-        <div className="flex-shrink-0 w-48 md:w-72 px-2 md:px-4">
+      {/* Barra inferior: en desktop usa grid para alinear el input con el inicio del ChatArea */}
+      <div className="bg-gray-900 border-t border-gray-700 flex items-center gap-2 flex-shrink-0
+                      px-2 py-2 md:px-0 md:py-3 md:pr-4
+                      md:grid md:grid-cols-[5rem_15rem_1fr]">
+        {/* Perfil: en desktop ocupa las 2 primeras columnas (ServerSidebar 5rem + ChannelSidebar 15rem) */}
+        <div className="flex-shrink-0 w-48 px-2 md:w-auto md:px-4 md:col-span-2">
           <UserProfile 
             name="Franco Developer" 
             avatar="🚀" 
             status="online" 
           />
         </div>
-        
-        {/* Spacer para ChannelSidebar en desktop */}
-        <div className="hidden md:block w-60"></div>
-        
-        {/* Input de mensaje - más compacto en móvil */}
-        <div className="flex-1 md:px-6">
-          <div className="bg-gray-800 rounded-lg px-2 py-1 md:px-4 md:py-3 flex items-center gap-1 md:gap-3">
+
+        {/* Input alineado exactamente con el inicio del ChatArea en desktop */}
+        <div className="flex-1 md:col-start-3 md:px-0">
+          <div className="bg-gray-800 rounded-lg px-3 py-3 md:px-4 md:py-3 flex items-center gap-1 md:gap-3">
             <span className="text-gray-500 text-xs md:text-sm hidden md:inline">💬</span>
             <input 
               type="text" 
