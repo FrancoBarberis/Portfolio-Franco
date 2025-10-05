@@ -1,6 +1,6 @@
 import { UserProfile } from '../components';
 
-function DiscordWindow({ children }) {
+function DiscordWindow({ children, userName = "Franco Barberis", userAvatar = "🚀", userStatus = "open to work" }) {
   return (
     <div className="h-screen w-full bg-gray-800 flex flex-col overflow-hidden">
       {/* Barra de título vacía */}
@@ -16,11 +16,11 @@ function DiscordWindow({ children }) {
                       px-2 py-2 md:px-0 md:py-3 md:pr-4
                       md:grid md:grid-cols-[5rem_15rem_1fr]">
         {/* Perfil: en desktop ocupa las 2 primeras columnas (ServerSidebar 5rem + ChannelSidebar 15rem) */}
-        <div className="flex-shrink-0 w-48 px-2 md:w-auto md:px-4 md:col-span-2">
+        <div className="px-2 md:px-4 md:col-span-2">
           <UserProfile 
-            name="Franco Developer" 
-            avatar="🚀" 
-            status="online" 
+            name={userName}
+            avatar={userAvatar}
+            status={userStatus}
           />
         </div>
 

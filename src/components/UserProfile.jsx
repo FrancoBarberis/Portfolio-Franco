@@ -1,10 +1,15 @@
-function UserProfile({ name = "Franco", avatar = "👤", status = "online" }) {
+function UserProfile({ name = "Franco Barberis", avatar = "👤", status = "open to work" }) {
   const statusColors = {
     online: "bg-green-500",
-    away: "bg-yellow-500", 
+    away: "bg-yellow-500",
     busy: "bg-red-500",
     offline: "bg-gray-500"
   };
+
+  // "open to work" usa el color de "online"
+  const normalized = (status || "").toLowerCase();
+  const colorKey = normalized === "open to work" ? "online" : normalized;
+  const statusClass = statusColors[colorKey] || statusColors.online;
 
   return (
     <div className="flex items-center gap-3 p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-200 cursor-pointer">
@@ -14,7 +19,7 @@ function UserProfile({ name = "Franco", avatar = "👤", status = "online" }) {
           {avatar}
         </div>
         {/* Indicador de estado */}
-        <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-gray-800 ${statusColors[status]}`}></div>
+        <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-gray-800 ${statusClass}`}></div>
       </div>
       
       {/* Información del usuario */}
