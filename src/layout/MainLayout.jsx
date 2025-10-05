@@ -1,4 +1,5 @@
 import { ServerSidebar, ChannelSidebar, ChatArea } from './';
+import { DiscordWindow } from '../components';
 import { useState } from 'react';
 
 function MainLayout() {
@@ -98,7 +99,7 @@ function MainLayout() {
   ];
   const [selectedServer, setSelectedServer] = useState(servidores[0]);
   const [selectedChannel, setSelectedChannel] = useState(servidores[0].channels[0]);
-  const [isChannelSidebarOpen, setIsChannelSidebarOpen] = useState(false);
+  const [isChannelSidebarOpen, setIsChannelSidebarOpen] = useState(window.innerWidth >= 768);
 
   const handleChannelChange = (channel) => {
     setSelectedChannel(channel);
@@ -106,8 +107,10 @@ function MainLayout() {
   }
 
   const handleServerChange = (server) => {
-    if (selectedServer.id === server.id && isChannelSidebarOpen) {
-      // Si es el mismo servidor y la sidebar está abierta, colapsar
+    const isDesktop = window.innerWidth >= 768; // md breakpoint
+    
+    if (selectedServer.id === server.id && isChannelSidebarOpen && !isDesktop) {
+      // Solo colapsar en mobile si es el mismo servidor y la sidebar está abierta
       setIsChannelSidebarOpen(false);
     } else {
       // Si es un servidor diferente, comportamiento normal
@@ -119,34 +122,37 @@ function MainLayout() {
         // Mantener el canal actual si es el mismo servidor
       }
       
-      setIsChannelSidebarOpen(true);
+      // En desktop siempre abierto, en mobile toggle
+      setIsChannelSidebarOpen(isDesktop ? true : true);
     }
   };
 
   return (
-    <div className="bg-gray-900 h-screen flex flex-row overflow-hidden">
-      <ServerSidebar 
-        servers={servidores} 
-        onServerSelect={handleServerChange}
-        selectedServer={selectedServer} 
-      />
-      
-      <ChannelSidebar 
-        channels={selectedServer.channels} 
-        onChannelSelect={handleChannelChange} 
-        selectedChannel={selectedChannel}
-        isOpen={isChannelSidebarOpen}
-        onToggle={() => setIsChannelSidebarOpen(!isChannelSidebarOpen)}
-        serverName={selectedServer.tooltip}
-      />
-      
-      <ChatArea 
-        channel={selectedChannel} 
-        serverName={selectedServer.tooltip}
-        onMenuClick={() => setIsChannelSidebarOpen(!isChannelSidebarOpen)}
-        isChannelSidebarOpen={isChannelSidebarOpen}
-      />
-    </div>
+    <DiscordWindow>
+      <div className="flex flex-row h-full overflow-hidden w-full min-h-0">
+        <ServerSidebar 
+          servers={servidores} 
+          onServerSelect={handleServerChange}
+          selectedServer={selectedServer} 
+        />
+        
+        <ChannelSidebar 
+          channels={selectedServer.channels} 
+          onChannelSelect={handleChannelChange} 
+          selectedChannel={selectedChannel}
+          isOpen={isChannelSidebarOpen}
+          onToggle={() => setIsChannelSidebarOpen(!isChannelSidebarOpen)}
+          serverName={selectedServer.tooltip}
+        />
+        
+        <ChatArea 
+          channel={selectedChannel} 
+          serverName={selectedServer.tooltip}
+          onMenuClick={() => setIsChannelSidebarOpen(!isChannelSidebarOpen)}
+          isChannelSidebarOpen={isChannelSidebarOpen}
+        />
+      </div>
+    </DiscordWindow>
   );
 }
 

@@ -2,18 +2,21 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
     return (
         <div className={`
             flex flex-col bg-gray-900 text-white overflow-hidden border-r border-gray-700
-            transition-all duration-300 ease-in-out
+            transition-all duration-300 ease-in-out h-full
+            md:w-60 md:flex-shrink-0
             ${isOpen 
-                ? 'w-full max-w-xs md:w-60' 
-                : 'w-0'
+                ? 'w-full max-w-xs flex-shrink-0' 
+                : 'w-0 md:w-60'
             }
         `}>
             <div className={`
-                flex flex-col gap-2 h-full p-4 min-w-0
+                flex flex-col gap-2 h-full min-w-0
+                p-3 md:p-4
                 transition-opacity duration-300 ease-in-out
+                md:opacity-100
                 ${isOpen 
                     ? 'opacity-100 delay-150'
-                    : 'opacity-0'
+                    : 'opacity-0 md:opacity-100'
                 }
             `}>
                 <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-700">
@@ -22,7 +25,8 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                     <button 
                         onClick={onToggle}
                         className="text-gray-400 hover:text-white cursor-pointer transition-colors duration-200 
-                                 flex-shrink-0 ml-2 text-lg w-6 h-6 flex items-center justify-center rounded hover:bg-gray-700"
+                                 flex-shrink-0 ml-2 text-lg w-6 h-6 flex items-center justify-center rounded hover:bg-gray-700
+                                 md:hidden"
                         title="Ocultar sidebar"
                     >
                         ✕

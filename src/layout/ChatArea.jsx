@@ -16,14 +16,14 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
   }, [channel]);
 
   return (
-    <div className="flex-1 flex flex-col bg-gray-600 min-w-0"> {/* Agregado min-w-0 */}
+    <div className="flex-1 flex flex-col bg-gray-600 min-w-0 h-full"> 
       {/* Header del canal */}
-      <header className="bg-gray-700 p-4 border-b border-gray-800 flex-shrink-0 shadow-sm">
+      <header className="bg-gray-700 px-3 py-2 md:px-6 md:py-3 border-b border-gray-800 flex-shrink-0 shadow-sm">
         <div className="flex items-center gap-2">
           {!isChannelSidebarOpen && (
             <button 
               onClick={onMenuClick}
-              className="text-white hover:text-gray-300 mr-2 cursor-pointer transition-colors duration-200"
+              className="md:hidden text-white hover:text-gray-300 mr-2 cursor-pointer transition-colors duration-200"
               title="Mostrar canales"
             >
               ☰
@@ -39,10 +39,10 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
       
       {/* Área de contenido principal con scroll controlado */}
       <div className="flex-1 overflow-y-auto overflow-x-hidden">
-        <div className="p-6 min-h-0"> {/* min-h-0 importante para flexbox */}
+        <div className="px-6 py-4 min-h-0"> {/* min-h-0 importante para flexbox */}
           <div 
             className={`
-              max-w-4xl mx-auto w-full
+              max-w-none w-full
               transition-all duration-400 ease-in-out transform
               ${isSliding 
                 ? 'translate-x-4 opacity-0 scale-95' 
@@ -57,14 +57,6 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
         </div>
       </div>
       
-      {/* Footer opcional */}
-      <div className="p-4 bg-gray-700 flex-shrink-0">
-        <div className="bg-gray-800 rounded-lg p-3">
-          <p className="text-gray-400 text-sm">
-            💬 Escríbeme un mensaje... (solo decorativo)
-          </p>
-        </div>
-      </div>
     </div>
   );
 }
