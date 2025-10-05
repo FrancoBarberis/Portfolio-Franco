@@ -1,7 +1,7 @@
 function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName}) {
     return (
         <div className={`
-            flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden border-r border-gray-300 dark:border-gray-700
+            flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden border-r-2 border-gray-400 dark:border-gray-700
             transition-all duration-300 ease-in-out h-full flex-shrink-0
             md:w-60
             ${isOpen 
@@ -20,7 +20,7 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                 }
             `}>
                 {/* Header */}
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-gray-300 dark:border-gray-700 pr-16 md:pr-0">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-gray-400 dark:border-gray-700 pr-16 md:pr-0">
                     <h2 className="text-base font-semibold truncate flex-1 min-w-0">
                         {serverName}
                     </h2>

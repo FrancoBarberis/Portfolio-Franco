@@ -18,7 +18,7 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
   return (
   <div className="flex-1 flex flex-col bg-white dark:bg-gray-600 min-w-0 h-full"> 
       {/* Header del canal */}
-      <header className="bg-gray-100 dark:bg-gray-800 px-3 md:px-4 pt-3 md:pt-4 pb-3 border-b border-gray-300 dark:border-gray-700 flex-shrink-0">
+      <header className="bg-gray-100 dark:bg-gray-800 px-3 md:px-4 pt-3 md:pt-4 pb-3 border-b-2 border-gray-400 dark:border-gray-700 flex-shrink-0">
         <div className="flex items-center gap-2">
           {!isChannelSidebarOpen && (
             <button 
