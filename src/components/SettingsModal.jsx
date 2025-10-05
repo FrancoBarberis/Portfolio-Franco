@@ -46,15 +46,18 @@ function SettingsModal({ isOpen, onClose, isDark, onToggleDark, anchorRect }) {
 
   // Cerrar al hacer click/touch fuera
   useEffect(() => {
-    const handleDown = (e) => {
+    const handleClick = (e) => {
       if (!popRef.current) return;
-      if (!popRef.current.contains(e.target)) onClose();
+      if (!popRef.current.contains(e.target)) onClose(); // click fuera => cerrar
     };
-    document.addEventListener("mousedown", handleDown);
-    document.addEventListener("touchstart", handleDown);
+    const handleKey = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener("click", handleClick);
+    document.addEventListener("keydown", handleKey);
     return () => {
-      document.removeEventListener("mousedown", handleDown);
-      document.removeEventListener("touchstart", handleDown);
+      document.removeEventListener("click", handleClick);
+      document.removeEventListener("keydown", handleKey);
     };
   }, [onClose]);
 

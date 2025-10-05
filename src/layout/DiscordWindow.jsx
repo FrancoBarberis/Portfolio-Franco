@@ -37,14 +37,13 @@ function DiscordWindow({ children, userName = "Franco Barberis", userAvatar = "ð
             audioEnabled={audioEnabled}
             onToggleAudio={() => setAudioEnabled(v => !v)}
             onOpenSettings={(e) => {
-              const rect = e?.currentTarget?.getBoundingClientRect?.();
-              // Si ya estÃ¡ abierto y tocas la rueda, se cierra
-              if (isSettingsOpen) {
-                setIsSettingsOpen(false);
-                return;
-              }
-              if (rect) setAnchorRect(rect);
-              setIsSettingsOpen(true);
+              e.stopPropagation(); // evita que el click llegue al listener global
+              setIsSettingsOpen(prev => {
+                if (prev) return false; // si estaba abierto, cerrarlo
+                const rect = e?.currentTarget?.getBoundingClientRect?.();
+                if (rect) setAnchorRect(rect);
+                return true; // abrir si estaba cerrado
+              });
             }}
           />
         </div>

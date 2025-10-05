@@ -25,10 +25,11 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                         {serverName}
                     </h2>
 
-                    {/* X solo en mobile, a la derecha */}
+                    {/* X solo en mobile, a la derecha (visible en claro/oscuro) */}
                     <button 
                         onClick={onToggle}
-                        className="md:hidden text-white hover:text-gray-300 transition-colors duration-150
+                        className="md:hidden text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-gray-300
+                                   focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50
                                    text-xl leading-none w-8 h-8 flex items-center justify-center flex-shrink-0"
                         aria-label="Ocultar sidebar"
                         title="Ocultar sidebar"
