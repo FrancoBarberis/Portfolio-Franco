@@ -4,7 +4,7 @@ import { UserProfile, SettingsModal } from '../components';
 function DiscordWindow({ 
   children, 
   userName = "Franco Barberis", 
-  userAvatar = "🚀", 
+  userAvatar = "🚀",
   userAvatarGif = null,
   userBio = "Frontend Developer",
   userStatus = "open to work", 

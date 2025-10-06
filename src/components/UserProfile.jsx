@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import Banner from "../assets/BannerCoding.webp"
+import Banner from "../assets/CoderGIF.gif"
 
 function UserProfile({
   name = "Franco Barberis",
@@ -190,7 +190,7 @@ function ProfileModal({ isOpen, anchorRect, name, githubName, avatar, avatarGif,
     >
       {/* Banner */}
       <div className="h-24 relative">
-          <img src={Banner} alt="banner" className="w-full h-full object-cover" />
+          <img src={Banner} alt="banner" className="w-full h-full object-cover " />
       </div>
 
       {/* Contenido del perfil */}
