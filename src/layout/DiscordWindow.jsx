@@ -6,7 +6,6 @@ function DiscordWindow({
   userName = "Franco Barberis", 
   userAvatar = "🚀", 
   userAvatarGif = null,
-  userBanner = null,
   userBio = "Frontend Developer",
   userStatus = "open to work", 
   githubName = "FrancoBarberis" 
@@ -60,7 +59,6 @@ function DiscordWindow({
             name={userName}
             avatar={userAvatar}
             avatarGif={userAvatarGif}
-            bannerImage={userBanner}
             bio={userBio}
             status={userStatus}
             githubName={githubName}

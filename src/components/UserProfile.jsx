@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import React from "react";
+import Banner from "../assets/BannerCoding.webp"
 
 function UserProfile({
   name = "Franco Barberis",
   avatar = "👤",
-  avatarGif = null, // URL del GIF para el modal
-  bannerImage = null, // URL del banner
+  avatarGif = "../assets/CSS.svg", // URL del GIF para el modal
   status = "open to work",
   onToggleAudio = () => {},
   onOpenSettings = () => {},
@@ -150,7 +150,6 @@ function UserProfile({
           githubName={githubName}
           avatar={avatar}
           avatarGif={avatarGif}
-          bannerImage={bannerImage}
           status={status}
           statusClass={statusClass}
           bio={bio}
@@ -190,10 +189,8 @@ function ProfileModal({ isOpen, anchorRect, name, githubName, avatar, avatarGif,
       style={{ ...position, width: '300px' }}
     >
       {/* Banner */}
-      <div className="h-24 relative" style={{ backgroundColor: bannerImage ? 'transparent' : '#5865F2' }}>
-        {bannerImage && (
-          <img src={bannerImage} alt="banner" className="w-full h-full object-cover" />
-        )}
+      <div className="h-24 relative">
+          <img src={Banner} alt="banner" className="w-full h-full object-cover" />
       </div>
 
       {/* Contenido del perfil */}
