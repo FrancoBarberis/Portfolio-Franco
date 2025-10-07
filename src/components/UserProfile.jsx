@@ -18,6 +18,7 @@ function UserProfile({
   const [isHovered, setIsHovered] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [avatarRect, setAvatarRect] = useState(null);
+  const [gifVersion, setGifVersion] = useState(0);
 
   const statusColors = {
     online: "bg-green-500",
@@ -42,6 +43,9 @@ function UserProfile({
         className="relative flex-shrink-0 cursor-pointer glow-rotating"
         onClick={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
+          // Forzar recarga sincronizada de los GIFs (pegar query ?v=timestamp)
+          const v = Date.now();
+          setGifVersion(v);
           setAvatarRect(rect);
           setShowProfileModal(prev => !prev);
         }}
@@ -49,6 +53,7 @@ function UserProfile({
           if (window.innerWidth >= 768) { // desktop: permite hover abrir
             const rect = e.currentTarget.getBoundingClientRect();
             setAvatarRect(rect);
+            setGifVersion(Date.now());
             setShowProfileModal(true);
           }
         }}
@@ -60,7 +65,7 @@ function UserProfile({
       >
         <div className="w-8 h-8 md:w-9 md:h-9 rounded-full overflow-hidden relative z-[1]">
           <img 
-            src={typeof avatar === 'string' ? avatar : rocketGif}
+            src={(typeof avatar === 'string' ? avatar : rocketGif) + (gifVersion ? ((String(avatar).includes('?') ? '&' : '?') + 'v=' + gifVersion) : '')}
             alt="avatar"
             className="w-full h-full object-cover"
           />
@@ -72,7 +77,7 @@ function UserProfile({
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <div className="text-[11px] md:text-sm font-medium text-gray-900 dark:text-white truncate relative overflow-hidden h-4 md:h-5 font-mono">
+  <div className="text-[10px] md:text-xs font-medium text-gray-900 dark:text-white truncate relative overflow-hidden h-4 md:h-5 font-mono">
           <span 
             className="block absolute w-full transition-all duration-200 ease-in-out"
             style={{
@@ -136,7 +141,7 @@ function UserProfile({
           title={isDark ? "Modo oscuro: ON" : "Modo oscuro: OFF"}
           aria-label="Alternar modo oscuro"
         >
-          <span className="text-yellow-500 dark:text-gray-300">{isDark ? '🌙' : '🌞'}</span>
+          <span className="text-sm md:text-base" aria-hidden>{isDark ? '🌙' : '🌞'}</span>
         </button>
       </div>
 
@@ -146,26 +151,21 @@ function UserProfile({
           isOpen={showProfileModal}
           anchorRect={avatarRect}
           name={name}
-          githubName={githubName}
           avatar={avatar}
-          avatarGif={avatarGif}
           status={status}
           statusClass={statusClass}
           bio={bio}
+          onClose={() => setShowProfileModal(false)}
+          gifVersion={gifVersion}
         />
       )}
     </div>
   );
 }
 
-function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gmail.com', avatar, status, statusClass, bio }) {
+function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gmail.com', avatar, status, statusClass, bio, onClose, gifVersion }) {
   const [position, setPosition] = useState(null);
-
-  useEffect(() => {
-    const closeHandler = () => setShowProfileModal(false);
-    window.addEventListener('close-profile-modal', closeHandler);
-    return () => window.removeEventListener('close-profile-modal', closeHandler);
-  }, []);
+  const modalRef = React.useRef(null);
 
   useEffect(() => {
     if (!isOpen || !anchorRect) {
@@ -186,22 +186,33 @@ function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gm
     });
   }, [isOpen, anchorRect]);
 
+  // Cerrar al click fuera
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleClick = (e) => {
+      if (!modalRef.current) return;
+      if (!modalRef.current.contains(e.target)) onClose?.();
+    };
+    document.addEventListener('mousedown', handleClick);
+    document.addEventListener('touchstart', handleClick);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('touchstart', handleClick);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen || !position) return null;
 
   return (
     <div
+      ref={modalRef}
       className="profile-modal bg-white dark:bg-gray-900 rounded-lg shadow-2xl border-2 border-gray-400 dark:border-gray-700 overflow-hidden"
       style={{ ...position, width: '300px' }}
     >
       {/* Botón X flotante en mobile, sobre el banner */}
       <button
         className="md:hidden absolute right-2 top-2 z-10 bg-black/30 text-white rounded-full w-8 h-8 flex items-center justify-center"
-        onClick={(e) => {
-          e.stopPropagation();
-          // cerrar modal en el mismo componente
-          const closeEvt = new Event('close-profile-modal');
-          window.dispatchEvent(closeEvt);
-        }}
+        onClick={(e) => { e.stopPropagation(); onClose?.(); }}
         aria-label="Cerrar"
         title="Cerrar"
         style={{ position: 'absolute' }}
@@ -217,12 +228,14 @@ function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gm
       <div className="px-4 pb-4">
         {/* Avatar grande: siempre usar `avatar` pasado */}
         <div className="relative -mt-12 mb-4">
-          <div className="w-20 h-20 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-gray-300 dark:bg-gray-700 glow-rotating">
-            <img 
-              src={typeof avatar === 'string' ? avatar : ''}
-              alt="avatar"
-              className="w-full h-full object-cover"
-            />
+          <div className="w-20 h-20 relative glow-rotating rounded-full">
+            <div className="w-full h-full rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-gray-300 dark:bg-gray-700">
+              <img 
+                src={(typeof avatar === 'string' ? avatar : '') + (gifVersion ? ((String(avatar).includes('?') ? '&' : '?') + 'v=' + gifVersion) : '')}
+                alt="avatar"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           {/* Indicador de estado */}
           <div
@@ -232,7 +245,7 @@ function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gm
 
         {/* Información del usuario */}
         <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 border-2 border-gray-300 dark:border-gray-700">
-          <h3 className="text-gray-900 dark:text-white font-semibold text-sm md:text-base mb-1 font-mono break-words">
+          <h3 className="text-gray-900 dark:text-white font-semibold text-xs md:text-sm mb-1 font-mono break-words">
             {email}
           </h3>
           <div className="border-t-2 border-gray-300 dark:border-gray-700 pt-2 mt-2">
