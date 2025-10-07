@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { UserProfile } from '../components';
 import rocketGif from '../assets/rocketGIF.webp';
 
@@ -12,10 +12,14 @@ function DiscordWindow({
   githubName = "FrancoBarberis" 
 }) {
   const [audioEnabled, setAudioEnabled] = useState(true);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(true); // por defecto: oscuro
+  const [transDur, setTransDur] = useState(500);
+  const [sweeping, setSweeping] = useState(false);
+  const [sweepType, setSweepType] = useState('darken'); // 'darken' | 'lighten'
+  const [sweepDir, setSweepDir] = useState('rtl'); // 'rtl' | 'ltr'
 
   // Opcional: añade o quita la clase 'dark' en <html> si usas Tailwind darkMode: 'class'
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = document.documentElement;
     if (isDark) el.classList.add('dark');
     else el.classList.remove('dark');
@@ -50,7 +54,29 @@ function DiscordWindow({
             onToggleAudio={() => setAudioEnabled(v => !v)}
             // Toggle de tema reemplaza la rueda de configuración
             isDark={isDark}
-            onToggleDark={() => setIsDark(v => !v)}
+            onToggleDark={() => {
+              // Duración responsive: más rápido en pantallas chicas
+              const w = window.innerWidth;
+              let dur = 500; // desktop por defecto
+              if (w <= 480) dur = 300;
+              else if (w <= 768) dur = 380;
+              setTransDur(dur);
+              const early = Math.max(0, Math.round(dur * 0.82));
+              // Barrido visual: darken de derecha a izquierda (light->dark), lighten de izquierda a derecha (dark->light)
+              if (!isDark) {
+                setSweepType('darken');
+                setSweepDir('rtl');
+                setSweeping(true);
+                setTimeout(() => setIsDark(true), early);
+                setTimeout(() => setSweeping(false), dur);
+              } else {
+                setSweepType('lighten');
+                setSweepDir('ltr');
+                setSweeping(true);
+                setTimeout(() => setIsDark(false), early);
+                setTimeout(() => setSweeping(false), dur);
+              }
+            }}
           />
         </div>
 
@@ -68,7 +94,20 @@ function DiscordWindow({
         </div>
       </div>
 
-      {/* (Eliminado) Popover de configuración: ahora el toggle está en UserProfile */}
+      {/* Overlay de barrido: oscurecer (RTL) o aclarar (LTR) toda la UI */}
+      {sweeping && (
+        <div className="fixed inset-0 pointer-events-none z-40">
+          <div
+            className={`w-full h-full scale-x-0 ${sweepDir === 'rtl' ? 'origin-right' : 'origin-left'}`}
+            style={{
+              background: sweepType === 'darken'
+                ? 'linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+                : 'linear-gradient(to right, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.25) 70%, rgba(255,255,255,0) 100%)',
+              animation: `darkwipe ${transDur}ms linear forwards`
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 }

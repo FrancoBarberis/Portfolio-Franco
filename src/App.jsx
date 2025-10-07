@@ -1,9 +1,14 @@
-import { MainLayout} from "./layout";
-// CUANDO TOQUE UN BOTON DE SERVER, SE ACTUALIZAN LOS CANALES DISPONIBLES
-// CUANDO TOQUE UN BOTON DE CANAL, SE ACTUALIZA EL CHAT
+import { MainLayout } from "./layout";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 function App() {
   return (
-    <MainLayout></MainLayout>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/:serverPath/:channelPath" element={<MainLayout />} />
+        <Route path="*" element={<Navigate to="/resumen/sobre-mi" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

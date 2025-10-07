@@ -1,19 +1,33 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { AboutMe, Studies, Certificates, HardSkills, SoftSkills, TburgerLabs } from '../pages';
+
+// Mapeo de rutas a componentes
+const routeComponents = {
+  'sobre-mi': AboutMe,
+  'estudios': Studies,
+  'certificados': Certificates,
+  'hard-skills': HardSkills,
+  'soft-skills': SoftSkills,
+  'tburgerlabs': TburgerLabs,
+};
 
 function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
+  const { channelPath } = useParams();
   const [isSliding, setIsSliding] = useState(false);
-  const [displayContent, setDisplayContent] = useState(channel?.chat);
+  const [displayContent, setDisplayContent] = useState(null);
 
   useEffect(() => {
-    if (channel) {
+    if (channelPath) {
       setIsSliding(true);
       
       setTimeout(() => {
-        setDisplayContent(channel.chat);
+        const Component = routeComponents[channelPath];
+        setDisplayContent(Component ? <Component /> : <div>Contenido no encontrado</div>);
         setIsSliding(false);
       }, 200);
     }
-  }, [channel]);
+  }, [channelPath]);
 
   return (
   <div className="flex-1 flex flex-col bg-white dark:bg-gray-600 min-w-0 h-full"> 
