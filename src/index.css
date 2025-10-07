@@ -16,3 +16,37 @@
 .tooltip-slide {
   animation: slideInLeft 300ms ease-out forwards;
 }
+
+/* Glow rotatorio en el borde del avatar */
+.glow-rotating {
+  position: relative;
+}
+.glow-rotating::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* borde fuera 2px */
+  border-radius: 9999px;
+  padding: 2px; /* grosor del glow */
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 215, 0, 0.0) 0deg,
+    rgba(255, 215, 0, 0.9) 40deg,
+    rgba(255, 215, 0, 0.0) 180deg,
+    rgba(80, 130, 255, 0.9) 220deg,
+    rgba(80, 130, 255, 0.0) 360deg
+  );
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: glow-spin 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glow-spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import Banner from "../assets/CoderGIF.gif"
+import Banner from "../assets/CoderGIF.gif";
+import rocketGif from "../assets/rocketGIF.webp";
 
 function UserProfile({
   name = "Franco Barberis",
-  avatar = "👤",
-  avatarGif = "../assets/CSS.svg", // URL del GIF para el modal
+  avatar = rocketGif,
+  avatarGif = rocketGif, // usa el rocket por defecto si no se pasa uno
   status = "open to work",
   onToggleAudio = () => {},
-  onOpenSettings = () => {},
+  onToggleDark = () => {},
+  isDark = true,
   audioEnabled = true,
   githubName = "FrancoBarberis",
   bio = "Full Stack Developer",
@@ -35,28 +37,33 @@ function UserProfile({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Avatar + estado */}
+      {/* Avatar/GIF dentro de contenedor con glow animado */}
       <div 
-        className="relative flex-shrink-0 cursor-pointer"
-        onMouseEnter={(e) => {
+        className="relative flex-shrink-0 cursor-pointer glow-rotating"
+        onClick={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           setAvatarRect(rect);
-          setShowProfileModal(true);
+          setShowProfileModal(prev => !prev);
+        }}
+        onMouseEnter={(e) => {
+          if (window.innerWidth >= 768) { // desktop: permite hover abrir
+            const rect = e.currentTarget.getBoundingClientRect();
+            setAvatarRect(rect);
+            setShowProfileModal(true);
+          }
         }}
         onMouseLeave={() => {
-          setShowProfileModal(false);
+          if (window.innerWidth >= 768) {
+            setShowProfileModal(false);
+          }
         }}
       >
-        <div className="w-8 h-8 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center text-gray-900 dark:text-white font-medium border-2 border-gray-400 dark:border-gray-700 overflow-hidden">
-          {typeof avatar === 'string' && avatar.startsWith('http') ? (
-            <img 
-              src={avatar} 
-              alt="avatar" 
-              className="w-full h-full object-cover rounded-full"
-            />
-          ) : (
-            avatar
-          )}
+        <div className="w-8 h-8 md:w-9 md:h-9 rounded-full overflow-hidden relative z-[1]">
+          <img 
+            src={typeof avatar === 'string' ? avatar : rocketGif}
+            alt="avatar"
+            className="w-full h-full object-cover"
+          />
         </div>
         <div
           className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-gray-200 dark:border-gray-800 ${statusClass}`}
@@ -65,7 +72,7 @@ function UserProfile({
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <div className="text-xs md:text-sm font-medium text-gray-900 dark:text-white truncate relative overflow-hidden h-4 md:h-5">
+        <div className="text-[11px] md:text-sm font-medium text-gray-900 dark:text-white truncate relative overflow-hidden h-4 md:h-5 font-mono">
           <span 
             className="block absolute w-full transition-all duration-200 ease-in-out"
             style={{
@@ -76,7 +83,7 @@ function UserProfile({
             {name}
           </span>
           <span 
-            className="block absolute w-full transition-all duration-200 ease-in-out"
+            className="block absolute w-full transition-all duration-200 ease-in-out truncate"
             style={{
               transform: isHovered ? 'translateY(0)' : 'translateY(100%)',
               opacity: isHovered ? 1 : 0,
@@ -85,13 +92,13 @@ function UserProfile({
             {name} <span className="font-light text-gray-900 dark:text-white">@github</span>
           </span>
         </div>
-        <div className="text-[10px] md:text-xs text-gray-600 dark:text-gray-400 capitalize">
+        <div className="text-[10px] md:text-xs text-gray-600 dark:text-gray-400 capitalize font-mono">
           {status}
         </div>
       </div>
 
-      {/* Acciones (solo audio y config) */}
-      <div className="flex gap-2">
+      {/* Acciones (audio + toggle tema) */}
+      <div className="flex gap-2 items-center self-center">
         <button
           type="button"
           onClick={onToggleAudio}
@@ -124,20 +131,12 @@ function UserProfile({
         </button>
         <button
           type="button"
-          onClick={(e) => onOpenSettings(e)}
-          data-settings-button
-          className="w-8 h-8 md:w-9 md:h-9 text-base md:text-lg text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-all duration-200 flex items-center justify-center rounded cursor-pointer"
-          title="Configuración"
-          aria-label="Configuración"
+          onClick={onToggleDark}
+          className="w-8 h-8 md:w-9 md:h-9 transition-all duration-200 flex items-center justify-center rounded cursor-pointer bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700"
+          title={isDark ? "Modo oscuro: ON" : "Modo oscuro: OFF"}
+          aria-label="Alternar modo oscuro"
         >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            fill="currentColor" 
-            className="w-5 h-5 md:w-5 md:h-5"
-          >
-            <path fillRule="evenodd" d="M11.828 2.25c-.916 0-1.699.663-1.85 1.567l-.091.549a.798.798 0 01-.517.608 7.45 7.45 0 00-.478.198.798.798 0 01-.796-.064l-.453-.324a1.875 1.875 0 00-2.416.2l-.243.243a1.875 1.875 0 00-.2 2.416l.324.453a.798.798 0 01.064.796 7.448 7.448 0 00-.198.478.798.798 0 01-.608.517l-.55.092a1.875 1.875 0 00-1.566 1.849v.344c0 .916.663 1.699 1.567 1.85l.549.091c.281.047.508.25.608.517.06.162.127.321.198.478a.798.798 0 01-.064.796l-.324.453a1.875 1.875 0 00.2 2.416l.243.243c.648.648 1.67.733 2.416.2l.453-.324a.798.798 0 01.796-.064c.157.071.316.137.478.198.267.1.47.327.517.608l.092.55c.15.903.932 1.566 1.849 1.566h.344c.916 0 1.699-.663 1.85-1.567l.091-.549a.798.798 0 01.517-.608 7.52 7.52 0 00.478-.198.798.798 0 01.796.064l.453.324a1.875 1.875 0 002.416-.2l.243-.243c.648-.648.733-1.67.2-2.416l-.324-.453a.798.798 0 01-.064-.796c.071-.157.137-.316.198-.478.1-.267.327-.47.608-.517l.55-.091a1.875 1.875 0 001.566-1.85v-.344c0-.916-.663-1.699-1.567-1.85l-.549-.091a.798.798 0 01-.608-.517 7.507 7.507 0 00-.198-.478.798.798 0 01.064-.796l.324-.453a1.875 1.875 0 00-.2-2.416l-.243-.243a1.875 1.875 0 00-2.416-.2l-.453.324a.798.798 0 01-.796.064 7.462 7.462 0 00-.478-.198.798.798 0 01-.517-.608l-.091-.55a1.875 1.875 0 00-1.85-1.566h-.344zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" clipRule="evenodd" />
-          </svg>
+          <span className="text-yellow-500 dark:text-gray-300">{isDark ? '🌙' : '🌞'}</span>
         </button>
       </div>
 
@@ -159,8 +158,14 @@ function UserProfile({
   );
 }
 
-function ProfileModal({ isOpen, anchorRect, name, githubName, avatar, avatarGif, bannerImage, status, statusClass, bio }) {
+function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gmail.com', avatar, status, statusClass, bio }) {
   const [position, setPosition] = useState(null);
+
+  useEffect(() => {
+    const closeHandler = () => setShowProfileModal(false);
+    window.addEventListener('close-profile-modal', closeHandler);
+    return () => window.removeEventListener('close-profile-modal', closeHandler);
+  }, []);
 
   useEffect(() => {
     if (!isOpen || !anchorRect) {
@@ -188,55 +193,56 @@ function ProfileModal({ isOpen, anchorRect, name, githubName, avatar, avatarGif,
       className="profile-modal bg-white dark:bg-gray-900 rounded-lg shadow-2xl border-2 border-gray-400 dark:border-gray-700 overflow-hidden"
       style={{ ...position, width: '300px' }}
     >
+      {/* Botón X flotante en mobile, sobre el banner */}
+      <button
+        className="md:hidden absolute right-2 top-2 z-10 bg-black/30 text-white rounded-full w-8 h-8 flex items-center justify-center"
+        onClick={(e) => {
+          e.stopPropagation();
+          // cerrar modal en el mismo componente
+          const closeEvt = new Event('close-profile-modal');
+          window.dispatchEvent(closeEvt);
+        }}
+        aria-label="Cerrar"
+        title="Cerrar"
+        style={{ position: 'absolute' }}
+      >
+        ✕
+      </button>
       {/* Banner */}
-      <div className="h-24 relative">
+    <div className="h-24 relative">
           <img src={Banner} alt="banner" className="w-full h-full object-cover " />
       </div>
 
       {/* Contenido del perfil */}
       <div className="px-4 pb-4">
-        {/* Avatar grande con GIF */}
+        {/* Avatar grande: siempre usar `avatar` pasado */}
         <div className="relative -mt-12 mb-4">
-          <div className="w-20 h-20 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-gray-300 dark:bg-gray-700">
-            {avatarGif ? (
-              <img 
-                src={avatarGif} 
-                alt="avatar" 
-                className="w-full h-full object-cover"
-              />
-            ) : typeof avatar === 'string' && avatar.startsWith('http') ? (
-              <img 
-                src={avatar} 
-                alt="avatar" 
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-4xl bg-gray-300 dark:bg-gray-600">
-                {avatar}
-              </div>
-            )}
+          <div className="w-20 h-20 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-gray-300 dark:bg-gray-700 glow-rotating">
+            <img 
+              src={typeof avatar === 'string' ? avatar : ''}
+              alt="avatar"
+              className="w-full h-full object-cover"
+            />
           </div>
           {/* Indicador de estado */}
           <div
-            className={`absolute bottom-0 right-0 w-5 h-5 rounded-full border-4 border-white dark:border-gray-900 ${statusClass}`}
+            className={`absolute bottom-0 right-0 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 ${statusClass}`}
           />
         </div>
 
         {/* Información del usuario */}
         <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 border-2 border-gray-300 dark:border-gray-700">
-          <h3 className="text-gray-900 dark:text-white font-semibold text-base md:text-lg mb-1">
-            {githubName} <span className="font-light">@github</span>
+          <h3 className="text-gray-900 dark:text-white font-semibold text-sm md:text-base mb-1 font-mono break-words">
+            {email}
           </h3>
           <div className="border-t-2 border-gray-300 dark:border-gray-700 pt-2 mt-2">
             <p className="text-gray-600 dark:text-gray-400 text-[10px] md:text-xs uppercase font-semibold mb-1">Estado</p>
             <p className="text-gray-900 dark:text-white text-xs md:text-sm capitalize">{status}</p>
           </div>
-          {bio && (
-            <div className="border-t-2 border-gray-300 dark:border-gray-700 pt-2 mt-2">
-              <p className="text-gray-600 dark:text-gray-400 text-[10px] md:text-xs uppercase font-semibold mb-1">Acerca de mí</p>
-              <p className="text-gray-900 dark:text-white text-xs md:text-sm">{bio}</p>
-            </div>
-          )}
+          <div className="border-t-2 border-gray-300 dark:border-gray-700 pt-2 mt-2">
+            <p className="text-gray-600 dark:text-gray-400 text-[10px] md:text-xs uppercase font-semibold mb-1">Acerca de mí</p>
+            <p className="text-gray-900 dark:text-white text-xs md:text-sm">Frontend Developer</p>
+          </div>
         </div>
       </div>
     </div>

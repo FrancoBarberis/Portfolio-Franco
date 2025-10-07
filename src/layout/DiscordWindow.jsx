@@ -1,20 +1,18 @@
 import { useEffect, useState } from 'react';
-import { UserProfile, SettingsModal } from '../components';
+import { UserProfile } from '../components';
+import rocketGif from '../assets/rocketGIF.webp';
 
 function DiscordWindow({ 
   children, 
   userName = "Franco Barberis", 
-  userAvatar = "🚀",
+  userAvatar = rocketGif,
   userAvatarGif = null,
   userBio = "Frontend Developer",
   userStatus = "open to work", 
   githubName = "FrancoBarberis" 
 }) {
   const [audioEnabled, setAudioEnabled] = useState(true);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
-  const [anchorRect, setAnchorRect] = useState(null);
-  const settingsButtonRef = useState(null)[0]; // Referencia al botón
 
   // Opcional: añade o quita la clase 'dark' en <html> si usas Tailwind darkMode: 'class'
   useEffect(() => {
@@ -23,24 +21,10 @@ function DiscordWindow({
     else el.classList.remove('dark');
   }, [isDark]);
 
-  // Actualizar anchorRect cuando cambia el tamaño de ventana
-  useEffect(() => {
-    if (!isSettingsOpen) return;
-
-    const updateAnchorRect = () => {
-      const button = document.querySelector('[data-settings-button]');
-      if (button) {
-        setAnchorRect(button.getBoundingClientRect());
-      }
-    };
-
-    updateAnchorRect();
-    window.addEventListener('resize', updateAnchorRect);
-    return () => window.removeEventListener('resize', updateAnchorRect);
-  }, [isSettingsOpen]);
+  // (sin popover de settings)
 
   return (
-    <div className="h-screen w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white flex flex-col overflow-hidden">
+  <div className="h-screen w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white flex flex-col overflow-hidden font-mono">
       {/* Barra de título vacía */}
   <div className="bg-gray-200 dark:bg-gray-900 h-6 md:h-8 border-b-2 border-gray-400 dark:border-gray-700 flex-shrink-0" />
 
@@ -64,15 +48,9 @@ function DiscordWindow({
             githubName={githubName}
             audioEnabled={audioEnabled}
             onToggleAudio={() => setAudioEnabled(v => !v)}
-            onOpenSettings={(e) => {
-              e.stopPropagation(); // evita que el click llegue al listener global
-              setIsSettingsOpen(prev => {
-                if (prev) return false; // si estaba abierto, cerrarlo
-                const rect = e?.currentTarget?.getBoundingClientRect?.();
-                if (rect) setAnchorRect(rect);
-                return true; // abrir si estaba cerrado
-              });
-            }}
+            // Toggle de tema reemplaza la rueda de configuración
+            isDark={isDark}
+            onToggleDark={() => setIsDark(v => !v)}
           />
         </div>
 
@@ -90,14 +68,7 @@ function DiscordWindow({
         </div>
       </div>
 
-      {/* Popover de configuración anclado al botón */}
-      <SettingsModal
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-        isDark={isDark}
-        onToggleDark={() => setIsDark(v => !v)}
-        anchorRect={anchorRect}
-      />
+      {/* (Eliminado) Popover de configuración: ahora el toggle está en UserProfile */}
     </div>
   );
 }

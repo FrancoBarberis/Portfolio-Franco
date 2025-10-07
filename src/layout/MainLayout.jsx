@@ -12,20 +12,24 @@ function MainLayout() {
           id: 11,
           channelName: "Sobre mí",
           chat: (
-            <div>
-              <h3 className="text-2xl font-bold mb-4">¡Hola! Soy Franco</h3>
-              <p className="mb-4">
-                Desarrollador full-stack con <strong>3 años de experiencia </strong> 
-                especializado en React y Node.js.
-              </p>
-              <ul className="list-disc ml-6 mb-4">
-                <li>Frontend: React, TypeScript, Tailwind CSS</li>
-                <li>Backend: Node.js, Express, PostgreSQL</li>
-                <li>DevOps: Docker, AWS, Git</li>
-              </ul>
+            <div className="space-y-4">
+              <h3 className="text-xl md:text-2xl font-bold">¡Hola! Soy Franco</h3>
               <p>
-                📧 <a href="mailto:franco@email.com" className="text-blue-600 hover:underline">
-                  franco@email.com
+                Soy desarrollador Full Stack con foco en experiencias limpias y usables. 
+                Tengo experiencia realizando varios tipos de proyectos: sitios corporativos, paneles administrativos,
+                e-commerce y soluciones a medida.
+              </p>
+              <div>
+                <h4 className="font-semibold mb-2">Stack principal</h4>
+                <ul className="list-disc ml-6 space-y-1">
+                  <li>Frontend: React, TypeScript, Tailwind CSS</li>
+                  <li>Backend: Node.js, Express, PostgreSQL</li>
+                  <li>DevOps: Docker, AWS, Git</li>
+                </ul>
+              </div>
+              <p>
+                📧 <a href="mailto:francobarberissic3@gmail.com" className="text-blue-600 hover:underline">
+                  francobarberissic3@gmail.com
                 </a>
               </p>
             </div>
