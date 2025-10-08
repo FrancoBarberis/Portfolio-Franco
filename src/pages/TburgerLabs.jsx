@@ -6,16 +6,16 @@ export default function TburgerLabs() {
         alt="TburgerLabs"
         className="w-full max-w-md mb-4 rounded-lg"
       />
-      <h3 className="text-xl font-bold mb-2">
+      <h3 className="text-xl font-bold mb-2 text-white">
         TburgerLabs - Sistema de Pedidos
       </h3>
-      <p className="mb-4">
+      <p className="mb-4 text-gray-300">
         Aplicación web completa para gestión de pedidos de restaurante con
         <strong> React + Node.js + PostgreSQL</strong>.
       </p>
       <div className="mb-4">
-        <h4 className="font-semibold mb-2">Características:</h4>
-        <ul className="list-disc ml-6">
+        <h4 className="font-semibold mb-2 text-white">Características:</h4>
+        <ul className="list-disc ml-6 text-gray-300">
           <li>Panel de administración</li>
           <li>Sistema de pedidos en tiempo real</li>
           <li>Integración con pagos</li>

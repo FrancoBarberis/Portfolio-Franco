@@ -4,3 +4,4 @@ export { default as Certificates } from './Certificates';
 export { default as HardSkills } from './HardSkills';
 export { default as SoftSkills } from './SoftSkills';
 export { default as TburgerLabs } from './TburgerLabs';
+export { default as Contact } from './Contact';

@@ -6,11 +6,9 @@ import rocketGif from "../assets/rocketGIF.webp";
 function UserProfile({
   name = "Franco Barberis",
   avatar = rocketGif,
-  avatarGif = rocketGif, // usa el rocket por defecto si no se pasa uno
+  avatarGif = rocketGif,
   status = "open to work",
   onToggleAudio = () => {},
-  onToggleDark = () => {},
-  isDark = true,
   audioEnabled = true,
   githubName = "FrancoBarberis",
   bio = "Full Stack Developer",
@@ -34,7 +32,7 @@ function UserProfile({
 
   return (
     <div 
-      className="flex items-center gap-3 p-2 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 border-2 border-gray-400 dark:border-gray-700"
+      className="flex items-center gap-3 p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-200 border-2 border-gray-700"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -71,13 +69,13 @@ function UserProfile({
           />
         </div>
         <div
-          className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-gray-200 dark:border-gray-800 ${statusClass}`}
+          className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-gray-800 ${statusClass}`}
         />
       </div>
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-  <div className="text-[10px] md:text-xs font-medium text-gray-900 dark:text-white truncate relative overflow-hidden h-4 md:h-5 font-mono">
+  <div className="text-[10px] md:text-xs font-medium text-white truncate relative overflow-hidden h-4 md:h-5 font-mono">
           <span 
             className="block absolute w-full transition-all duration-200 ease-in-out"
             style={{
@@ -94,23 +92,23 @@ function UserProfile({
               opacity: isHovered ? 1 : 0,
             }}
           >
-            {name} <span className="font-light text-gray-900 dark:text-white">@github</span>
+            {name} <span className="font-light text-white">@github</span>
           </span>
         </div>
-        <div className="text-[10px] md:text-xs text-gray-600 dark:text-gray-400 capitalize font-mono">
+        <div className="text-[10px] md:text-xs text-gray-400 capitalize font-mono">
           {status}
         </div>
       </div>
 
-      {/* Acciones (audio + toggle tema) */}
+      {/* Acciones (solo audio) */}
       <div className="flex gap-2 items-center self-center">
         <button
           type="button"
           onClick={onToggleAudio}
           className={`w-8 h-8 md:w-9 md:h-9 transition-all duration-300 flex items-center justify-center rounded cursor-pointer ${
             audioEnabled 
-              ? 'bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700' 
-              : 'bg-red-200 dark:bg-red-900/30 hover:bg-red-300 dark:hover:bg-red-900/50'
+              ? 'bg-transparent hover:bg-gray-700' 
+              : 'bg-red-900/30 hover:bg-red-900/50'
           }`}
           title={audioEnabled ? "Desactivar audio" : "Activar audio"}
           aria-label={audioEnabled ? "Desactivar audio" : "Activar audio"}
@@ -121,8 +119,8 @@ function UserProfile({
             fill="currentColor" 
             className={`w-5 h-5 md:w-5 md:h-5 transition-all duration-300 ${
               audioEnabled 
-                ? 'text-gray-600 dark:text-gray-400' 
-                : 'text-red-600 dark:text-red-400 scale-110'
+                ? 'text-gray-400' 
+                : 'text-red-400 scale-110'
             }`}
           >
             {audioEnabled ? (
@@ -133,15 +131,6 @@ function UserProfile({
               </>
             )}
           </svg>
-        </button>
-        <button
-          type="button"
-          onClick={onToggleDark}
-          className="w-8 h-8 md:w-9 md:h-9 transition-all duration-200 flex items-center justify-center rounded cursor-pointer bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700"
-          title={isDark ? "Modo oscuro: ON" : "Modo oscuro: OFF"}
-          aria-label="Alternar modo oscuro"
-        >
-          <span className="text-sm md:text-base" aria-hidden>{isDark ? '🌙' : '🌞'}</span>
         </button>
       </div>
 
@@ -206,7 +195,7 @@ function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gm
   return (
     <div
       ref={modalRef}
-      className="profile-modal bg-white dark:bg-gray-900 rounded-lg shadow-2xl border-2 border-gray-400 dark:border-gray-700 overflow-hidden"
+      className="profile-modal bg-gray-900 rounded-lg shadow-2xl border-2 border-gray-700 overflow-hidden"
       style={{ ...position, width: '300px' }}
     >
       {/* Botón X flotante en mobile, sobre el banner */}
@@ -229,7 +218,7 @@ function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gm
         {/* Avatar grande: siempre usar `avatar` pasado */}
         <div className="relative -mt-12 mb-4">
           <div className="w-20 h-20 relative glow-rotating rounded-full">
-            <div className="w-full h-full rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-gray-300 dark:bg-gray-700">
+            <div className="w-full h-full rounded-full border-4 border-gray-900 overflow-hidden bg-gray-700">
               <img 
                 src={(typeof avatar === 'string' ? avatar : '') + (gifVersion ? ((String(avatar).includes('?') ? '&' : '?') + 'v=' + gifVersion) : '')}
                 alt="avatar"
@@ -239,22 +228,22 @@ function ProfileModal({ isOpen, anchorRect, name, email = 'francobarberissic3@gm
           </div>
           {/* Indicador de estado */}
           <div
-            className={`absolute bottom-0 right-0 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 ${statusClass}`}
+            className={`absolute bottom-0 right-0 w-6 h-6 rounded-full border-4 border-gray-900 ${statusClass}`}
           />
         </div>
 
         {/* Información del usuario */}
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 border-2 border-gray-300 dark:border-gray-700">
-          <h3 className="text-gray-900 dark:text-white font-semibold text-xs md:text-sm mb-1 font-mono break-words">
+        <div className="bg-gray-800 rounded-lg p-3 border-2 border-gray-700">
+          <h3 className="text-white font-semibold text-xs md:text-sm mb-1 font-mono break-words">
             {email}
           </h3>
-          <div className="border-t-2 border-gray-300 dark:border-gray-700 pt-2 mt-2">
-            <p className="text-gray-600 dark:text-gray-400 text-[10px] md:text-xs uppercase font-semibold mb-1">Estado</p>
-            <p className="text-gray-900 dark:text-white text-xs md:text-sm capitalize">{status}</p>
+          <div className="border-t-2 border-gray-700 pt-2 mt-2">
+            <p className="text-gray-400 text-[10px] md:text-xs uppercase font-semibold mb-1">Estado</p>
+            <p className="text-white text-xs md:text-sm capitalize">{status}</p>
           </div>
-          <div className="border-t-2 border-gray-300 dark:border-gray-700 pt-2 mt-2">
-            <p className="text-gray-600 dark:text-gray-400 text-[10px] md:text-xs uppercase font-semibold mb-1">Acerca de mí</p>
-            <p className="text-gray-900 dark:text-white text-xs md:text-sm">Frontend Developer</p>
+          <div className="border-t-2 border-gray-700 pt-2 mt-2">
+            <p className="text-gray-400 text-[10px] md:text-xs uppercase font-semibold mb-1">Acerca de mí</p>
+            <p className="text-white text-xs md:text-sm">Frontend Developer</p>
           </div>
         </div>
       </div>
@@ -302,7 +291,7 @@ function SettingsModal({ isOpen, onClose, isDark, onToggleDark, anchorRect }) {
 
   return (
     <div
-      className="settings-modal bg-gray-800 dark:bg-gray-800 rounded-lg shadow-xl border-2 border-gray-400 dark:border-gray-700 p-4 w-72"
+      className="settings-modal bg-gray-800 rounded-lg shadow-xl border-2 border-gray-700 p-4 w-72"
       style={position}
     >
       <div className="flex items-center justify-between mb-4">
@@ -317,7 +306,7 @@ function SettingsModal({ isOpen, onClose, isDark, onToggleDark, anchorRect }) {
 
       <div className="space-y-3">
         {/* Toggle Dark Mode */}
-        <div className="flex items-center justify-between p-3 bg-gray-700 dark:bg-gray-700 rounded hover:bg-gray-600 dark:hover:bg-gray-600 transition-colors border-2 border-gray-600 dark:border-gray-600">
+        <div className="flex items-center justify-between p-3 bg-gray-700 rounded hover:bg-gray-600 transition-colors border-2 border-gray-600">
           <span className="text-white text-sm">Modo oscuro</span>
           <button
             onClick={onToggleDark}
@@ -334,7 +323,7 @@ function SettingsModal({ isOpen, onClose, isDark, onToggleDark, anchorRect }) {
         </div>
 
         {/* Otras opciones de configuración */}
-        <div className="p-3 bg-gray-700 dark:bg-gray-700 rounded border-2 border-gray-600 dark:border-gray-600">
+        <div className="p-3 bg-gray-700 rounded border-2 border-gray-600">
           <p className="text-gray-400 text-xs">Más opciones próximamente...</p>
         </div>
       </div>

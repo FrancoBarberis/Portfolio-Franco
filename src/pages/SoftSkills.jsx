@@ -1,40 +1,74 @@
 export default function SoftSkills() {
   return (
-    <div>
-      <img
-        src="/proyecto1.jpg"
-        alt="TburgerLabs"
-        className="w-full max-w-md mb-4 rounded-lg"
-      />
-      <h3 className="text-xl font-bold mb-2">
-        TburgerLabs - Sistema de Pedidos
-      </h3>
-      <p className="mb-4">
-        Aplicación web completa para gestión de pedidos de restaurante con
-        <strong> React + Node.js + PostgreSQL</strong>.
-      </p>
-      <div className="mb-4">
-        <h4 className="font-semibold mb-2">Características:</h4>
-        <ul className="list-disc ml-6">
-          <li>Panel de administración</li>
-          <li>Sistema de pedidos en tiempo real</li>
-          <li>Integración con pagos</li>
-          <li>Dashboard de estadísticas</li>
-        </ul>
-      </div>
-      <div className="flex gap-4">
-        <a
-          href="#"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Ver Demo
-        </a>
-        <a
-          href="#"
-          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
-        >
-          GitHub
-        </a>
+    <div className="space-y-6 max-w-3xl mx-auto">
+      <h3 className="text-2xl font-bold text-white">Habilidades Blandas</h3>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">🤝</span>
+            <h4 className="text-xl font-semibold text-white">Trabajo en Equipo</h4>
+          </div>
+          <p className="text-gray-300">
+            Experiencia colaborando en equipos multidisciplinarios, usando metodologías ágiles
+            y herramientas de gestión de proyectos.
+          </p>
+        </div>
+
+        <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">💡</span>
+            <h4 className="text-xl font-semibold text-white">Resolución de Problemas</h4>
+          </div>
+          <p className="text-gray-300">
+            Capacidad analítica para identificar problemas y proponer soluciones efectivas
+            tanto en código como en arquitectura.
+          </p>
+        </div>
+
+        <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">🗣️</span>
+            <h4 className="text-xl font-semibold text-white">Comunicación</h4>
+          </div>
+          <p className="text-gray-300">
+            Habilidad para comunicar ideas técnicas de forma clara, tanto con equipos
+            de desarrollo como con stakeholders no técnicos.
+          </p>
+        </div>
+
+        <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">📚</span>
+            <h4 className="text-xl font-semibold text-white">Aprendizaje Continuo</h4>
+          </div>
+          <p className="text-gray-300">
+            Constantemente actualizándome con nuevas tecnologías y mejores prácticas
+            en el desarrollo de software.
+          </p>
+        </div>
+
+        <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">⚡</span>
+            <h4 className="text-xl font-semibold text-white">Adaptabilidad</h4>
+          </div>
+          <p className="text-gray-300">
+            Flexible para trabajar con diferentes tecnologías, metodologías y
+            adaptarme rápidamente a nuevos entornos.
+          </p>
+        </div>
+
+        <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">🎯</span>
+            <h4 className="text-xl font-semibold text-white">Orientación a Resultados</h4>
+          </div>
+          <p className="text-gray-300">
+            Enfocado en entregar soluciones de calidad que cumplan con los
+            objetivos del proyecto y las expectativas del cliente.
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName}) {
     return (
         <div className={`
-            flex flex-col bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden border-r-2 border-gray-400 dark:border-gray-700
+            flex flex-col bg-gray-900 text-white overflow-hidden border-r-2 border-gray-700
             transition-all duration-300 ease-in-out h-full flex-shrink-0
             md:w-60
             ${isOpen 
@@ -20,15 +20,15 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                 }
             `}>
                 {/* Header */}
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-gray-400 dark:border-gray-700 pr-16 md:pr-0">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-gray-700 pr-16 md:pr-0">
                     <h2 className="text-sm md:text-base font-semibold truncate flex-1 min-w-0">
                         {serverName}
                     </h2>
 
-                    {/* X solo en mobile, a la derecha (visible en claro/oscuro) */}
+                    {/* X solo en mobile, a la derecha */}
                     <button 
                         onClick={onToggle}
-                        className="md:hidden text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-gray-300
+                        className="md:hidden text-white hover:text-gray-300
                                    focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50
                                    text-lg md:text-xl leading-none w-8 h-8 flex items-center justify-center flex-shrink-0"
                         aria-label="Ocultar sidebar"
@@ -52,12 +52,12 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                                 transition-all duration-150 ease-in-out
                                 flex items-center gap-2 min-w-0
                                 ${selectedChannel?.id === channel.id 
-                                    ? 'bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-white' 
-                                    : 'text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-300'
+                                    ? 'bg-gray-600 text-white' 
+                                    : 'text-gray-400 hover:bg-gray-700 hover:text-gray-300'
                                 }
                             `}
                         >
-                            <span className="text-gray-500 dark:text-gray-500 flex-shrink-0 text-xs md:text-sm">#</span>
+                            <span className="text-gray-500 flex-shrink-0 text-xs md:text-sm">#</span>
                             <span className="truncate min-w-0 text-xs md:text-sm font-medium">{channel.channelName}</span>
                         </button>
                     ))}
