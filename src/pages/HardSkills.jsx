@@ -54,8 +54,7 @@ export default function HardSkills() {
           <style>{`
             @media (min-width: 1024px) {
               .group:hover img[alt="CSS 1"] {
-                top: calc(100% + 6rem) !important;
-                opacity: 0.5 !important;
+                animation: rain-infinite 3s linear infinite;
               }
             }
           `}</style>
@@ -64,20 +63,15 @@ export default function HardSkills() {
           <img
             src={CSSIcon}
             alt="CSS 2"
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-14 opacity-70 lg:left-1/2 lg:-translate-x-1/2"
+            className="absolute left-4 -top-1/2 -translate-y-1/2 w-14 opacity-70 lg:left-1/2 lg:-translate-x-1/2"
             style={{
               transition: "top 0.7s ease-in 0.3s, opacity 0.7s ease-in 0.3s",
             }}
           />
           <style>{`
             @media (min-width: 1024px) {
-              .group img[alt="CSS 2"] {
-                top: -5rem;
-                opacity: 0;
-              }
               .group:hover img[alt="CSS 2"] {
-                top: 200% !important;
-                opacity: 0.7 !important;
+                animation: rain-infinite 2s linear infinite;
               }
             }
           `}</style>
@@ -96,8 +90,7 @@ export default function HardSkills() {
           <style>{`
             @media (min-width: 1024px) {
               .group:hover img[alt="CSS 3"] {
-                top: calc(100% + 5.5rem) !important;
-                opacity: 0.5 !important;
+                animation: rain-infinite 1.2s linear infinite;
               }
             }
           `}</style>

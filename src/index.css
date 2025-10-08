@@ -80,6 +80,23 @@
   }
 }
 
+@keyframes rain-infinite {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  10% {
+    opacity: .5;
+  }
+  90% {
+    opacity: .9;
+  }
+  100% {
+    top: 200%;
+    opacity: 1;
+  }
+}
+
 /* Scrollbar personalizado para modo oscuro */
 ::-webkit-scrollbar {
   width: 12px;
