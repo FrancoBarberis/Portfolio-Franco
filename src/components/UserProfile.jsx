@@ -33,13 +33,12 @@ function UserProfile({
   return (
     <div 
       className="flex items-center gap-3 p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-200 border-2 border-gray-700"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Avatar/GIF dentro de contenedor con glow animado */}
       <div 
         className="relative flex-shrink-0 cursor-pointer glow-rotating"
         onClick={(e) => {
+          e.stopPropagation();
           const rect = e.currentTarget.getBoundingClientRect();
           // Forzar recarga sincronizada de los GIFs (pegar query ?v=timestamp)
           const v = Date.now();
@@ -74,10 +73,14 @@ function UserProfile({
       </div>
 
       {/* Info */}
-      <div className="flex-1 min-w-0">
-  <div className="text-[10px] md:text-xs font-medium text-white truncate relative overflow-hidden h-4 md:h-5 font-mono">
+      <div 
+        className="flex-1 min-w-0"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="text-[10px] md:text-xs font-medium text-white truncate relative overflow-hidden h-4 md:h-5 font-mono">
           <span 
-            className="block absolute w-full transition-all duration-200 ease-in-out"
+            className="block absolute w-full transition-all duration-300 ease-in-out"
             style={{
               transform: isHovered ? 'translateY(-100%)' : 'translateY(0)',
               opacity: isHovered ? 0 : 1,
@@ -86,13 +89,13 @@ function UserProfile({
             {name}
           </span>
           <span 
-            className="block absolute w-full transition-all duration-200 ease-in-out truncate"
+            className="block absolute w-full transition-all duration-300 ease-in-out truncate"
             style={{
               transform: isHovered ? 'translateY(0)' : 'translateY(100%)',
               opacity: isHovered ? 1 : 0,
             }}
           >
-            {name} <span className="font-light text-white">@github</span>
+            {name} <span className="font-light text-gray-300">@github</span>
           </span>
         </div>
         <div className="text-[10px] md:text-xs text-gray-400 capitalize font-mono">

@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { AboutMe, Studies, Certificates, HardSkills, SoftSkills, TburgerLabs, Contact } from '../pages';
+import { 
+  AboutMe, 
+  Studies, 
+  Certificates, 
+  HardSkills, 
+  SoftSkills, 
+  TburgerLabs, 
+  PixelCanvas,
+  SoundWave,
+  CodeMorph,
+  GestureLab,
+  Contact 
+} from '../pages';
 
 // Mapeo de rutas a componentes
 const routeComponents = {
@@ -11,6 +23,10 @@ const routeComponents = {
   'hard-skills': HardSkills,
   'soft-skills': SoftSkills,
   'tburgerlabs': TburgerLabs,
+  'pixelcanvas': PixelCanvas,
+  'soundwave': SoundWave,
+  'codemorph': CodeMorph,
+  'gesturelab': GestureLab,
 };
 
 function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {

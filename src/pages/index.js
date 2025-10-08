@@ -4,4 +4,8 @@ export { default as Certificates } from './Certificates';
 export { default as HardSkills } from './HardSkills';
 export { default as SoftSkills } from './SoftSkills';
 export { default as TburgerLabs } from './TburgerLabs';
+export { default as PixelCanvas } from './PixelCanvas';
+export { default as SoundWave } from './SoundWave';
+export { default as CodeMorph } from './CodeMorph';
+export { default as GestureLab } from './GestureLab';
 export { default as Contact } from './Contact';

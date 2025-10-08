@@ -6,7 +6,7 @@ function MainLayout() {
   const servidores = [
     {
       id: 1,
-      icon: "👤",
+      icon: "🎓",
       tooltip: "Resumen",
       path: "resumen",
       channels: [
@@ -55,6 +55,26 @@ function MainLayout() {
           id: 31,
           channelName: "TburgerLabs",
           path: "tburgerlabs",
+        },
+        {
+          id: 32,
+          channelName: "PixelCanvas",
+          path: "pixelcanvas",
+        },
+        {
+          id: 33,
+          channelName: "SoundWave",
+          path: "soundwave",
+        },
+        {
+          id: 34,
+          channelName: "CodeMorph",
+          path: "codemorph",
+        },
+        {
+          id: 35,
+          channelName: "GestureLab",
+          path: "gesturelab",
         },
       ],
     },
