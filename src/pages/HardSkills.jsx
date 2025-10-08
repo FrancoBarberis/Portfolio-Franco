@@ -11,114 +11,167 @@ export default function HardSkills() {
       <h2 className="text-xl md:text-2xl font-semibold text-white">Te presento mi stack</h2>
       <div className="grid grid-cols-3 grid-rows-4 gap-3 md:gap-4 w-full max-w-2xl h-[400px] md:h-[500px]">
         
-        {/* HTML - Naranja oficial #E34F26 - Comienza centro-abajo */}
+        {/* HTML - Naranja oficial #E34F26 - Termina muy abajo con efecto de aparición */}
         <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">HTML</span>
           <img 
             src={HTMLIcon} 
             alt="HTML" 
-            className="absolute left-1/2 -translate-x-1/2 bottom-1/2 translate-y-1/2 md:-bottom-6 w-24 md:w-32 opacity-70 md:opacity-40 rotate-0 md:rotate-12 md:group-hover:bottom-1/2 md:group-hover:translate-y-1/2 md:group-hover:opacity-70 md:group-hover:rotate-0"
+            className="absolute left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/3 w-24 md:w-32 opacity-70 md:bottom-0 md:translate-y-0 md:opacity-0 md:group-hover:bottom-1/3 md:group-hover:translate-y-1/3 md:group-hover:opacity-70"
             style={{ transition: 'all 0.5s ease-out' }}
           />
         </div>
 
-        {/* JavaScript - Amarillo oficial #F7DF1E */}
+        {/* JavaScript - Amarillo oficial #F7DF1E - rota al hover */}
         <div className="relative bg-gradient-to-br from-yellow-400 to-yellow-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer">
           <span className="relative z-10">JavaScript</span>
           <img 
             src={JSIcon} 
             alt="JavaScript" 
-            className="absolute right-2 bottom-2 w-28 opacity-60 rotate-0 md:-right-8 md:-bottom-8 md:w-36 md:opacity-30 md:rotate-[-15deg] md:group-hover:right-2 md:group-hover:bottom-2 md:group-hover:w-28 md:group-hover:rotate-0 md:group-hover:opacity-60"
-            style={{ transition: 'all 0.3s ease-out' }}
+            className="absolute right-2 bottom-2 w-16 opacity-60 lg:w-20 lg:opacity-40 lg:group-hover:opacity-60"
           />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="JavaScript"] {
+                animation: spin 2s linear infinite;
+              }
+            }
+          `}</style>
         </div>
 
-        {/* CSS - Azul oficial #1572B6 - 3 SVG caen como lluvia de arriba hacia abajo */}
+        {/* CSS - Azul oficial #1572B6 - Lluvia más rápida, izquierda en mobile/tablet */}
         <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">CSS</span>
           
-          {/* CSS IZQUIERDA - Cae desde arriba y sale por abajo */}
+          {/* CSS IZQUIERDA - Cae primero, desde arriba fuera, atraviesa y sale por abajo */}
           <img 
             src={CSSIcon} 
             alt="CSS 1" 
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-24 opacity-70 rotate-0 md:-top-20 md:opacity-30 md:rotate-[-8deg] md:group-hover:-bottom-20 md:group-hover:top-auto md:group-hover:rotate-0 md:group-hover:opacity-50"
-            style={{ transition: 'all 0.8s ease-in' }}
-          />
-          
-          {/* CSS CENTRO - Cae y queda en el centro */}
-          <img 
-            src={CSSIcon} 
-            alt="CSS 2" 
-            className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-14 opacity-70 rotate-0 md:-top-16 md:opacity-30 md:rotate-[5deg] md:group-hover:top-1/2 md:group-hover:-translate-y-1/2 md:group-hover:rotate-0 md:group-hover:opacity-70"
-            style={{ transition: 'all 0.8s ease-in 0.1s' }}
-          />
-          
-          {/* CSS DERECHA - Cae desde arriba y sale por abajo */}
-          <img 
-            src={CSSIcon} 
-            alt="CSS 3" 
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-20 opacity-70 rotate-0 md:-top-18 md:opacity-30 md:rotate-[12deg] md:group-hover:-bottom-18 md:group-hover:top-auto md:group-hover:rotate-0 md:group-hover:opacity-50"
-            style={{ transition: 'all 0.8s ease-in 0.2s' }}
-          />
-        </div>
-
-        {/* React - Celeste oficial #61DAFB - Scale extremo con transición suave */}
-        <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer">
-          <span className="relative z-10">React</span>
-          <img 
-            src={ReactIcon} 
-            alt="React" 
-            className="absolute right-0 top-0 w-20 opacity-60 transition-all duration-500 ease-out"
+            className="hidden lg:block absolute left-4 w-24"
             style={{ 
-              animation: 'spin 20s linear infinite',
-              transform: 'scale(1.2)',
-              transformOrigin: 'top right'
+              top: '-6rem',
+              opacity: 0,
+              transition: 'top 0.7s ease-in 0s, opacity 0.7s ease-in 0s'
             }}
           />
           <style>{`
-            @media (min-width: 768px) {
-              .group img[alt="React"] {
-                transform: scale(0.3);
-                opacity: 0.2;
+            @media (min-width: 1024px) {
+              .group:hover img[alt="CSS 1"] {
+                top: calc(100% + 6rem) !important;
+                opacity: 0.5 !important;
               }
-              .group:hover img[alt="React"] {
-                transform: scale(3.5) !important;
+            }
+          `}</style>
+          
+          {/* CSS CENTRO/IZQUIERDA - En mobile/tablet a la izquierda, en desktop cae al centro */}
+          <img 
+            src={CSSIcon} 
+            alt="CSS 2" 
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-14 opacity-70 lg:left-1/2 lg:-translate-x-1/2"
+            style={{ 
+              transition: 'top 0.7s ease-in 0.3s, opacity 0.7s ease-in 0.3s'
+            }}
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group img[alt="CSS 2"] {
+                top: -5rem;
+                opacity: 0;
+              }
+              .group:hover img[alt="CSS 2"] {
+                top: 50% !important;
+                opacity: 0.7 !important;
+              }
+            }
+          `}</style>
+          
+          {/* CSS DERECHA - Cae segundo, desde arriba fuera, atraviesa y sale por abajo */}
+          <img 
+            src={CSSIcon} 
+            alt="CSS 3" 
+            className="hidden lg:block absolute right-4 w-20"
+            style={{ 
+              top: '-5.5rem',
+              opacity: 0,
+              transition: 'top 0.7s ease-in 0.15s, opacity 0.7s ease-in 0.15s'
+            }}
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="CSS 3"] {
+                top: calc(100% + 5.5rem) !important;
                 opacity: 0.5 !important;
               }
             }
           `}</style>
         </div>
 
-        {/* Git - Rojo/Naranja oficial #F05032 - Izquierdo 2x grande, movimientos rectos */}
+        {/* React - Celeste oficial #61DAFB - Mucho más grande, centrado, rota al hover */}
+        <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer">
+          <span className="relative z-10">React</span>
+          <img 
+            src={ReactIcon} 
+            alt="React" 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 lg:w-40 opacity-60"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group img[alt="React"] {
+                opacity: 0.3;
+              }
+              .group:hover img[alt="React"] {
+                animation: spin 2s linear infinite !important;
+                opacity: 0.6 !important;
+              }
+            }
+          `}</style>
+        </div>
+
+        {/* Git - Rojo/Naranja oficial #F05032 - Izq a la izquierda, Der a la derecha */}
         <div className="relative bg-gradient-to-br from-orange-600 to-red-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Git</span>
-          {/* Git IZQUIERDO - MAS GRANDE, baja desde arriba-izquierda */}
+          
+          {/* Git IZQUIERDO - Baja desde arriba fuera, queda a la IZQUIERDA */}
           <img 
             src={GitIcon} 
             alt="Git izquierdo" 
-            className="absolute left-2 bottom-2 w-32 opacity-70 rotate-0 md:-left-4 md:-top-12 md:w-40 md:opacity-40 md:rotate-[-15deg] md:group-hover:left-2 md:group-hover:bottom-2 md:group-hover:w-32 md:group-hover:rotate-0 md:group-hover:opacity-70"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-32 opacity-80 lg:-top-16 lg:opacity-60 lg:group-hover:top-1/2 lg:group-hover:-translate-y-1/2 lg:group-hover:opacity-90"
             style={{ transition: 'all 0.5s ease-out' }}
           />
-          {/* Git DERECHO - Mas pequeño, sube desde abajo-derecha */}
+          
+          {/* Git DERECHO - Sube desde abajo fuera, queda a la DERECHA */}
           <img 
             src={GitIcon} 
             alt="Git derecho" 
-            className="absolute right-2 top-2 w-16 opacity-70 rotate-0 md:-right-4 md:-bottom-12 md:w-20 md:opacity-40 md:rotate-[15deg] md:group-hover:right-2 md:group-hover:top-2 md:group-hover:w-16 md:group-hover:rotate-0 md:group-hover:opacity-70"
-            style={{ transition: 'all 0.5s ease-out 0.3s' }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-16 opacity-80"
+            style={{ 
+              transition: 'all 0.5s ease-out 0.2s'
+            }}
           />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group img[alt="Git derecho"] {
+                top: calc(100% + 3rem);
+                opacity: 0.6;
+              }
+              .group:hover img[alt="Git derecho"] {
+                top: 50% !important;
+                opacity: 0.9 !important;
+              }
+            }
+          `}</style>
         </div>
 
-        {/* Tailwind - Cyan oficial #06B6D4 - animación más rápida */}
+        {/* Tailwind - Cyan oficial #06B6D4 - Posición inicial corregida */}
         <div className="relative bg-gradient-to-br from-cyan-500 to-teal-500 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Tailwind</span>
           <img 
             src={TailwindIcon} 
             alt="Tailwind" 
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 md:w-24 md:opacity-40 md:group-hover:opacity-60"
-            style={{ left: '0.5rem' }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
           />
           <style>{`
-            @media (min-width: 768px) {
+            @media (min-width: 1024px) {
               .group:hover img[alt="Tailwind"] {
                 animation: slide-infinite 1.5s linear infinite;
               }
