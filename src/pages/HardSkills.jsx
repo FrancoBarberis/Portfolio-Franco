@@ -18,7 +18,7 @@ export default function HardSkills() {
           <img
             src={HTMLIcon}
             alt="HTML"
-            className="absolute opacity-70 left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/2 scale-120 w-24 md:-top-5 md:w-32  lg:bottom-0  lg:opacity-0 lg:group-hover:translate-y-1/4 lg:group-hover:opacity-70"
+            className="absolute opacity-70 left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/2 scale-120 w-24 md:-top-5 md:w-32  lg:bottom-0  lg:opacity-0 lg:group-hover:translate-y-1/3 lg:group-hover:opacity-70"
             style={{ transition: "all 0.5s ease-out" }}
           />
         </div>
@@ -31,7 +31,7 @@ export default function HardSkills() {
             alt="JavaScript"
             className="absolute transition-transform right-2 bottom-2 w-16 opacity-60 md:scale-120 lg:scale-200
             lg:w-20 lg:left-45 lg:-bottom-10 lg:opacity-40 lg:rotate-45 lg:group-hover:opacity-60 lg:group-hover:rotate-0
-            lg:group-hover:scale-140 lg:group-hover:-translate-x-14 lg:group-hover:-translate-y-14"
+            lg:group-hover:scale-130 lg:group-hover:-translate-x-14 lg:group-hover:-translate-y-13"
             style={{ transition: "all 0.5s ease-out" }}
           />
         </div>
@@ -76,7 +76,7 @@ export default function HardSkills() {
                 opacity: 0;
               }
               .group:hover img[alt="CSS 2"] {
-                top: 50% !important;
+                top: 200% !important;
                 opacity: 0.7 !important;
               }
             }
@@ -132,7 +132,7 @@ export default function HardSkills() {
           <img
             src={GitIcon}
             alt="Git izquierdo"
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-32 opacity-80 lg:-top-16 lg:opacity-60 lg:group-hover:top-1/2 lg:group-hover:-translate-y-1/2 lg:group-hover:opacity-90"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-32 opacity-80 lg:-top-16 lg:opacity-70 lg:group-hover:top-1/2 lg:group-hover:-translate-y-1/2 lg:group-hover:opacity-90"
             style={{ transition: "all 0.5s ease-out" }}
           />
 

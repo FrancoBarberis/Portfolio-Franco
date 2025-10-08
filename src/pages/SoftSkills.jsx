@@ -1,6 +1,6 @@
 export default function SoftSkills() {
   return (
-    <div className="space-y-6 max-w-3xl mx-auto">
+    <div className=" flex flex-col justify-center items-center space-y-6 max-w-3xl mx-auto">
       <h3 className="text-2xl font-bold text-white">Habilidades Blandas</h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -39,12 +39,12 @@ export default function SoftSkills() {
 
         <div className="bg-gradient-to-br from-orange-600 to-orange-800 p-6 rounded-lg border-2 border-orange-500 hover:scale-105 transition-transform">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-3xl">📚</span>
-            <h4 className="text-xl font-semibold text-white">Aprendizaje Continuo</h4>
+            <span className="text-3xl">🤖</span>
+            <h4 className="text-xl font-semibold text-white">Prompts efectivos</h4>
           </div>
           <p className="text-orange-100">
-            Constantemente actualizándome con nuevas tecnologías y mejores prácticas
-            en el desarrollo de software.
+            Puedo implementar cambios y mejoras en el código generadas por IA,
+            dando prompts claros y específicos.
           </p>
         </div>
 
