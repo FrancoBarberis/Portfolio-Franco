@@ -13,29 +13,31 @@ export default function HardSkills() {
       </h2>
       <div className="grid grid-cols-3 grid-rows-4 gap-3 md:gap-4 w-full max-w-2xl h-[400px] md:h-[500px]">
         {/* HTML - Naranja oficial #E34F26 - Termina muy abajo con efecto de aparición */}
-        <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base lg:font-extrabold lg:text-3xl text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">HTML</span>
           <img
             src={HTMLIcon}
             alt="HTML"
-            className="absolute left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/3 w-24 md:w-32 opacity-70 md:bottom-0 md:translate-y-0 md:opacity-0 md:group-hover:bottom-1/3 md:group-hover:translate-y-1/3 md:group-hover:opacity-70"
+            className="absolute opacity-70 left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/2 scale-120 w-24 md:-top-5 md:w-32  lg:bottom-0  lg:opacity-0 lg:group-hover:translate-y-1/4 lg:group-hover:opacity-70"
             style={{ transition: "all 0.5s ease-out" }}
           />
         </div>
 
         {/* JavaScript - Amarillo oficial #F7DF1E - rota al hover */}
-        <div className="relative bg-gradient-to-br from-yellow-400 to-yellow-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer">
-          <span className="relative z-10">JavaScript</span>
+        <div className="relative bg-gradient-to-br from-yellow-400 to-yellow-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-xs md:text-base lg:font-extrabold lg:text-3xl text-gray-900 overflow-hidden group cursor-pointer">
+          <span className="relative z-10 ">JavaScript</span>
           <img
             src={JSIcon}
             alt="JavaScript"
-            className="absolute transition-transform right-2 bottom-2 w-16 opacity-60 lg:w-20 lg:left-45 lg:opacity-40 lg:rotate-45 lg:group-hover:opacity-60 lg:group-hover:rotate-0 lg:group-hover:scale-110 lg:group-hover:-translate-x-14"
+            className="absolute transition-transform right-2 bottom-2 w-16 opacity-60 md:scale-120 lg:scale-200
+            lg:w-20 lg:left-45 lg:-bottom-10 lg:opacity-40 lg:rotate-45 lg:group-hover:opacity-60 lg:group-hover:rotate-0
+            lg:group-hover:scale-140 lg:group-hover:-translate-x-14 lg:group-hover:-translate-y-14"
             style={{ transition: "all 0.5s ease-out" }}
           />
         </div>
 
         {/* CSS - Azul oficial #1572B6 - Lluvia más rápida, izquierda en mobile/tablet */}
-        <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 p-3 md:p-6 rounded text-center lg:font-extrabold lg:text-3xl col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">CSS</span>
 
           {/* CSS IZQUIERDA - Cae primero, desde arriba fuera, atraviesa y sale por abajo */}
@@ -102,14 +104,14 @@ export default function HardSkills() {
         </div>
 
         {/* React - Celeste oficial #61DAFB - Mucho más grande, centrado, rota al hover */}
-        <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-500 p-3 md:p-6 rounded text-center col-span-1 lg:font-extrabold lg:text-3xl row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer">
           <span className="relative z-10">React</span>
           <img
             src={ReactIcon}
             alt="React"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 lg:w-40 opacity-60"
+            className="absolute transition-all duration-2000 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 lg:w-40 opacity-60 lg:group-hover:animate-spin lg:group-hover:scale-120 lg:group-hover:opacity-90"
           />
-          <style>{`
+          {/* <style>{`
             @media (min-width: 1024px) {
               .group img[alt="React"] {
                 opacity: 0.3;
@@ -119,11 +121,11 @@ export default function HardSkills() {
                 opacity: 0.6 !important;
               }
             }
-          `}</style>
+          `}</style> */}
         </div>
 
         {/* Git - Rojo/Naranja oficial #F05032 - Izq a la izquierda, Der a la derecha */}
-        <div className="relative bg-gradient-to-br from-orange-600 to-red-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-orange-600 to-red-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Git</span>
 
           {/* Git IZQUIERDO - Baja desde arriba fuera, queda a la IZQUIERDA */}
@@ -138,27 +140,15 @@ export default function HardSkills() {
           <img
             src={GitIcon}
             alt="Git derecho"
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-16 opacity-80"
+            className="absolute opacity-0 right-4 top-1/2 -translate-y-1/2 w-16 md:w-20 md:top-1/2 lg:opacity-60 lg:top-44 lg:group-hover:opacity-90 lg:group-hover:top-1/2"
             style={{
               transition: "all 0.5s ease-out 0.2s",
             }}
           />
-          <style>{`
-            @media (min-width: 1024px) {
-              .group img[alt="Git derecho"] {
-                top: calc(100% + 3rem);
-                opacity: 0.6;
-              }
-              .group:hover img[alt="Git derecho"] {
-                top: 50% !important;
-                opacity: 0.9 !important;
-              }
-            }
-          `}</style>
         </div>
 
         {/* Tailwind - Cyan oficial #06B6D4 - Posición inicial corregida */}
-        <div className="relative bg-gradient-to-br from-cyan-500 to-teal-500 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-cyan-500 to-teal-500 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Tailwind</span>
           <img
             src={TailwindIcon}
