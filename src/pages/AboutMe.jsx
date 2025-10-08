@@ -10,7 +10,7 @@ export default function AboutMe() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/70 to-transparent" />
       </div>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white text-center -mt-2">¡Hola! Soy Franco</h3>
+      <h3 className="text-xl md:text-2xl font-bold text-white text-center -mt-2">Frontend Developer</h3>
       <p className="text-gray-300 text-center">
         Soy desarrollador Full Stack con foco en experiencias limpias y usables.
         Tengo experiencia realizando varios tipos de proyectos: sitios
