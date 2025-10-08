@@ -12,11 +12,11 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
             <div className={`
                 flex flex-col gap-2 h-full min-w-0
                 p-3 md:p-4
-                transition-opacity duration-200 ease-in-out
-                md:opacity-100
+                transition-all duration-300 ease-in-out
+                md:opacity-100 md:translate-x-0
                 ${isOpen 
-                    ? 'opacity-100'
-                    : 'opacity-0 md:opacity-100'
+                    ? 'opacity-100 translate-x-0'
+                    : 'opacity-0 -translate-x-full md:opacity-100 md:translate-x-0'
                 }
             `}>
                 {/* Header */}
