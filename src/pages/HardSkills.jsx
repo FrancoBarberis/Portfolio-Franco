@@ -128,7 +128,7 @@ export default function HardSkills() {
           <img
             src={TailwindIcon}
             alt="Tailwind"
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-100"
           />
           <style>{`
             @media (min-width: 1024px) {
@@ -140,20 +140,13 @@ export default function HardSkills() {
         </div>
 
         {/* VITE */}
-        <div className="relative bg-gradient-to-br from-blue-500 to-yellow-400 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-yellow-500 to-blue-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Vite</span>
           <img
             src={ViteIcon}
             alt="Vite"
             className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
           />
-          <style>{`
-            @media (min-width: 1024px) {
-              .group:hover img[alt="Tailwind"] {
-                animation: slide-infinite 1.5s linear infinite;
-              }
-            }
-          `}</style>
         </div>
         {/* NodeJS */}
         <div className="relative bg-gradient-to-br from-green-600 to-black p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
@@ -166,20 +159,13 @@ export default function HardSkills() {
         </div>  
         
         {/* Sql y NoSql */}
-        <div className="relative bg-gradient-to-br from-cyan-500 to-teal-500 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-yellow-700 to-yellow-300 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">SQL & noSQL</span>
           <img
             src={SQLIcon}
-            alt="Vite"
+            alt="SQL & noSQL"
             className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
           />
-          <style>{`
-            @media (min-width: 1024px) {
-              .group:hover img[alt="Tailwind"] {
-                animation: slide-infinite 1.5s linear infinite;
-              }
-            }
-          `}</style>
         </div>
       </div>
     </div>
