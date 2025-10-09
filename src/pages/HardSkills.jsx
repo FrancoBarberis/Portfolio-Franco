@@ -9,9 +9,9 @@ export default function HardSkills() {
   return (
     <div className="flex flex-col justify-center items-center gap-4 p-4">
       <h2 className="text-xl md:text-2xl font-semibold text-white">
-        Te presento mi stack
+        Este es mi stack de tecnologías
       </h2>
-      <div className="grid grid-cols-3 grid-rows-4 gap-3 md:gap-4 w-full max-w-2xl h-[400px] md:h-[500px]">
+      <div className="grid grid-cols-3 grid-rows-6 gap-3 md:gap-4 w-full max-w-2xl h-[400px] md:h-[600px]">
         {/* HTML - Naranja oficial #E34F26 - Termina muy abajo con efecto de aparición */}
         <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base lg:font-extrabold lg:text-3xl text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">HTML</span>
@@ -44,12 +44,7 @@ export default function HardSkills() {
           <img
             src={CSSIcon}
             alt="CSS 1"
-            className="hidden lg:block absolute left-4 w-24"
-            style={{
-              top: "-6rem",
-              opacity: 0,
-              transition: "top 0.7s ease-in 0s, opacity 0.7s ease-in 0s",
-            }}
+            className=" top-3 opacity-70 lg:block absolute left-4 w-24 lg:opacity-0"
           />
           <style>{`
             @media (min-width: 1024px) {
@@ -63,7 +58,7 @@ export default function HardSkills() {
           <img
             src={CSSIcon}
             alt="CSS 2"
-            className="absolute left-4 -top-1/2 -translate-y-1/2 w-14 opacity-70 lg:left-1/2 lg:-translate-x-1/2"
+            className="absolute left-4 -top-1/2 -translate-y-1/2 w-14 opacity-0 lg:left-1/2 lg:-translate-x-1/2"
             style={{
               transition: "top 0.7s ease-in 0.3s, opacity 0.7s ease-in 0.3s",
             }}
@@ -80,12 +75,7 @@ export default function HardSkills() {
           <img
             src={CSSIcon}
             alt="CSS 3"
-            className="hidden lg:block absolute right-4 w-20"
-            style={{
-              top: "-5.5rem",
-              opacity: 0,
-              transition: "top 0.7s ease-in 0.15s, opacity 0.7s ease-in 0.15s",
-            }}
+            className="hidden lg:block absolute right-4 w-20 opacity-0 "
           />
           <style>{`
             @media (min-width: 1024px) {
@@ -102,19 +92,8 @@ export default function HardSkills() {
           <img
             src={ReactIcon}
             alt="React"
-            className="absolute transition-all duration-2000 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 lg:w-40 opacity-60 lg:group-hover:animate-spin lg:group-hover:scale-120 lg:group-hover:opacity-90"
+            className="absolute transition-opacity duration-2000 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 lg:w-40 opacity-60 lg:group-hover:animate-spin lg:group-hover:scale-120 lg:group-hover:opacity-90"
           />
-          {/* <style>{`
-            @media (min-width: 1024px) {
-              .group img[alt="React"] {
-                opacity: 0.3;
-              }
-              .group:hover img[alt="React"] {
-                animation: spin 2s linear infinite !important;
-                opacity: 0.6 !important;
-              }
-            }
-          `}</style> */}
         </div>
 
         {/* Git - Rojo/Naranja oficial #F05032 - Izq a la izquierda, Der a la derecha */}

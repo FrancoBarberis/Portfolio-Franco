@@ -13,10 +13,6 @@ function DiscordWindow({
 }) {
   const [audioEnabled, setAudioEnabled] = useState(true);
 
-  // Asegurar que el modo oscuro esté siempre activo
-  useLayoutEffect(() => {
-    document.documentElement.classList.add('dark');
-  }, []);
 
   return (
   <div className="h-screen w-full bg-gray-800 text-white flex flex-col overflow-hidden font-mono">
