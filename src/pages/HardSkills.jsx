@@ -10,7 +10,7 @@ import SQLIcon from "../assets/SQL.svg";
 
 export default function HardSkills() {
   return (
-    <div className="flex flex-col justify-center items-center gap-4 p-4">
+    <div className="flex flex-col justify-around items-center gap-y-20 p-4">
       <h2 className="text-xl md:text-2xl font-semibold text-white">
         Este es mi stack de tecnologías
       </h2>
@@ -123,12 +123,12 @@ export default function HardSkills() {
         </div>
 
         {/* Tailwind - Cyan oficial #06B6D4 - Posición inicial corregida */}
-        <div className="relative bg-gradient-to-br from-cyan-500 to-white p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+        <div className="relative bg-gradient-to-br from-white to-cyan-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Tailwind</span>
           <img
             src={TailwindIcon}
             alt="Tailwind"
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-100"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-100 lg:group-hover:opacity-100"
           />
           <style>{`
             @media (min-width: 1024px) {
@@ -149,12 +149,13 @@ export default function HardSkills() {
           />
         </div>
         {/* NodeJS */}
+        
         <div className="relative bg-gradient-to-br from-green-600 to-black p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">NodeJS</span>
           <img
             src={NodeIcon}
             alt="NodeJS"
-            className="absolute transition-all ease-in-out duration-300 left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
+            className="absolute transition-all ease-in-out duration-300 left-70% top-1/4 w-3xl opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
           />
         </div>  
         
