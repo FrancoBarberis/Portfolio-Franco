@@ -1,4 +1,12 @@
-function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName}) {
+import { playHighPopSound } from '../utils/audioUtils';
+
+function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName, audioEnabled = true}) {
+    
+    const handleChannelClick = (channel) => {
+        playHighPopSound(audioEnabled);
+        onChannelSelect(channel);
+    };
+
     return (
         <div className={`
             flex flex-col bg-gray-900 text-white overflow-hidden border-r-2 border-gray-700
@@ -46,7 +54,7 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                     {channels.map(channel => (
                         <button 
                             key={channel.id}
-                            onClick={() => onChannelSelect(channel)}
+                            onClick={() => handleChannelClick(channel)}
                             className={`
                                 text-left py-1.5 px-2 mx-1 rounded cursor-pointer
                                 transition-all duration-150 ease-in-out

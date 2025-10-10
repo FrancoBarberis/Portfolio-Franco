@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 function MainLayout() {
+  const [audioEnabled, setAudioEnabled] = useState(true);
+  
   const servidores = [
     {
       id: 1,
@@ -156,12 +158,13 @@ function MainLayout() {
   };
 
   return (
-    <DiscordWindow>
+    <DiscordWindow onAudioEnabledChange={setAudioEnabled}>
       <div className="flex flex-row h-full overflow-hidden w-full">
         <ServerSidebar
           servers={servidores}
           onServerSelect={handleServerChange}
           selectedServer={selectedServer}
+          audioEnabled={audioEnabled}
         />
 
         <ChannelSidebar
@@ -171,6 +174,7 @@ function MainLayout() {
           isOpen={isChannelSidebarOpen}
           onToggle={() => setIsChannelSidebarOpen(!isChannelSidebarOpen)}
           serverName={selectedServer.tooltip}
+          audioEnabled={audioEnabled}
         />
 
         <ChatArea

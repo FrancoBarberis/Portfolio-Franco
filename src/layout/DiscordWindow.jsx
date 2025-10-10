@@ -9,10 +9,16 @@ function DiscordWindow({
   userAvatarGif = null,
   userBio = "Frontend Developer",
   userStatus = "open to work", 
-  githubName = "FrancoBarberis" 
+  githubName = "FrancoBarberis",
+  onAudioEnabledChange
 }) {
   const [audioEnabled, setAudioEnabled] = useState(true);
 
+  const handleToggleAudio = () => {
+    const newValue = !audioEnabled;
+    setAudioEnabled(newValue);
+    onAudioEnabledChange?.(newValue);
+  };
 
   return (
   <div className="h-screen w-full bg-gray-800 text-white flex flex-col overflow-hidden font-mono">
@@ -36,7 +42,7 @@ function DiscordWindow({
             status={userStatus}
             githubName={githubName}
             audioEnabled={audioEnabled}
-            onToggleAudio={() => setAudioEnabled(v => !v)}
+            onToggleAudio={handleToggleAudio}
           />
         </div>
       </div>

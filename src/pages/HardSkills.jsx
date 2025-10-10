@@ -166,31 +166,138 @@ export default function HardSkills() {
           />
         </div>
 
-        {/* Tailwind - Cyan oficial #06B6D4 - Posición inicial corregida */}
+        {/* Tailwind - Cyan oficial #06B6D4 - Múltiples logos deslizándose rápido */}
         <div className="relative bg-gradient-to-br from-white to-cyan-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Tailwind</span>
+          
+          {/* Logo 1 */}
           <img
             src={TailwindIcon}
-            alt="Tailwind"
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-100 lg:group-hover:opacity-100"
+            alt="Tailwind 1"
+            className="absolute w-16 opacity-0 lg:w-20 lg:opacity-0"
           />
           <style>{`
             @media (min-width: 1024px) {
-              .group:hover img[alt="Tailwind"] {
-                animation: slide-infinite 1.5s linear infinite;
+              .group:hover img[alt="Tailwind 1"] {
+                animation: slide-infinite 0.8s linear infinite;
+                opacity: 0.4;
+              }
+            }
+          `}</style>
+
+          {/* Logo 2 */}
+          <img
+            src={TailwindIcon}
+            alt="Tailwind 2"
+            className="absolute w-16 opacity-0 lg:w-20 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="Tailwind 2"] {
+                animation: slide-infinite 0.8s linear 0.2s infinite;
+                opacity: 0.35;
+              }
+            }
+          `}</style>
+
+          {/* Logo 3 */}
+          <img
+            src={TailwindIcon}
+            alt="Tailwind 3"
+            className="absolute w-16 opacity-0 lg:w-20 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="Tailwind 3"] {
+                animation: slide-infinite 0.8s linear 0.4s infinite;
+                opacity: 0.45;
+              }
+            }
+          `}</style>
+
+          {/* Logo 4 */}
+          <img
+            src={TailwindIcon}
+            alt="Tailwind 4"
+            className="absolute w-16 opacity-0 lg:w-20 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="Tailwind 4"] {
+                animation: slide-infinite 0.8s linear 0.6s infinite;
+                opacity: 0.3;
+              }
+            }
+          `}</style>
+
+          {/* Logo 5 */}
+          <img
+            src={TailwindIcon}
+            alt="Tailwind 5"
+            className="absolute w-16 opacity-0 lg:w-18 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="Tailwind 5"] {
+                animation: slide-infinite 0.8s linear 0.1s infinite;
+                opacity: 0.4;
               }
             }
           `}</style>
         </div>
 
-        {/* VITE */}
+        {/* VITE - Rayo que cruza la pantalla a alta velocidad */}
         <div className="relative bg-gradient-to-br from-yellow-500 to-blue-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">Vite</span>
+          
+          {/* Logo estático - visible por defecto, se oculta en hover */}
           <img
             src={ViteIcon}
-            alt="Vite"
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
+            alt="Vite Static"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 opacity-60 lg:w-24 lg:opacity-70 lg:group-hover:opacity-0 transition-opacity duration-300"
           />
+
+          {/* Rayo 1 - Diagonal de izquierda a derecha */}
+          <img
+            src={ViteIcon}
+            alt="Vite 1"
+            className="absolute w-20 opacity-0 lg:w-28 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="Vite 1"] {
+                animation: lightning-strike 0.6s ease-out infinite;
+              }
+            }
+          `}</style>
+
+          {/* Rayo 2 - Más pequeño, más rápido */}
+          <img
+            src={ViteIcon}
+            alt="Vite 2"
+            className="absolute w-16 opacity-0 lg:w-20 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="Vite 2"] {
+                animation: lightning-strike 0.4s ease-out 0.3s infinite;
+              }
+            }
+          `}</style>
+
+          {/* Rayo 3 - Centro */}
+          <img
+            src={ViteIcon}
+            alt="Vite 3"
+            className="absolute w-24 opacity-0 lg:w-32 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="Vite 3"] {
+                animation: lightning-strike 0.5s ease-out 0.15s infinite;
+              }
+            }
+          `}</style>
         </div>
         {/* NodeJS */}
         
@@ -207,14 +314,72 @@ export default function HardSkills() {
           />
         </div>  
         
-        {/* Sql y NoSql */}
+        {/* SQL & noSQL - Base de datos con iconos orbitando */}
         <div className="relative bg-gradient-to-br from-yellow-700 to-yellow-300 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
           <span className="relative z-10">SQL & noSQL</span>
+          
+          {/* Centro - Base de datos principal */}
           <img
             src={SQLIcon}
-            alt="SQL & noSQL"
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-16 opacity-60 lg:w-24 lg:opacity-40 lg:group-hover:opacity-60"
+            alt="SQL Center"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 opacity-50 lg:w-20 lg:opacity-50"
           />
+
+          {/* Órbita 1 - Arriba (0°) */}
+          <img
+            src={SQLIcon}
+            alt="SQL Orbit 1"
+            className="absolute left-1/2 top-1/2 w-10 opacity-0 lg:w-12 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="SQL Orbit 1"] {
+                animation: orbit-1 2s linear infinite;
+              }
+            }
+          `}</style>
+
+          {/* Órbita 2 - Derecha (90°) */}
+          <img
+            src={SQLIcon}
+            alt="SQL Orbit 2"
+            className="absolute left-1/2 top-1/2 w-8 opacity-0 lg:w-10 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="SQL Orbit 2"] {
+                animation: orbit-2 2s linear infinite;
+              }
+            }
+          `}</style>
+
+          {/* Órbita 3 - Abajo (180°) */}
+          <img
+            src={SQLIcon}
+            alt="SQL Orbit 3"
+            className="absolute left-1/2 top-1/2 w-8 opacity-0 lg:w-10 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="SQL Orbit 3"] {
+                animation: orbit-3 2s linear infinite;
+              }
+            }
+          `}</style>
+
+          {/* Órbita 4 - Izquierda (270°) */}
+          <img
+            src={SQLIcon}
+            alt="SQL Orbit 4"
+            className="absolute left-1/2 top-1/2 w-8 opacity-0 lg:w-10 lg:opacity-0"
+          />
+          <style>{`
+            @media (min-width: 1024px) {
+              .group:hover img[alt="SQL Orbit 4"] {
+                animation: orbit-4 2s linear infinite;
+              }
+            }
+          `}</style>
         </div>
       </div>
     </div>

@@ -97,6 +97,91 @@
   }
 }
 
+/* Animación de rayo para Vite - cruza diagonalmente a alta velocidad */
+@keyframes lightning-strike {
+  0% {
+    left: -20%;
+    top: -20%;
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.8);
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 120%;
+    top: 120%;
+    opacity: 0;
+    transform: rotate(-45deg) scale(1.2);
+  }
+}
+
+/* Animaciones de órbita para SQL - 4 iconos girando alrededor del centro sin atravesarlo */
+@keyframes orbit-1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(40px) rotate(-360deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes orbit-2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(90deg) translateX(40px) rotate(-90deg);
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(450deg) translateX(40px) rotate(-450deg);
+    opacity: 0.35;
+  }
+}
+
+@keyframes orbit-3 {
+  0% {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(40px) rotate(-180deg);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(540deg) translateX(40px) rotate(-540deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes orbit-4 {
+  0% {
+    transform: translate(-50%, -50%) rotate(270deg) translateX(40px) rotate(-270deg);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(630deg) translateX(40px) rotate(-630deg);
+    opacity: 0.25;
+  }
+}
+
 /* Scrollbar personalizado para modo oscuro */
 ::-webkit-scrollbar {
   width: 12px;
