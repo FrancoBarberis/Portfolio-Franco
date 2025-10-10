@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { playHighPopSound } from '../utils/audioUtils';
 import { 
   AboutMe, 
   Studies, 
@@ -29,7 +30,7 @@ const routeComponents = {
   'gesturelab': GestureLab,
 };
 
-function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
+function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audioEnabled = true }) {
   const { channelPath } = useParams();
   const [isSliding, setIsSliding] = useState(false);
   const [displayContent, setDisplayContent] = useState(null);
@@ -46,6 +47,11 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
     }
   }, [channelPath]);
 
+  const handleMenuClick = () => {
+    playHighPopSound(audioEnabled);
+    onMenuClick();
+  };
+
   return (
   <div className="flex-1 flex flex-col bg-gray-600 min-w-0 h-full"> 
       {/* Header del canal */}
@@ -53,7 +59,7 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen }) {
         <div className="flex items-center gap-2">
           {!isChannelSidebarOpen && (
             <button 
-              onClick={onMenuClick}
+              onClick={handleMenuClick}
               className="md:hidden text-white hover:text-gray-300 mr-2 transition-colors duration-200 text-lg md:text-xl"
               title="Mostrar canales"
               aria-label="Mostrar canales"

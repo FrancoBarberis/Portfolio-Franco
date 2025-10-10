@@ -58,26 +58,6 @@ function MainLayout() {
           channelName: "TburgerLabs",
           path: "tburgerlabs",
         },
-        {
-          id: 32,
-          channelName: "PixelCanvas",
-          path: "pixelcanvas",
-        },
-        {
-          id: 33,
-          channelName: "SoundWave",
-          path: "soundwave",
-        },
-        {
-          id: 34,
-          channelName: "CodeMorph",
-          path: "codemorph",
-        },
-        {
-          id: 35,
-          channelName: "GestureLab",
-          path: "gesturelab",
-        },
       ],
     },
   ];
@@ -137,6 +117,9 @@ function MainLayout() {
     setSelectedChannel(channel);
     setIsChannelSidebarOpen(false);
     navigate(`/${selectedServer.path}/${channel.path}`);
+    
+    // Scroll al inicio
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleServerChange = (server) => {
@@ -159,7 +142,7 @@ function MainLayout() {
 
   return (
     <DiscordWindow onAudioEnabledChange={setAudioEnabled}>
-      <div className="flex flex-row h-full overflow-hidden w-full">
+      <div className="flex flex-row h-full overflow-hidden w-full relative">
         <ServerSidebar
           servers={servidores}
           onServerSelect={handleServerChange}
@@ -182,6 +165,7 @@ function MainLayout() {
           serverName={selectedServer.tooltip}
           onMenuClick={() => setIsChannelSidebarOpen(!isChannelSidebarOpen)}
           isChannelSidebarOpen={isChannelSidebarOpen}
+          audioEnabled={audioEnabled}
         />
       </div>
     </DiscordWindow>

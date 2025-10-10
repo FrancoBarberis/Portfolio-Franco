@@ -7,6 +7,11 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
         onChannelSelect(channel);
     };
 
+    const handleToggle = () => {
+        playHighPopSound(audioEnabled);
+        onToggle();
+    };
+
     return (
         <div className={`
             flex flex-col bg-gray-900 text-white overflow-hidden border-r-2 border-gray-700
@@ -35,7 +40,7 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
 
                     {/* X solo en mobile, a la derecha */}
                     <button 
-                        onClick={onToggle}
+                        onClick={handleToggle}
                         className="md:hidden text-white hover:text-gray-300
                                    focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50
                                    text-lg md:text-xl leading-none w-8 h-8 flex items-center justify-center flex-shrink-0"
@@ -45,10 +50,6 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                         ✕
                     </button>
                 </div>
-                
-                <h3 className="text-[10px] md:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                    Canales de texto
-                </h3>
                 
                 <div className="flex flex-col gap-1 overflow-y-auto flex-1 min-w-0">
                     {channels.map(channel => (
