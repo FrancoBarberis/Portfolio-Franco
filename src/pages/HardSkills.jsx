@@ -7,8 +7,52 @@ import TailwindIcon from "../assets/Tailwind.svg";
 import ViteIcon from "../assets/Vite.svg";
 import NodeIcon from "../assets/Node.svg";
 import SQLIcon from "../assets/SQL.svg";
+import { useRef, useState, useEffect } from "react";
+import Typed from "typed.js";
 
 export default function HardSkills() {
+  const nodeTextRef = useRef(null);
+  const typedRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    if (isHovering && nodeTextRef.current) {
+      // Destruir instancia anterior si existe
+      if (typedRef.current) {
+        typedRef.current.destroy();
+      }
+
+      // Limpiar el contenido antes de iniciar
+      nodeTextRef.current.textContent = '';
+
+      // Crear nueva instancia de Typed
+      typedRef.current = new Typed(nodeTextRef.current, {
+        strings: ["NodeJS"],
+        typeSpeed: 120,
+        backSpeed: 80,
+        backDelay: 1500,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+    } else {
+      // Al salir del hover, destruir typed y restaurar texto
+      if (typedRef.current) {
+        typedRef.current.destroy();
+        typedRef.current = null;
+      }
+      if (nodeTextRef.current) {
+        nodeTextRef.current.textContent = 'NodeJS';
+      }
+    }
+
+    return () => {
+      if (typedRef.current) {
+        typedRef.current.destroy();
+      }
+    };
+  }, [isHovering]);
+
   return (
     <div className="flex flex-col justify-around items-center gap-y-20 p-4">
       <h2 className="text-xl md:text-2xl font-semibold text-white">
@@ -150,8 +194,12 @@ export default function HardSkills() {
         </div>
         {/* NodeJS */}
         
-        <div className="relative bg-gradient-to-br from-green-600 to-black p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
-          <span className="relative z-10">NodeJS</span>
+        <div 
+          className="relative bg-gradient-to-br from-green-600 to-black p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          <span className="relative z-10" ref={nodeTextRef}>NodeJS</span>
           <img
             src={NodeIcon}
             alt="NodeJS"
