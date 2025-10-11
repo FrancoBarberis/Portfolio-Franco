@@ -8,7 +8,7 @@ export default function AboutMe() {
   useEffect(() => {
     if (typedRef.current) {
       typedInstance.current = new Typed(typedRef.current, {
-        strings: ["Franco Barberis", "Frontend Developer"],
+        strings: ["Franco Barberis", "<br />Frontend Developer"],
         typeSpeed: 120,
         backSpeed: 80,
         backDelay: 3000,
@@ -37,8 +37,8 @@ export default function AboutMe() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/70 to-transparent" />
       </div>
 
-      <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem] flex items-center justify-center">
-        <span ref={typedRef} className="text-cyan-400"></span>
+      <h3 className="text-2xl md:text-5xl lg:text-6xl font-bold text-center min-h-[3rem] md:min-h-[5rem] lg:min-h-[6rem] flex items-center justify-center whitespace-nowrap">
+        <span ref={typedRef} className="text-cyan-400 inline-block"></span>
       </h3>
       <p className="text-gray-300 text-center text-base md:text-lg leading-relaxed">
         Soy desarrollador Full Stack con foco en experiencias limpias y usables.

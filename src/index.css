@@ -214,6 +214,9 @@
   color: #22d3ee; /* cyan-400 */
   font-weight: 100;
   animation: blink 1s infinite;
+  display: inline-block;
+  margin-left: 0;
+  position: static;
 }
 
 @keyframes blink {
