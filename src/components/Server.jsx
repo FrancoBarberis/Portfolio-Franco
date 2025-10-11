@@ -3,20 +3,6 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
 function Server({ id, icon, tooltip, onClick, isSelected }) {
-  const [showTooltip, setShowTooltip] = useState(false);
-  const tooltipId = `server-tooltip-${id}`;
-
-  useEffect(() => {
-    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const update = () => setShowTooltip(!!mq.matches);
-    update();
-    if (mq.addEventListener) {
-      mq.addEventListener("change", update);
-      return () => mq.removeEventListener("change", update);
-    }
-    mq.addListener(update);
-    return () => mq.removeListener(update);
-  }, []);
 
   const classes = [
     "w-full aspect-square rounded-xl flex items-center justify-center",
@@ -27,18 +13,12 @@ function Server({ id, icon, tooltip, onClick, isSelected }) {
   ].join(" ");
 
   return (
-    <>
-      <div
-        className={classes}
-        data-tooltip-id={showTooltip ? tooltipId : undefined}
-        data-tooltip-content={showTooltip ? tooltip : undefined}
-        onClick={onClick}
-      >
-  <span className="text-white text-2xl font-bold">{icon}</span>
-      </div>
-
-      {showTooltip && <Tooltip id={tooltipId} place="right" />}
-    </>
+    <div
+      className={classes}
+      onClick={onClick}
+    >
+      <span className="text-white text-2xl font-bold">{icon}</span>
+    </div>
   );
 }
 
