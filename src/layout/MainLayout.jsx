@@ -27,6 +27,11 @@ function MainLayout() {
           channelName: "Certificados",
           path: "certificados",
         },
+        {
+          id: 14,
+          channelName: "Contacto",
+          path: "contacto",
+        },
       ],
     },
     {
@@ -117,9 +122,9 @@ function MainLayout() {
     setSelectedChannel(channel);
     setIsChannelSidebarOpen(false);
     navigate(`/${selectedServer.path}/${channel.path}`);
-    
-    // Scroll al inicio
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
   };
 
   const handleServerChange = (server) => {

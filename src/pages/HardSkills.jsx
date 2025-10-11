@@ -17,15 +17,8 @@ export default function HardSkills() {
 
   useEffect(() => {
     if (isHovering && nodeTextRef.current) {
-      // Destruir instancia anterior si existe
-      if (typedRef.current) {
-        typedRef.current.destroy();
-      }
-
-      // Limpiar el contenido antes de iniciar
+      if (typedRef.current) typedRef.current.destroy();
       nodeTextRef.current.textContent = '';
-
-      // Crear nueva instancia de Typed
       typedRef.current = new Typed(nodeTextRef.current, {
         strings: ["NodeJS"],
         typeSpeed: 120,
@@ -36,25 +29,14 @@ export default function HardSkills() {
         cursorChar: "|",
       });
     } else {
-      // Al salir del hover, destruir typed y restaurar texto
-      if (typedRef.current) {
-        typedRef.current.destroy();
-        typedRef.current = null;
-      }
-      if (nodeTextRef.current) {
-        nodeTextRef.current.textContent = 'NodeJS';
-      }
+      if (typedRef.current) { typedRef.current.destroy(); typedRef.current = null; }
+      if (nodeTextRef.current) nodeTextRef.current.textContent = 'NodeJS';
     }
-
-    return () => {
-      if (typedRef.current) {
-        typedRef.current.destroy();
-      }
-    };
+    return () => { if (typedRef.current) typedRef.current.destroy(); };
   }, [isHovering]);
 
   return (
-    <div className="flex flex-col justify-around items-center gap-y-20 p-4">
+    <div className="flex flex-col justify-around items-center gap-y-20 p-4 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(99,102,241,0.3), 0 0 32px 4px rgba(99,102,241,0.15)"}}>
       <h2 className="text-xl md:text-2xl font-semibold text-white">
         Este es mi stack de tecnologías
       </h2>

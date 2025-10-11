@@ -5,7 +5,7 @@ export default function Certificates() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Certificado 1 */}
-        <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/20 p-6 rounded-lg border-2 border-blue-700">
+  <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/20 p-6 rounded-lg border-2 border-blue-700 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🏆</span>
             <div>
@@ -26,7 +26,7 @@ export default function Certificates() {
         </div>
 
         {/* Certificado 2 */}
-        <div className="bg-gradient-to-br from-green-900/20 to-green-800/20 p-6 rounded-lg border-2 border-green-700">
+  <div className="bg-gradient-to-br from-green-900/20 to-green-800/20 p-6 rounded-lg border-2 border-green-700 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">✅</span>
             <div>
@@ -47,7 +47,7 @@ export default function Certificates() {
         </div>
 
         {/* Certificado 3 */}
-        <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/20 p-6 rounded-lg border-2 border-purple-700">
+  <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/20 p-6 rounded-lg border-2 border-purple-700 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(168,85,247,0.3), 0 0 32px 4px rgba(168,85,247,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">📜</span>
             <div>
@@ -68,7 +68,7 @@ export default function Certificates() {
         </div>
 
         {/* Certificado 4 */}
-        <div className="bg-gradient-to-br from-orange-900/20 to-orange-800/20 p-6 rounded-lg border-2 border-orange-700">
+  <div className="bg-gradient-to-br from-orange-900/20 to-orange-800/20 p-6 rounded-lg border-2 border-orange-700 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(251,146,60,0.3), 0 0 32px 4px rgba(251,146,60,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">☁️</span>
             <div>
@@ -89,7 +89,7 @@ export default function Certificates() {
         </div>
 
         {/* Certificado 5 */}
-        <div className="bg-gradient-to-br from-teal-900/20 to-teal-800/20 p-6 rounded-lg border-2 border-teal-700">
+  <div className="bg-gradient-to-br from-teal-900/20 to-teal-800/20 p-6 rounded-lg border-2 border-teal-700 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(13,148,136,0.3), 0 0 32px 4px rgba(13,148,136,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🎨</span>
             <div>
@@ -110,7 +110,7 @@ export default function Certificates() {
         </div>
 
         {/* Certificado 6 */}
-        <div className="bg-gradient-to-br from-red-900/20 to-red-800/20 p-6 rounded-lg border-2 border-red-700">
+  <div className="bg-gradient-to-br from-red-900/20 to-red-800/20 p-6 rounded-lg border-2 border-red-700 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(239,68,68,0.3), 0 0 32px 4px rgba(239,68,68,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🗄️</span>
             <div>
@@ -131,7 +131,7 @@ export default function Certificates() {
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-yellow-900/20 rounded-lg border border-yellow-800">
+  <div className="mt-6 p-4 bg-yellow-900/20 rounded-lg border border-yellow-800 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(202,138,4,0.3), 0 0 32px 4px rgba(202,138,4,0.15)"}}>
         <p className="text-sm text-gray-300">
           🎓 <strong>Nota:</strong> Estos son placeholders de certificaciones. Las credenciales
           reales estarán disponibles próximamente con enlaces verificables.

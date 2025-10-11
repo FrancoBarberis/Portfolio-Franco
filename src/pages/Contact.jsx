@@ -1,72 +1,75 @@
+import { useState } from "react";
+
+const CONTACT_DATA = [
+  { label: "Email", value: "francobarberissic3@gmail.com", color: "from-indigo-500 to-indigo-700", icon: "📧" },
+  { label: "LinkedIn", value: "linkedin.com/in/franco-barberis", color: "from-blue-500 to-blue-700", icon: "💼" },
+  { label: "GitHub", value: "github.com/FrancoBarberis", color: "from-gray-700 to-gray-900", icon: "🐙" },
+  { label: "Ubicación", value: "Argentina - Disponible para remoto", color: "from-pink-500 to-pink-700", icon: "📍" },
+];
+
 export default function Contact() {
+  const [copied, setCopied] = useState(null);
+
+  const handleCopy = (value, idx) => {
+    navigator.clipboard.writeText(value);
+    setCopied(idx);
+    setTimeout(() => setCopied(null), 1200);
+  };
+
   return (
-    <div className="space-y-6 max-w-2xl">
-      <h3 className="text-2xl font-bold text-white">Contacto</h3>
-      
-      <div className="space-y-4">
-        <div className="bg-gray-700 p-4 rounded-lg">
-          <h4 className="font-semibold mb-2 flex items-center gap-2 text-white">
-            <span>📧</span> Email
-          </h4>
-          <a
-            href="mailto:francobarberissic3@gmail.com"
-            className="text-blue-400 hover:underline"
+    <div className="flex flex-col items-center justify-center min-h-[60vh] pt-2 pb-8">
+      <h2 className="text-2xl font-bold mb-6 text-white">Contacto</h2>
+      <div className="flex flex-col gap-6 w-full max-w-md">
+        {CONTACT_DATA.map((item, idx) => (
+          <div
+            key={item.label}
+            className={`
+              relative rounded-xl px-5 py-4 shadow-lg
+              bg-gradient-to-br ${item.color}
+              text-white flex items-center justify-between
+              border border-white/10
+              ring-2 ring-indigo-400/30
+              transition-all
+              animate-glow
+            `}
+            style={{
+              boxShadow: "0 0 16px 2px rgba(99,102,241,0.3), 0 0 32px 4px rgba(99,102,241,0.15)"
+            }}
           >
-            francobarberissic3@gmail.com
-          </a>
-        </div>
-
-        <div className="bg-gray-700 p-4 rounded-lg">
-          <h4 className="font-semibold mb-2 flex items-center gap-2 text-white">
-            <span>💼</span> LinkedIn
-          </h4>
-          <a
-            href="https://linkedin.com/in/franco-barberis"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:underline"
-          >
-            linkedin.com/in/franco-barberis
-          </a>
-        </div>
-
-        <div className="bg-gray-700 p-4 rounded-lg">
-          <h4 className="font-semibold mb-2 flex items-center gap-2 text-white">
-            <span>🐙</span> GitHub
-          </h4>
-          <a
-            href="https://github.com/FrancoBarberis"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:underline"
-          >
-            github.com/FrancoBarberis
-          </a>
-        </div>
-
-        <div className="bg-gray-700 p-4 rounded-lg">
-          <h4 className="font-semibold mb-2 flex items-center gap-2 text-white">
-            <span>📱</span> Teléfono
-          </h4>
-          <p className="text-gray-300">+54 XXX XXX XXXX</p>
-        </div>
-
-        <div className="bg-gray-700 p-4 rounded-lg">
-          <h4 className="font-semibold mb-2 flex items-center gap-2 text-white">
-            <span>📍</span> Ubicación
-          </h4>
-          <p className="text-gray-300">
-            Argentina - Disponible para remoto
-          </p>
-        </div>
+            <div className="flex flex-col">
+              <span className="font-semibold text-lg flex items-center gap-2">{item.icon} {item.label}</span>
+              <span className="text-sm opacity-90">{item.value}</span>
+            </div>
+            <button
+              onClick={() => handleCopy(item.value, idx)}
+              className="absolute top-2 right-2 bg-white/20 hover:bg-white/40 text-white px-2 py-1 rounded transition-all text-xs font-semibold shadow cursor-copy"
+              title="Copiar"
+              style={{cursor: 'pointer'}}
+            >
+              <span role="img" aria-label="Copiar" style={{fontSize: '1.2em'}}>�️</span>
+            </button>
+            {copied === idx && (
+              <span className="absolute top-2 left-2 bg-indigo-700 text-white px-2 py-1 rounded text-xs font-semibold shadow animate-fade-in">
+                ¡Copiado!
+              </span>
+            )}
+          </div>
+        ))}
       </div>
-
-      <div className="mt-6 p-4 bg-blue-900/20 rounded-lg border border-blue-800">
-        <p className="text-sm text-gray-300">
-          💡 <strong className="text-white">Disponibilidad:</strong> Abierto a nuevas oportunidades y proyectos freelance.
-          No dudes en contactarme para discutir cómo puedo ayudarte.
-        </p>
-      </div>
+      {/* Eliminado disponibilidad */}
+      {/* Animaciones CSS extra para glow y fade-in */}
+      <style>{`
+        @keyframes glow {
+          0%, 100% { box-shadow: 0 0 16px 2px rgba(99,102,241,0.3), 0 0 32px 4px rgba(99,102,241,0.15); }
+          50% { box-shadow: 0 0 32px 8px rgba(99,102,241,0.5), 0 0 64px 16px rgba(99,102,241,0.25); }
+        }
+        .animate-glow { animation: glow 2s infinite; }
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(-8px);}
+          to { opacity: 1; transform: translateY(0);}
+        }
+        .animate-fade-in { animation: fade-in 0.4s;}
+      `}</style>
     </div>
   );
 }

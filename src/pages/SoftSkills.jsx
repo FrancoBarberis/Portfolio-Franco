@@ -1,8 +1,7 @@
 export default function SoftSkills() {
   return (
-    <div className=" flex flex-col justify-center items-center space-y-6 max-w-3xl mx-auto">
+    <div className=" flex flex-col justify-center items-center space-y-6 max-w-3xl mx-auto animate-glow" style={{boxShadow: "0 0 16px 2px rgba(99,102,241,0.3), 0 0 32px 4px rgba(99,102,241,0.15)"}}>
       <h3 className="text-2xl font-bold text-white">Habilidades Blandas</h3>
-      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg border-2 border-blue-500 hover:scale-105 transition-transform">
           <div className="flex items-center gap-3 mb-3">
