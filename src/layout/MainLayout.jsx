@@ -120,7 +120,10 @@ function MainLayout() {
 
   const handleChannelChange = (channel) => {
     setSelectedChannel(channel);
-    setIsChannelSidebarOpen(false);
+    const isDesktop = window.innerWidth >= 768;
+    if (!isDesktop) {
+      setIsChannelSidebarOpen(false);
+    }
     navigate(`/${selectedServer.path}/${channel.path}`);
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'auto' });
