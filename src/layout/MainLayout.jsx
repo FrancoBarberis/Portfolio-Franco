@@ -3,6 +3,17 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 function MainLayout() {
+  // Sincroniza la visibilidad de la ChannelSidebar con el tamaño de pantalla
+  useEffect(() => {
+    const handleResize = () => {
+      const isDesktop = window.innerWidth >= 768;
+      setIsChannelSidebarOpen(isDesktop);
+    };
+    window.addEventListener('resize', handleResize);
+    // Ejecuta una vez al montar para corregir el estado inicial
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const [audioEnabled, setAudioEnabled] = useState(true);
   
   const servidores = [
