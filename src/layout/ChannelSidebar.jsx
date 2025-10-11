@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { playHighPopSound } from '../utils/audioUtils';
 
 function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onToggle, serverName, audioEnabled = true}) {
+
+    const [hoveredChannelId, setHoveredChannelId] = useState(null);
     
     const handleChannelClick = (channel) => {
         playHighPopSound(audioEnabled);
@@ -37,7 +40,6 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                     <h2 className="text-sm md:text-base font-semibold truncate flex-1 min-w-0">
                         {serverName}
                     </h2>
-
                     {/* X solo en mobile, a la derecha */}
                     <button 
                         onClick={handleToggle}
@@ -50,16 +52,18 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                         ✕
                     </button>
                 </div>
-                
-                <div className="flex flex-col gap-1 overflow-y-auto flex-1 min-w-0">
+                {/* Lista de canales */}
+                <div className="flex flex-col gap-1 mt-4">
                     {channels.map(channel => (
-                        <button 
+                        <button
                             key={channel.id}
                             onClick={() => handleChannelClick(channel)}
+                            onMouseEnter={() => setHoveredChannelId(channel.id)}
+                            onMouseLeave={() => setHoveredChannelId(null)}
                             className={`
                                 text-left py-1.5 px-2 mx-1 rounded cursor-pointer
                                 transition-all duration-150 ease-in-out
-                                flex items-center gap-2 min-w-0
+                                flex items-center gap-2 min-w-0 relative
                                 ${selectedChannel?.id === channel.id 
                                     ? 'bg-gray-600 text-white' 
                                     : 'text-gray-400 hover:bg-gray-700 hover:text-gray-300'
@@ -68,6 +72,14 @@ function ChannelSidebar({channels, onChannelSelect, selectedChannel, isOpen, onT
                         >
                             <span className="text-gray-500 flex-shrink-0 text-xs md:text-sm">#</span>
                             <span className="truncate min-w-0 text-xs md:text-sm font-medium">{channel.channelName}</span>
+                            {channel.tooltip && (
+                                <div
+                                    className={`absolute left-full top-1/2 transform -translate-y-1/2 ml-2 px-2 py-1 bg-gray-900 text-white text-xs rounded shadow-lg transition-opacity duration-200 ${hoveredChannelId === channel.id ? 'opacity-100' : 'opacity-0'} pointer-events-none`}
+                                    style={{ minWidth: '80px', zIndex: 50 }}
+                                >
+                                    {channel.tooltip}
+                                </div>
+                            )}
                         </button>
                     ))}
                 </div>

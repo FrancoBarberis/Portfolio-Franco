@@ -123,8 +123,10 @@ function MainLayout() {
     setIsChannelSidebarOpen(false);
     navigate(`/${selectedServer.path}/${channel.path}`);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 50);
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 100);
   };
 
   const handleServerChange = (server) => {

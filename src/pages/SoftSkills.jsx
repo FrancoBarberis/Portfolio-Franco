@@ -1,9 +1,9 @@
 export default function SoftSkills() {
   return (
-    <div className=" flex flex-col justify-center items-center space-y-6 max-w-3xl mx-auto animate-glow" style={{boxShadow: "0 0 16px 2px rgba(99,102,241,0.3), 0 0 32px 4px rgba(99,102,241,0.15)"}}>
+  <div className=" flex flex-col justify-center items-center space-y-6 max-w-3xl mx-auto">
       <h3 className="text-2xl font-bold text-white">Habilidades Blandas</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg border-2 border-blue-500 hover:scale-105 transition-transform">
+  <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg border-2 border-blue-500 hover:scale-105 transition-transform animate-glow" style={{boxShadow: "0 0 16px 2px rgba(37,99,235,0.3), 0 0 32px 4px rgba(37,99,235,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🤝</span>
             <h4 className="text-xl font-semibold text-white">Trabajo en Equipo</h4>
@@ -14,7 +14,7 @@ export default function SoftSkills() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-600 to-purple-800 p-6 rounded-lg border-2 border-purple-500 hover:scale-105 transition-transform">
+  <div className="bg-gradient-to-br from-purple-600 to-purple-800 p-6 rounded-lg border-2 border-purple-500 hover:scale-105 transition-transform animate-glow" style={{boxShadow: "0 0 16px 2px rgba(139,92,246,0.3), 0 0 32px 4px rgba(139,92,246,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">💡</span>
             <h4 className="text-xl font-semibold text-white">Resolución de Problemas</h4>
@@ -25,7 +25,7 @@ export default function SoftSkills() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-green-600 to-green-800 p-6 rounded-lg border-2 border-green-500 hover:scale-105 transition-transform">
+  <div className="bg-gradient-to-br from-green-600 to-green-800 p-6 rounded-lg border-2 border-green-500 hover:scale-105 transition-transform animate-glow" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🗣️</span>
             <h4 className="text-xl font-semibold text-white">Comunicación</h4>
@@ -36,7 +36,7 @@ export default function SoftSkills() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-orange-600 to-orange-800 p-6 rounded-lg border-2 border-orange-500 hover:scale-105 transition-transform">
+  <div className="bg-gradient-to-br from-orange-600 to-orange-800 p-6 rounded-lg border-2 border-orange-500 hover:scale-105 transition-transform animate-glow" style={{boxShadow: "0 0 16px 2px rgba(251,146,60,0.3), 0 0 32px 4px rgba(251,146,60,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🤖</span>
             <h4 className="text-xl font-semibold text-white">Prompts efectivos</h4>
@@ -47,7 +47,7 @@ export default function SoftSkills() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-teal-600 to-teal-800 p-6 rounded-lg border-2 border-teal-500 hover:scale-105 transition-transform">
+  <div className="bg-gradient-to-br from-teal-600 to-teal-800 p-6 rounded-lg border-2 border-teal-500 hover:scale-105 transition-transform animate-glow" style={{boxShadow: "0 0 16px 2px rgba(20,184,166,0.3), 0 0 32px 4px rgba(20,184,166,0.15)"}}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">⚡</span>
             <h4 className="text-xl font-semibold text-white">Adaptabilidad</h4>

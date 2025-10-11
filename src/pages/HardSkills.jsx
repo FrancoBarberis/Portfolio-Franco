@@ -36,13 +36,13 @@ export default function HardSkills() {
   }, [isHovering]);
 
   return (
-    <div className="flex flex-col justify-around items-center gap-y-20 p-4 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(99,102,241,0.3), 0 0 32px 4px rgba(99,102,241,0.15)"}}>
+  <div className="flex flex-col justify-around items-center gap-y-20 p-4">
       <h2 className="text-xl md:text-2xl font-semibold text-white">
         Este es mi stack de tecnologías
       </h2>
       <div className="grid grid-cols-3 grid-rows-6 gap-3 md:gap-4 w-full max-w-2xl h-[400px] md:h-[600px]">
         {/* HTML - Naranja oficial #E34F26 - Termina muy abajo con efecto de aparición */}
-        <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base lg:font-extrabold lg:text-3xl text-white overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base lg:font-extrabold lg:text-3xl text-white overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(227,79,38,0.3), 0 0 32px 4px rgba(227,79,38,0.15)"}}>
           <span className="relative z-10">HTML</span>
           <img
             src={HTMLIcon}
@@ -53,7 +53,7 @@ export default function HardSkills() {
         </div>
 
         {/* JavaScript - Amarillo oficial #F7DF1E - rota al hover */}
-        <div className="relative bg-gradient-to-br from-yellow-400 to-yellow-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-xs md:text-base lg:font-extrabold lg:text-3xl text-gray-900 overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-yellow-400 to-yellow-500 p-3 md:p-6 rounded text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-xs md:text-base lg:font-extrabold lg:text-3xl text-gray-900 overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(247,223,30,0.3), 0 0 32px 4px rgba(247,223,30,0.15)"}}>
           <span className="relative z-10 ">JavaScript</span>
           <img
             src={JSIcon}
@@ -66,7 +66,7 @@ export default function HardSkills() {
         </div>
 
         {/* CSS - Azul oficial #1572B6 - Lluvia más rápida, izquierda en mobile/tablet */}
-        <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 p-3 md:p-6 rounded text-center lg:font-extrabold lg:text-3xl col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 p-3 md:p-6 rounded text-center lg:font-extrabold lg:text-3xl col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(21,114,182,0.3), 0 0 32px 4px rgba(21,114,182,0.15)"}}>
           <span className="relative z-10">CSS</span>
 
           {/* CSS IZQUIERDA - Cae primero, desde arriba fuera, atraviesa y sale por abajo */}
@@ -116,7 +116,7 @@ export default function HardSkills() {
         </div>
 
         {/* React - Celeste oficial #61DAFB - Mucho más grande, centrado, rota al hover */}
-        <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-500 p-3 md:p-6 rounded text-center col-span-1 lg:font-extrabold lg:text-3xl row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-500 p-3 md:p-6 rounded text-center col-span-1 lg:font-extrabold lg:text-3xl row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-gray-900 overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(97,218,251,0.3), 0 0 32px 4px rgba(97,218,251,0.15)"}}>
           <span className="relative z-10">React</span>
           <img
             src={ReactIcon}
@@ -126,7 +126,7 @@ export default function HardSkills() {
         </div>
 
         {/* Git - Rojo/Naranja oficial #F05032 - Izq a la izquierda, Der a la derecha */}
-        <div className="relative bg-gradient-to-br from-orange-600 to-red-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-orange-600 to-red-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(240,80,50,0.3), 0 0 32px 4px rgba(240,80,50,0.15)"}}>
           <span className="relative z-10">Git</span>
 
           {/* Git IZQUIERDO - Baja desde arriba fuera, queda a la IZQUIERDA */}
@@ -149,7 +149,7 @@ export default function HardSkills() {
         </div>
 
         {/* Tailwind - Cyan oficial #06B6D4 - Múltiples logos deslizándose rápido */}
-        <div className="relative bg-gradient-to-br from-white to-cyan-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-white to-cyan-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(6,182,212,0.3), 0 0 32px 4px rgba(6,182,212,0.15)"}}>
           <span className="relative z-10">Tailwind</span>
           
           {/* Logo 1 */}
@@ -229,7 +229,7 @@ export default function HardSkills() {
         </div>
 
         {/* VITE - Rayo que cruza la pantalla a alta velocidad */}
-        <div className="relative bg-gradient-to-br from-yellow-500 to-blue-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-yellow-500 to-blue-600 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
           <span className="relative z-10">Vite</span>
           
           {/* Logo estático - visible por defecto, se oculta en hover */}
@@ -284,7 +284,7 @@ export default function HardSkills() {
         {/* NodeJS */}
         
         <div 
-          className="relative bg-gradient-to-br from-green-600 to-black p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer"
+          className="relative bg-gradient-to-br from-green-600 to-black p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
@@ -297,7 +297,7 @@ export default function HardSkills() {
         </div>  
         
         {/* SQL & noSQL - Base de datos con iconos orbitando */}
-        <div className="relative bg-gradient-to-br from-yellow-700 to-yellow-300 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer">
+  <div className="relative bg-gradient-to-br from-yellow-700 to-yellow-300 p-3 md:p-6 rounded lg:font-extrabold lg:text-3xl text-center col-span-1 row-span-2 flex items-center justify-center font-medium text-sm md:text-base text-white overflow-hidden group cursor-pointer animate-glow" style={{boxShadow: "0 0 16px 2px rgba(202,138,4,0.3), 0 0 32px 4px rgba(202,138,4,0.15)"}}>
           <span className="relative z-10">SQL & noSQL</span>
           
           {/* Centro - Base de datos principal */}

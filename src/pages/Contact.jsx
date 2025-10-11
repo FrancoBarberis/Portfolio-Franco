@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const CONTACT_DATA = [
-  { label: "Email", value: "francobarberissic3@gmail.com", color: "from-indigo-500 to-indigo-700", icon: "📧" },
+  { label: "Email", value: "francobarberissic3@gmail.com", color: "from-green-500 to-green-700", icon: "📧" },
   { label: "LinkedIn", value: "linkedin.com/in/franco-barberis", color: "from-blue-500 to-blue-700", icon: "💼" },
   { label: "GitHub", value: "github.com/FrancoBarberis", color: "from-gray-700 to-gray-900", icon: "🐙" },
   { label: "Ubicación", value: "Argentina - Disponible para remoto", color: "from-pink-500 to-pink-700", icon: "📍" },
@@ -46,13 +46,13 @@ export default function Contact() {
               title="Copiar"
               style={{cursor: 'pointer'}}
             >
-              <span role="img" aria-label="Copiar" style={{fontSize: '1.2em'}}>�️</span>
+              <span role="img" aria-label="Copiar" style={{fontSize: '1.2em'}}>🖱️</span>
+              {copied === idx && (
+                <span className="ml-2 bg-indigo-700 text-white px-2 py-1 rounded text-xs font-semibold shadow animate-fade-in inline-block">
+                  ¡Copiado!
+                </span>
+              )}
             </button>
-            {copied === idx && (
-              <span className="absolute top-2 left-2 bg-indigo-700 text-white px-2 py-1 rounded text-xs font-semibold shadow animate-fade-in">
-                ¡Copiado!
-              </span>
-            )}
           </div>
         ))}
       </div>
