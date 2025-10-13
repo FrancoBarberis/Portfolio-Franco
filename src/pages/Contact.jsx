@@ -53,14 +53,14 @@ export default function Contact() {
               onClick={() => handleCopy(item.value, idx)}
               className="absolute top-2 right-2 bg-white/20 hover:bg-white/40 text-white px-2 py-1 rounded transition-all text-xs font-semibold shadow cursor-copy"
               title="Copiar"
-              style={{cursor: 'pointer'}}
+              style={{cursor: 'pointer', position: 'absolute', top: '0.5rem', right: '0.5rem'}}
             >
-              <span role="img" aria-label="Copiar" style={{fontSize: '1.2em'}}>🖱️</span>
               {copied === idx && (
-                <span className="ml-2 bg-indigo-700 text-white px-2 py-1 rounded text-xs font-semibold shadow animate-fade-in inline-block">
+                <span className="absolute right-full top-1/2 -translate-y-1/2 bg-indigo-700 text-white px-2 py-1 rounded text-xs font-semibold shadow animate-fade-in whitespace-nowrap z-10" style={{marginRight: '0.5rem'}}>
                   ¡Copiado!
                 </span>
               )}
+              <span role="img" aria-label="Copiar" style={{fontSize: '1.2em'}}>🖱️</span>
             </button>
           </div>
         ))}
