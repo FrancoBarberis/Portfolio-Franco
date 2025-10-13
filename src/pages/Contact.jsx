@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const CONTACT_DATA = [
-  { label: "Email", value: "francobarberissic3@gmail.com", color: "from-green-500 to-green-700", icon: "📧" },
-  { label: "LinkedIn", value: "linkedin.com/in/franco-barberis", color: "from-blue-500 to-blue-700", icon: "💼" },
-  { label: "GitHub", value: "github.com/FrancoBarberis", color: "from-violet-600 to-violet-900", icon: "🐙" },
-  { label: "Ubicación", value: "Argentina - Disponible para remoto", color: "from-yellow-400 to-yellow-600", icon: "📍" },
+  { label: "Email", value: "francobarberissic3@gmail.com", color: "from-green-500 to-green-700", icon: "" },
+  { label: "LinkedIn", value: "www.linkedin.com/in/franco-barberis-a97677171/", color: "from-blue-500 to-blue-700", icon: "" },
+  { label: "GitHub", value: "github.com/FrancoBarberis", color: "from-violet-600 to-violet-900", icon: "" },
+  { label: "Ubicación", value: "Argentina - Disponible para remoto", color: "from-yellow-400 to-yellow-600", icon: "" },
 ];
 
 export default function Contact() {
@@ -24,44 +24,51 @@ export default function Contact() {
           <div
             key={item.label}
             className={`
-              relative rounded-xl px-5 py-4 shadow-lg
+              w-full rounded-xl pl-3 pr-4 py-4 shadow-lg
               bg-gradient-to-br ${item.color}
-              text-white flex items-center justify-between
-              border border-white/10
+              text-white border border-white/10
               ring-2 ring-indigo-400/20
-              transition-all
-              animate-pulse-glow
+              transition-all animate-pulse-glow
+              flex items-center
             `}
-            style={{
-              boxShadow:
-                item.label === "Email"
-                  ? "0 0 8px 1px rgba(34,197,94,0.25), 0 0 16px 2px rgba(34,197,94,0.12)"
-                  : item.label === "LinkedIn"
-                  ? "0 0 8px 1px rgba(59,130,246,0.25), 0 0 16px 2px rgba(59,130,246,0.12)"
-                  : item.label === "GitHub"
-                  ? "0 0 8px 1px rgba(55,65,81,0.25), 0 0 16px 2px rgba(55,65,81,0.12)"
-                  : item.label === "Ubicación"
-                  ? "0 0 8px 1px rgba(236,72,153,0.25), 0 0 16px 2px rgba(236,72,153,0.12)"
-                  : "0 0 8px 1px rgba(99,102,241,0.15), 0 0 16px 2px rgba(99,102,241,0.08)"
-            }}
           >
-            <div className="flex flex-col">
-              <span className="font-semibold text-lg flex items-center gap-2">{item.icon} {item.label}</span>
-              <span className="text-sm opacity-90">{item.value}</span>
-            </div>
-            <button
-              onClick={() => handleCopy(item.value, idx)}
-              className="absolute top-2 right-2 bg-white/20 hover:bg-white/40 text-white px-2 py-1 rounded transition-all text-xs font-semibold shadow cursor-copy"
-              title="Copiar"
-              style={{cursor: 'pointer', position: 'absolute', top: '0.5rem', right: '0.5rem'}}
-            >
-              {copied === idx && (
-                <span className="absolute right-full top-1/2 -translate-y-1/2 bg-indigo-700 text-white px-2 py-1 rounded text-xs font-semibold shadow animate-fade-in whitespace-nowrap z-10" style={{marginRight: '0.5rem'}}>
-                  ¡Copiado!
-                </span>
-              )}
-              <span role="img" aria-label="Copiar" style={{fontSize: '1.2em'}}>🖱️</span>
-            </button>
+            <span className="font-semibold text-lg flex items-center min-w-[110px]">{item.label}</span>
+            {item.label === "LinkedIn" ? (
+              <a
+                href={`https://${item.value}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm opacity-90 flex-1 break-words whitespace-normal underline hover:text-blue-300 transition-colors"
+              >
+                {item.value}
+              </a>
+            ) : item.label === "GitHub" ? (
+              <a
+                href={`https://${item.value}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm opacity-90 flex-1 break-words whitespace-normal underline hover:text-violet-300 transition-colors"
+              >
+                {item.value}
+              </a>
+            ) : (
+              <span className="text-sm opacity-90 flex-1 break-words whitespace-normal">{item.value}</span>
+            )}
+            {item.label !== "Ubicación" && (
+              <button
+                onClick={() => handleCopy(item.value, idx)}
+                className="bg-white/20 hover:bg-white/40 text-white px-2 py-1 rounded transition-all text-xs font-semibold shadow cursor-copy relative ml-2"
+                title="Copiar"
+                style={{cursor: 'pointer'}}
+              >
+                {copied === idx && (
+                  <span className="absolute right-full top-1/2 -translate-y-1/2 bg-indigo-700 text-white px-2 py-1 rounded text-xs font-semibold shadow animate-fade-in whitespace-nowrap z-10" style={{marginRight: '0.5rem'}}>
+                    ¡Copiado!
+                  </span>
+                )}
+                <span role="img" aria-label="Copiar" style={{fontSize: '1.2em'}}>🖱️</span>
+              </button>
+            )}
           </div>
         ))}
       </div>
