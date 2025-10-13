@@ -232,3 +232,50 @@
   background: #222;
   overflow: hidden;
 }
+
+.animated-inner-border {
+  position: relative;
+  border-radius: 0.75rem;
+}
+.animated-inner-border .border-side {
+  position: absolute;
+  background: #fff;
+  z-index: 2;
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.animated-inner-border .border-bottom {
+  left: 16px; right: 16px; bottom: 16px; height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 0.75rem;
+}
+.animated-inner-border:hover .border-bottom {
+  transform: scaleX(1);
+}
+.animated-inner-border .border-right {
+  top: 16px; bottom: 16px; right: 16px; width: 2px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  border-radius: 0.75rem;
+}
+.animated-inner-border:hover .border-right {
+  transform: scaleY(1);
+}
+.animated-inner-border .border-top {
+  left: 16px; right: 16px; top: 16px; height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  border-radius: 0.75rem;
+}
+.animated-inner-border:hover .border-top {
+  transform: scaleX(1);
+}
+.animated-inner-border .border-left {
+  top: 16px; bottom: 16px; left: 16px; width: 2px;
+  transform: scaleY(0);
+  transform-origin: top;
+  border-radius: 0.75rem;
+}
+.animated-inner-border:hover .border-left {
+  transform: scaleY(1);
+}
