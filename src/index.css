@@ -223,3 +223,12 @@
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
 }
+
+.neon-bar-glow {
+  position: relative;
+  border: 2px solid #222;
+  box-shadow: none;
+  border-image: none;
+  background: #222;
+  overflow: hidden;
+}

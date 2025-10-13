@@ -8,7 +8,7 @@ export default function AboutMe() {
   useEffect(() => {
     if (typedRef.current) {
       typedInstance.current = new Typed(typedRef.current, {
-        strings: ["Franco Barberis", "<br />Frontend Developer"],
+        strings: ["Franco Barberis", "Frontend Developer"],
         typeSpeed: 120,
         backSpeed: 80,
         backDelay: 3000,
@@ -18,7 +18,6 @@ export default function AboutMe() {
         cursorChar: "|",
       });
     }
-
     return () => {
       if (typedInstance.current) {
         typedInstance.current.destroy();
