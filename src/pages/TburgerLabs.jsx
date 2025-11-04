@@ -40,7 +40,7 @@ export default function TburgerLabs() {
           </h3>
           <p className="mb-4 text-gray-300">
             Aplicación web para generar pedidos de restaurante con temática de Resident Evil, desarrollada con
-            <strong> React, npm y Firestore Database</strong>.
+            <strong> React y Firestore Database</strong>.
           </p>
           <h4 className="font-semibold mb-3 text-white">Características:</h4>
           <ul className="list-disc ml-6 text-gray-300 space-y-1 mb-10">
