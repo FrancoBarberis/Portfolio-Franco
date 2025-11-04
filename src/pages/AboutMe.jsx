@@ -41,10 +41,10 @@ export default function AboutMe() {
       >
         {/* REVISAR EL TAMAÑO DEL CONTENEDOR, NO COINCIDE CON EL TEXTO DINAMICO */}
         <h3 className="text-2xl md:text-5xl lg:text-5xl font-extrabold text-center whitespace-nowrap absolute bottom-2 transform -left-1/2  bg-opacity-100 backdrop-blur-3xl text-white w-full py-2 bg-black">
-          <span ref={typedRef} className="text-cyan-400 inline-block"></span>
+          <span ref={typedRef} className="text-white inline-block"></span>
         </h3>
       </div>
-      <p className="text-gray-300 text-center text-base md:text-lg leading-relaxed">
+      <p className="text-gray-300 text-center text-base md:text-3xl md:mt-20 leading-relaxed">
         Soy desarrollador Full Stack con foco en experiencias limpias y usables.
         Tengo algunos proyectos realizados que podrás ver en este portafolio.
       </p>
