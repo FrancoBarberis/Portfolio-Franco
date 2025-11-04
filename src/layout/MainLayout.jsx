@@ -74,6 +74,11 @@ function MainLayout() {
           channelName: "TburgerLabs",
           path: "tburgerlabs",
         },
+        {
+          id: 32,
+          channelName: "Poketris", 
+          path: "poketris",
+        }
       ],
     },
   ];
