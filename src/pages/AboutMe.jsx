@@ -45,11 +45,9 @@ export default function AboutMe() {
         </h3>
       </div>
       <p className="text-gray-300 text-center text-base md:text-lg leading-relaxed">
-       Soy desarrollador Full Stack con foco en experiencias limpias y usables.
-       Tengo algunos proyectos realizados que podrás ver en este portafolio.
-     </p>
+        Soy desarrollador Full Stack con foco en experiencias limpias y usables.
+        Tengo algunos proyectos realizados que podrás ver en este portafolio.
+      </p>
     </div>
-
-     
   );
 }

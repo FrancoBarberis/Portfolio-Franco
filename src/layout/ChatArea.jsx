@@ -7,12 +7,9 @@ import {
   Certificates, 
   HardSkills, 
   SoftSkills, 
-  TburgerLabs, 
-  PixelCanvas,
-  SoundWave,
-  CodeMorph,
-  GestureLab,
-  Contact 
+  TburgerLabs,
+  Contact,
+  Poketris
 } from '../pages';
 
 // Mapeo de rutas a componentes
@@ -24,10 +21,7 @@ const routeComponents = {
   'hard-skills': HardSkills,
   'soft-skills': SoftSkills,
   'tburgerlabs': TburgerLabs,
-  'pixelcanvas': PixelCanvas,
-  'soundwave': SoundWave,
-  'codemorph': CodeMorph,
-  'gesturelab': GestureLab,
+  'poketris': Poketris
 };
 
 function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audioEnabled = true }) {
@@ -38,9 +32,11 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audi
   useEffect(() => {
     if (channelPath) {
       setIsSliding(true);
-      
+
       setTimeout(() => {
-        const Component = routeComponents[channelPath];
+        // Normaliza el channelPath para que coincida con las claves del objeto
+        const normalizedPath = decodeURIComponent(channelPath).toLowerCase();
+        const Component = routeComponents[normalizedPath];
         setDisplayContent(Component ? <Component /> : <div>Contenido no encontrado</div>);
         setIsSliding(false);
       }, 200);
