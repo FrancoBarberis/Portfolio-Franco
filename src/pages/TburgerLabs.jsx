@@ -16,7 +16,7 @@ export default function TburgerLabs() {
           <div className="border-side border-top hidden lg:block"></div>
           <div className="border-side border-left hidden lg:block"></div>
           {/* Overlay oscuro con animación y visibilidad responsive */}
-          <div className="absolute left-0 right-0 bottom-[20%] flex items-center justify-center bg transition-colors duration-[2500ms] z-20">
+          <div className="absolute left-0 right-0 bottom-[20%] md:bottom-[5%] flex items-center justify-center bg transition-colors duration-[2500ms] z-20">
             <div className="flex flex-row gap-2 md:gap-0 md:space-x-5 items-center justify-center w-full transition-opacity duration-[1800ms] lg:opacity-0 lg:pointer-events-none group-hover:lg:opacity-100 group-hover:lg:pointer-events-auto">
               <a
                 href="https://tburgerlabs.com/"

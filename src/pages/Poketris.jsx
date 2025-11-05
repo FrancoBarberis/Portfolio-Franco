@@ -23,7 +23,7 @@ export default function Poketris() {
                 href="https://tburgerlabs.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 max-w-[90px] w-[22vw] md:max-w-none md:w-auto text-center text-white px-2 py-1 md:px-6 md:py-3 rounded-lg font-thin md:font-semibold shadow-lg text-[11px] md:text-base transition-colors duration-200 border border-gray-600 z-10 hover:brightness-110 whitespace-nowrap mx-auto"
+                className="flex items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 max-w-[90px] w-[22vw] md:max-w-none md:w-auto md:min-w-[110px] text-center text-white px-2 py-1 md:px-6 md:py-3 rounded-lg font-thin md:font-semibold shadow-lg text-[11px] md:text-base transition-colors duration-200 border border-gray-600 z-10 hover:brightness-110 whitespace-nowrap mx-auto"
                 style={{ width: '22vw', maxWidth: '90px' }}
               >
                 Ver Demo
@@ -32,7 +32,7 @@ export default function Poketris() {
                 href="#"
                 onClick={(e) => e.preventDefault()}
                 target="_blank"
-                className="flex items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 max-w-[90px] w-[22vw] md:max-w-none md:w-auto text-center text-white px-2 py-1 md:px-6 md:py-3 rounded-lg font-thin md:font-semibold shadow-lg text-[11px] md:text-base transition-colors duration-200 border border-gray-600 z-10 hover:brightness-110 whitespace-nowrap mx-auto"
+                className="flex items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 max-w-[90px] w-[22vw] md:max-w-none md:w-auto md:min-w-[110px] text-center text-white px-2 py-1 md:px-6 md:py-3 rounded-lg font-thin md:font-semibold shadow-lg text-[11px] md:text-base transition-colors duration-200 border border-gray-600 z-10 hover:brightness-110 whitespace-nowrap mx-auto"
                 style={{ width: '22vw', maxWidth: '90px' }}
               >
                 GitHub
