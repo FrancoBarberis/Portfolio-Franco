@@ -28,21 +28,29 @@ export default function AboutMe() {
 
   return (
     <div className="flex flex-col justify-center align-middle h-full w-full">
-      <div
-        className="relative h-full w-full flex flex-col items-center justify-end mx-auto mb-5"
-        style={{
-          backgroundImage: `url(${Foto})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "240px",
-          height: "320px",
-        }}
-      >
-        {/* Título centrado, una sola línea, sin fondo, cursor al final */}
-        <div className="flex justify-center items-center w-full pb-2">
-          <h3 className="text-2xl md:text-5xl lg:text-5xl font-extrabold text-center text-white m-0 p-0 whitespace-nowrap">
-            <span ref={typedRef} className="text-white inline-block whitespace-nowrap"></span>
+      <div className="relative flex flex-col items-center justify-end mx-auto mb-5" style={{width: '240px', height: '320px'}}>
+        {/* Imagen centrada */}
+        <img 
+          src={Foto} 
+          alt="Perfil" 
+          className="w-full h-full object-cover object-center rounded-lg block" 
+          style={{
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 0,
+              WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 10%, black 70%, black 100%)',
+              maskImage: 'linear-gradient(to top, transparent 0%, black 10%, black 70%, black 100%)'
+          }}
+        />
+        {/* Gradiente difuminado en la parte inferior */}
+        {/* Eliminado: el gradiente ahora es una máscara sobre la imagen */}
+        {/* Texto Typed.js sobre la imagen, puede sobresalir horizontalmente */}
+        <div className="flex justify-center items-center w-full pb-2 relative" style={{zIndex: 2, overflow: 'visible'}}>
+          <h3 className="text-2xl md:text-5xl lg:text-5xl font-extrabold text-center text-white m-0 p-0 whitespace-nowrap" style={{overflow: 'visible'}}>
+            <span ref={typedRef} className="text-white inline-block whitespace-nowrap" style={{overflow: 'visible'}}></span>
           </h3>
         </div>
       </div>
