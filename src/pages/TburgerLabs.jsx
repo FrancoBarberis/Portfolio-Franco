@@ -8,22 +8,29 @@ export default function TburgerLabs() {
           <img
             src={TBurgerLabsPicture}
             alt="TBurgerLabs"
-            className="absolute inset-0 w-full h-full object-cover object-top pointer-events-auto hover:contrast-50 hover:brightness-75 transition-all duration-500"
+            className="absolute inset-0 w-full h-full object-cover object-top pointer-events-auto transition-[filter] duration-[1800ms] group-hover:brightness-25 group-hover:contrast-100"
           />
-
+          <style>{`
+            @media (max-width: 767px) {
+              .tburger-img-mask {
+                -webkit-mask-image: linear-gradient(to top, transparent 0%, black 14%, black 70%, black 100%) !important;
+                mask-image: linear-gradient(to top, transparent 0%, black 14%, black 70%, black 100%) !important;
+              }
+            }
+          `}</style>
           {/* Borde interno animado */}
           <div className="border-side border-bottom"></div>
           <div className="border-side border-right"></div>
           <div className="border-side border-top"></div>
           <div className="border-side border-left"></div>
           {/* Overlay oscuro con animación y visibilidad responsive */}
-          <div className="absolute inset-0 flex items-end justify-center pb-16 bg  opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-colors duration-500">
-            <div className="flex gap-4 transition-opacity duration-500">
+          <div className="absolute inset-0 flex items-end justify-center pb-16 bg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-colors duration-500">
+            <div className="flex gap-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-[1800ms]">
               <a
                 href="https://tburgerlabs.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 lg:w-30 text-center text-white px-6 py-3 rounded-lg hover:bg-gray-800 font-semibold shadow-lg transition-colors duration-200 border border-gray-600 z-10"
+                className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 lg:w-30 text-center text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition-colors duration-200 border border-gray-600 z-10 hover:brightness-110"
               >
                 Ver Demo
               </a>
@@ -31,7 +38,7 @@ export default function TburgerLabs() {
                 href="#"
                 onClick={(e) => e.preventDefault()}
                 target="_blank"
-                className="bg-gray-700 lg:w-30 text-center text-white px-6 py-3 rounded-lg hover:bg-gray-800 font-semibold shadow-lg transition-colors duration-200 border border-gray-600 z-10"
+                className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 lg:w-30 text-center text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition-colors duration-200 border border-gray-600 z-10 hover:brightness-110"
               >
                 GitHub
               </a>

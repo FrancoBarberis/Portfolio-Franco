@@ -8,7 +8,7 @@ export default function Poketris() {
           <img
             src={TBurgerLabsPicture}
             alt="Poketris"
-            className="absolute inset-0 w-full h-full object-cover object-top pointer-events-auto transition-all duration-[2500ms] group-hover:contrast-50 group-hover:brightness-75"
+            className="absolute inset-0 w-full h-full object-cover object-top pointer-events-auto transition-[filter] duration-[1800ms] group-hover:brightness-25 group-hover:contrast-100"
           />
           {/* Borde interno animado */}
           <div className="border-side border-bottom hidden md:block"></div>
@@ -17,7 +17,7 @@ export default function Poketris() {
           <div className="border-side border-left hidden md:block"></div>
           {/* Overlay oscuro con animación y visibilidad responsive */}
           <div className="absolute inset-0 flex items-end justify-center pb-16 bg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-colors duration-[2500ms]">
-            <div className="flex gap-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-[2500ms]">
+            <div className="flex gap-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-[1800ms]">
               <a
                 href="https://tburgerlabs.com/"
                 target="_blank"

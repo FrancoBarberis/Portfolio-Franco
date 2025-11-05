@@ -33,7 +33,7 @@ export default function AboutMe() {
         <img 
           src={Foto} 
           alt="Perfil" 
-          className="w-full h-full object-cover object-center rounded-lg block" 
+          className="w-full h-full object-cover object-center rounded-lg block aboutme-img-mask" 
           style={{
             position: 'absolute',
             left: 0,
@@ -41,8 +41,18 @@ export default function AboutMe() {
             width: '100%',
             height: '100%',
             zIndex: 0,
-              WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 10%, black 70%, black 100%)',
-              maskImage: 'linear-gradient(to top, transparent 0%, black 10%, black 70%, black 100%)'
+            WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 14%, black 70%, black 100%)',
+            maskImage: 'linear-gradient(to top, transparent 0%, black 14%, black 70%, black 100%)'
+          }}
+        />
+        <style>{`
+          @media (min-width: 768px) {
+            .aboutme-img-mask {
+              -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%, black 70%, black 100%) !important;
+              mask-image: linear-gradient(to top, transparent 0%, black 10%, black 70%, black 100%) !important;
+            }
+          }
+        `}</style>
           }}
         />
         {/* Gradiente difuminado en la parte inferior */}
