@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { playHighPopSound } from '../utils/audioUtils';
 import { 
@@ -25,6 +25,7 @@ const routeComponents = {
 };
 
 function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audioEnabled = true }) {
+  const scrollRef = useRef(null);
   const { channelPath } = useParams();
   const [isSliding, setIsSliding] = useState(false);
   const [displayContent, setDisplayContent] = useState(null);
@@ -32,7 +33,10 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audi
   useEffect(() => {
     if (channelPath) {
       setIsSliding(true);
-
+      // Resetear scroll al cambiar de canal
+      if (scrollRef.current) {
+        scrollRef.current.scrollTop = 0;
+      }
       setTimeout(() => {
         // Normaliza el channelPath para que coincida con las claves del objeto
         const normalizedPath = decodeURIComponent(channelPath).toLowerCase();
@@ -72,7 +76,7 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audi
       </header>
       
     {/* Área de contenido principal con scroll controlado */}
-  <div className="flex-1 min-h-0 overflow-y-auto scrollbar-dark" style={{maxHeight: 'calc(100vh - var(--bottom-bar-height, 56px))'}}>
+  <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto scrollbar-dark" style={{maxHeight: 'calc(100vh - var(--bottom-bar-height, 56px))'}}>
     <div className="px-6 py-4 min-h-0 h-fit mb-10">
           <div
             className={`
