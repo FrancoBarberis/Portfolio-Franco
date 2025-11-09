@@ -49,17 +49,17 @@ export default function TburgerLabs() {
           <h3 className="text-xl md:text-2xl font-bold mb-3 text-white text-center">
             TburgerLabs - Catálogo online
           </h3>
-          <p className="mb-4 text-gray-300 text-left text-sm md:text-base">
+          <p className="mb-4 text-gray-300 text-left leading-relaxed text-sm md:text-base">
             Aplicación web para generar pedidos de restaurante con temática de Resident Evil, desarrollada con
             <strong> React y Firestore Database</strong>.
           </p>
           <h4 className="font-semibold mb-3 text-white text-left">Características:</h4>
-          <ul className="list-disc pl-4 text-gray-300 space-y-1 mb-4 text-left text-sm md:text-base">
+          <ul className="list-disc pl-4 text-gray-300 space-y-1 mb-4 text-left leading-relaxed text-sm md:text-base">
             <li>Panel de administración de precios (con ruta protegida de React)</li>
             <li>Redirección a Whatsapp para completar pedidos</li>
             <li>Base de datos NoSQL (Firestore)</li>
           </ul>
-          <p className="text-left">Esta fue la primer aplicación que desarrollé y publiqué, inicialmente la hice con Vanilla JS y luego la refactoricé con React para mejorar su estructura y funcionalidad. Me ayudé con Copilot para implementar la base de datos.</p>
+          <p className="mb-4 text-gray-300 text-left leading-relaxed text-sm md:text-base">Esta fue la primer aplicación que desarrollé y publiqué, inicialmente la hice con Vanilla JS y luego la refactoricé con React para mejorar su estructura y funcionalidad. Me ayudé con Copilot para implementar la base de datos.</p>
         </div>
       </div>
     </div>

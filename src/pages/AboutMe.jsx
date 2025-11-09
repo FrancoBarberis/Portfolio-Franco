@@ -62,7 +62,7 @@ export default function AboutMe() {
           </h3>
         </div>
       </div>
-  <p className="text-gray-300 text-center text-base md:text-2xl md:mt-8 leading-relaxed max-w-md md:max-w-2xl mx-auto h-fit">
+  <p className="text-gray-300 text-left text-base md:text-2xl md:mt-8 leading-relaxed max-w-md md:max-w-2xl mx-auto h-fit">
         Soy desarrollador Full Stack con foco en experiencias limpias y usables.
         Tengo algunos proyectos realizados que podrás ver en este portafolio.
       </p>

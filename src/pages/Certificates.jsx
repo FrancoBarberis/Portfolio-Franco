@@ -13,7 +13,7 @@ export default function Certificates() {
                 <p className="text-sm text-gray-400">Universidad Nacional General Sarmiento (UNGS)</p>
               </div>
             </div>
-            <p className="text-sm text-gray-300 mb-2">
+            <p className="text-sm text-gray-300 mb-2 text-left leading-relaxed">
               Formación en desarrollo de software, algoritmos, estructuras de datos, bases de datos y arquitectura de sistemas.
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function Certificates() {
                 <p className="text-sm text-gray-400">Coderhouse</p>
               </div>
             </div>
-            <p className="text-sm text-gray-300 mb-2">
+            <p className="text-sm text-gray-300 mb-2 text-left leading-relaxed">
               Especialización en desarrollo web moderno con HTML, CSS y JS.
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function Certificates() {
                 <p className="text-sm text-gray-400">Udemy</p>
               </div>
             </div>
-            <p className="text-sm text-gray-300 mb-2">
+            <p className="text-sm text-gray-300 mb-2 text-left leading-relaxed">
               Desarrollo con React, NodeJS, bases de datos y APIs.
             </p>
           </div>

@@ -8,7 +8,7 @@ export default function SoftSkills() {
             <span className="text-3xl">🤝</span>
             <h4 className="text-xl font-semibold text-white">Trabajo en Equipo</h4>
           </div>
-          <p className="text-blue-100">
+          <p className="text-blue-100 text-left leading-relaxed">
             Experiencia colaborando en equipos multidisciplinarios, usando metodologías ágiles
             y herramientas de gestión de proyectos.
           </p>
@@ -19,7 +19,7 @@ export default function SoftSkills() {
             <span className="text-3xl">💡</span>
             <h4 className="text-xl font-semibold text-white">Resolución de Problemas</h4>
           </div>
-          <p className="text-purple-100">
+          <p className="text-purple-100 text-left leading-relaxed">
             Capacidad analítica para identificar problemas y proponer soluciones efectivas
             tanto en código como en arquitectura.
           </p>
@@ -30,7 +30,7 @@ export default function SoftSkills() {
             <span className="text-3xl">🗣️</span>
             <h4 className="text-xl font-semibold text-white">Comunicación</h4>
           </div>
-          <p className="text-green-100">
+          <p className="text-green-100 text-left leading-relaxed">
             Habilidad para comunicar ideas técnicas de forma clara, tanto con equipos
             de desarrollo como con stakeholders no técnicos.
           </p>
@@ -41,7 +41,7 @@ export default function SoftSkills() {
             <span className="text-3xl">🤖</span>
             <h4 className="text-xl font-semibold text-white">Prompts efectivos</h4>
           </div>
-          <p className="text-orange-100">
+          <p className="text-orange-100 text-left leading-relaxed">
             Puedo implementar cambios y mejoras en el código generadas por IA,
             dando prompts claros y específicos.
           </p>
@@ -52,7 +52,7 @@ export default function SoftSkills() {
             <span className="text-3xl">⚡</span>
             <h4 className="text-xl font-semibold text-white">Adaptabilidad</h4>
           </div>
-          <p className="text-teal-100">
+          <p className="text-teal-100 text-left leading-relaxed">
             Flexible para trabajar con diferentes tecnologías, metodologías y
             adaptarme rápidamente a nuevos entornos.
           </p>
@@ -63,7 +63,7 @@ export default function SoftSkills() {
             <span className="text-3xl">🎯</span>
             <h4 className="text-xl font-semibold text-white">Orientación a Resultados</h4>
           </div>
-          <p className="text-red-100">
+          <p className="text-red-100 text-left leading-relaxed">
             Enfocado en entregar soluciones de calidad que cumplan con los
             objetivos del proyecto y las expectativas del cliente.
           </p>

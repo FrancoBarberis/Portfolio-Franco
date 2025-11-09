@@ -49,15 +49,15 @@ export default function Poketris() {
           <h3 className="text-xl md:text-2xl font-bold mb-3 text-white text-center">
             Pokétris - Juego de Tetris
           </h3>
-          <p className="mb-4 text-gray-300 text-left text-sm md:text-base">
+          <p className="mb-4 text-gray-300 text-left leading-relaxed text-sm md:text-base">
             El clásico tetris, con un giro inesperado. Se juega horizontalmente, e incorpora la captura de Pokémon, cambiando puntos por Pokéballs. Los sprites y stats se obtienen de la PokéAPI. Desarrollado con <strong> React y Firestore Database</strong>.
           </p>
           <h4 className="font-semibold mb-3 text-white text-left">Características:</h4>
-          <ul className="list-disc pl-4 text-gray-300 space-y-1 mb-4 text-left text-sm md:text-base">
+          <ul className="list-disc pl-4 text-gray-300 space-y-1 mb-4 text-left leading-relaxed text-sm md:text-base">
             <li>Consumo de la PokéAPI (API REST)</li>
             <li>Base de datos Firestore para almacenar puntuaciones de los jugadores</li>
           </ul>
-          <p className="text-left">Pokétris comenzó como un Tetris básico, pero busqué llevarlo más allá integrando la PokéAPI y una base de datos en Firestore para almacenar puntuaciones. El mayor desafío fue lograr que el tablero se renderizara de forma consistente y fluida usando React, manteniendo la experiencia de juego dinámica y sin errores.</p>
+          <p className="mb-4 text-gray-300 text-left leading-relaxed text-sm md:text-base">Pokétris comenzó como un Tetris básico, pero busqué llevarlo más allá integrando la PokéAPI y una base de datos en Firestore para almacenar puntuaciones. El mayor desafío fue lograr que el tablero se renderizara de forma consistente y fluida usando React, manteniendo la experiencia de juego dinámica y sin errores.</p>
         </div>
       </div>
     </div>

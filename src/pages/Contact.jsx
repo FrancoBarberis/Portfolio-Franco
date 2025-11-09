@@ -66,7 +66,7 @@ export default function Contact() {
                 {item.value}
               </a>
             ) : (
-              <span className="text-xs md:text-sm opacity-90 flex-1 break-words whitespace-normal">{item.value}</span>
+              <span className="text-xs md:text-sm opacity-90 flex-1 break-words whitespace-normal text-left leading-relaxed">{item.value}</span>
             )}
           </div>
         ))}

@@ -36,13 +36,27 @@ function DiscordWindow({
   }, []);
 
   return (
-    <div className="h-screen w-full bg-gray-800 text-white flex flex-col font-mono" style={{'--bottom-bar-height': `${bottomBarHeight}px`}}>
+    <div
+      className="w-full bg-gray-800 text-white flex flex-col font-mono"
+      style={{
+        height: '100dvh',
+        minHeight: '100dvh',
+        '--bottom-bar-height': `${bottomBarHeight}px`
+      }}
+    >
       {/* Contenido principal */}
       <div className="flex-1 flex w-full min-h-0">
         {children}
       </div>
       {/* Barra inferior - más compacta en desktop/tablet */}
-      <div ref={bottomBarRef} className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 px-2 py-2 z-50" style={{zIndex: 50}}>
+      <div
+        ref={bottomBarRef}
+        className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 px-2 py-2 z-50"
+        style={{
+          zIndex: 50,
+          paddingBottom: 'env(safe-area-inset-bottom)'
+        }}
+      >
         {/* Perfil: ocupa todo el ancho */}
         <div className="w-full px-2">
           <UserProfile 
