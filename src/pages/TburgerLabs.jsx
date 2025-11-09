@@ -16,8 +16,9 @@ export default function TburgerLabs() {
           <div className="border-side border-top hidden lg:block"></div>
           <div className="border-side border-left hidden lg:block"></div>
           {/* Overlay oscuro con animación y visibilidad responsive */}
-          <div className="absolute left-0 right-0 bottom-[20%] md:bottom-[5%] flex items-center justify-center bg transition-colors duration-[2500ms] z-20">
-            <div className="flex flex-row gap-2 md:gap-0 md:space-x-5 items-center justify-center w-full transition-opacity duration-[1800ms] lg:opacity-0 lg:pointer-events-none group-hover:lg:opacity-100 group-hover:lg:pointer-events-auto">
+          <div className="absolute left-0 right-0 bottom-[20%] flex items-center justify-center bg transition-colors duration-[2500ms] z-20">
+            <div className="flex flex-row gap-2 md:gap-0 md:space-x-5 items-center justify-center w-full transition-opacity duration-[1800ms]
+              lg:opacity-0 lg:pointer-events-none group-hover:lg:opacity-100 group-hover:lg:pointer-events-auto">
               <a
                 href="https://tburgerlabs.com/"
                 target="_blank"
@@ -42,7 +43,7 @@ export default function TburgerLabs() {
         {/* Contenedor oscuro fuera de la imagen */}
         <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 rounded-xl p-4 mb-6 shadow-lg mt-0 md:p-6 md:text-left relative">
           <h3 className="text-xl md:text-2xl font-bold mb-3 text-white text-center">
-            TburgerLabs - Sistema de Pedidos
+            TburgerLabs - Catálogo online
           </h3>
           <p className="mb-4 text-gray-300 text-left text-sm md:text-base">
             Aplicación web para generar pedidos de restaurante con temática de Resident Evil, desarrollada con
