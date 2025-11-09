@@ -17,7 +17,7 @@ export default function Studies() {
           {/* Educación formal - IZQUIERDA */}
           <div className="relative flex items-center">
             <div className="w-1/2 pr-8 text-right">
-              <div className="bg-gray-700 p-6 rounded-lg border-2 border-blue-500 inline-block max-w-md animate-glow" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
+                <div className="bg-gray-700 p-4 min-h-[240px] rounded-lg border-2 border-blue-500 inline-block max-w-md animate-glow" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
                 <div className="mb-3">
                   <h4 className="text-lg font-semibold text-white">Tecnicatura Universitaria en Informática</h4>
                   <p className="text-gray-400 text-sm">Universidad Nacional General Sarmiento (UNGS)</p>
@@ -42,7 +42,7 @@ export default function Studies() {
             {/* Círculo en la línea */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-gray-800 z-10"></div>
             <div className="w-1/2 pl-8">
-              <div className="bg-gray-700 p-6 rounded-lg border-2 border-green-500 inline-block max-w-md animate-glow" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
+              <div className="bg-gray-700 p-4 min-h-[240px] rounded-lg border-2 border-green-500 inline-block max-w-md animate-glow" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
                 <div className="mb-3">
                   <h4 className="text-lg font-semibold text-white">Web Development Course</h4>
                   <p className="text-gray-400 text-sm">Coderhouse</p>
@@ -60,7 +60,7 @@ export default function Studies() {
           {/* Curso 2 - IZQUIERDA */}
           <div className="relative flex items-center">
             <div className="w-1/2 pr-8 text-right">
-              <div className="bg-gray-700 p-6 rounded-lg border-2 border-purple-500 inline-block max-w-md animate-glow" style={{boxShadow: "0 0 16px 2px rgba(168,85,247,0.3), 0 0 32px 4px rgba(168,85,247,0.15)"}}>
+              <div className="bg-gray-700 p-4 min-h-[240px] rounded-lg border-2 border-purple-500 inline-block max-w-md animate-glow" style={{boxShadow: "0 0 16px 2px rgba(168,85,247,0.3), 0 0 32px 4px rgba(168,85,247,0.15)"}}>
                 <div className="mb-3">
                   <h4 className="text-lg font-semibold text-white">Full Stack Web Development Bootcamp</h4>
                   <p className="text-gray-400 text-sm">Udemy</p>

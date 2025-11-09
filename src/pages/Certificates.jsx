@@ -4,7 +4,7 @@ export default function Certificates() {
       <h3 className="text-2xl font-bold text-white text-center">Certificaciones</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Certificado 1 */}
-        <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/20 p-6 rounded-lg border-2 border-blue-700 animate-glow flex flex-col justify-between" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
+  <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/20 p-4 rounded-lg border-2 border-blue-700 animate-glow flex flex-col justify-between min-h-[240px] flex-1" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
           <div>
             <div className="flex items-center gap-3 mb-3">
               <span className="text-3xl">�</span>
@@ -25,7 +25,7 @@ export default function Certificates() {
         </div>
 
         {/* Certificado 2 */}
-        <div className="bg-gradient-to-br from-green-900/20 to-green-800/20 p-6 rounded-lg border-2 border-green-700 animate-glow flex flex-col justify-between" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
+  <div className="bg-gradient-to-br from-green-900/20 to-green-800/20 p-4 rounded-lg border-2 border-green-700 animate-glow flex flex-col justify-between min-h-[240px] flex-1" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
           <div>
             <div className="flex items-center gap-3 mb-3">
               <span className="text-3xl">📝</span>
@@ -46,7 +46,7 @@ export default function Certificates() {
         </div>
 
         {/* Certificado 3 */}
-        <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/20 p-6 rounded-lg border-2 border-purple-700 animate-glow flex flex-col justify-between" style={{boxShadow: "0 0 16px 2px rgba(168,85,247,0.3), 0 0 32px 4px rgba(168,85,247,0.15)"}}>
+  <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/20 p-4 rounded-lg border-2 border-purple-700 animate-glow flex flex-col justify-between min-h-[240px] flex-1" style={{boxShadow: "0 0 16px 2px rgba(168,85,247,0.3), 0 0 32px 4px rgba(168,85,247,0.15)"}}>
           <div>
             <div className="flex items-center gap-3 mb-3">
               <span className="text-3xl">�</span>
