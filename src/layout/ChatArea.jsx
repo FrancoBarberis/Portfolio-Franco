@@ -77,7 +77,7 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audi
       
     {/* Área de contenido principal con scroll controlado */}
   <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto scrollbar-dark" style={{maxHeight: 'calc(100vh - var(--bottom-bar-height, 56px))'}}>
-    <div className="px-6 py-4 min-h-0 h-fit mb-10">
+    <div className="px-6 py-4 min-h-0 h-fit mb-20">
           <div
             className={`
               w-full

@@ -51,7 +51,7 @@ function DiscordWindow({
       {/* Barra inferior - más compacta en desktop/tablet */}
       <div
         ref={bottomBarRef}
-        className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 px-2 py-2 z-50"
+  className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 p-2 pb-4 z-50"
         style={{
           zIndex: 50,
           paddingBottom: 'env(safe-area-inset-bottom)'
