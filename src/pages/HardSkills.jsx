@@ -36,7 +36,7 @@ export default function HardSkills() {
   }, [isHovering]);
 
   return (
-  <div className="flex flex-col justify-around items-center gap-y-20 p-4">
+  <div className="flex flex-col justify-around items-center gap-y-20 p-4 h-fit">
       <h2 className="text-xl md:text-2xl font-semibold text-white">
         Este es mi stack de tecnologías
       </h2>

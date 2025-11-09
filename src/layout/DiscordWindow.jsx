@@ -21,15 +21,15 @@ function DiscordWindow({
   };
 
   return (
-  <div className="h-screen min-h-0 w-full bg-gray-800 text-white flex flex-col overflow-visible font-mono">
+  <div className="h-screen w-full bg-gray-800 text-white flex flex-col font-mono">
 
   {/* Contenido principal */}
-  <div className="flex-1 min-h-0 flex overflow-hidden w-full">
+  <div className="flex-1 flex w-full min-h-0">
         {children}
       </div>
 
       {/* Barra inferior - más compacta en desktop/tablet */}
-  <div className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 px-2 py-2">
+  <div className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 px-2 py-2 z-50" style={{zIndex: 50}}>
         {/* Perfil: ocupa todo el ancho */}
         <div className="w-full px-2">
           <UserProfile 

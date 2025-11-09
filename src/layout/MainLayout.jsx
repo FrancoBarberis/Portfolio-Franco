@@ -168,7 +168,7 @@ function MainLayout() {
 
   return (
     <DiscordWindow onAudioEnabledChange={setAudioEnabled}>
-  <div className="flex flex-row h-full min-h-0 overflow-hidden w-full relative z-0">
+  <div className="flex flex-row h-screen w-full relative z-0">
         <ServerSidebar
           servers={servidores}
           onServerSelect={handleServerChange}

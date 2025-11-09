@@ -1,6 +1,6 @@
 export default function Studies() {
   return (
-    <div className="space-y-6 max-w-4xl mx-auto px-4">
+  <div className="space-y-6 max-w-4xl mx-auto px-4 h-full overflow-y-auto max-h-full">
       <h3 className="text-2xl font-bold text-white text-center mb-8">Formación Académica</h3>
       
       {/* Timeline container con línea central - OCULTO EN MOBILE */}

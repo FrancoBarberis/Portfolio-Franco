@@ -49,7 +49,7 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audi
   };
 
   return (
-  <div className="flex-1 flex flex-col bg-gray-600 min-w-0 h-full"> 
+  <div className="flex-1 flex flex-col bg-gray-600 min-w-0 min-h-0"> 
       {/* Header del canal */}
       <header className="bg-gray-800 px-3 md:px-4 pt-3 md:pt-4 pb-3 border-b-2 border-gray-700 flex-shrink-0">
         <div className="flex items-center gap-2">
@@ -71,9 +71,9 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audi
         </div>
       </header>
       
-      {/* Área de contenido principal con scroll controlado */}
-      <div className="flex-1 overflow-y-auto overflow-x-hidden">
-        <div className="px-6 py-4 min-h-0">
+    {/* Área de contenido principal con scroll controlado */}
+  <div className="flex-1 min-h-0 overflow-y-auto max-h-full">
+    <div className="px-6 py-4 min-h-0 h-fit">
           <div
             className={`
               w-full
@@ -81,8 +81,9 @@ function ChatArea({ channel, serverName, onMenuClick, isChannelSidebarOpen, audi
               motion-reduce:transition-none
               ${isSliding ? 'opacity-0' : 'opacity-100'}
             `}
+            style={{height: 'fit-content'}}
           >
-            <div className="break-words">
+            <div className="break-words h-fit">
               {displayContent}
             </div>
           </div>

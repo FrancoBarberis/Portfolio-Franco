@@ -1,8 +1,8 @@
 import TBurgerLabsPicture from "../assets/TBurgerLabs.png";
 export default function TburgerLabs() {
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto px-4">
-      <div className="flex flex-col w-full max-w-2xl gap-4">
+    <div className="flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto px-4 h-fit">
+      <div className="flex flex-col w-full max-w-2xl gap-4 h-fit">
         {/* Imagen del proyecto con borde interno animado (igual que Poketris) */}
   <div className="bg-gradient-to-br from-gray-700 via-gray-600 to-gray-800 rounded-lg overflow-hidden shadow-xl relative h-64 md:h-80 flex items-center justify-center group animated-inner-border">
           <img

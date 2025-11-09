@@ -17,7 +17,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] pt-2 pb-8">
+  <div className="flex flex-col items-center justify-center pt-2 pb-8 h-fit">
   <h2 className="text-2xl font-bold mb-6 text-white">Redes y contacto</h2>
   <div className="flex flex-col gap-4 w-full max-w-md">
         {CONTACT_DATA.map((item, idx) => (

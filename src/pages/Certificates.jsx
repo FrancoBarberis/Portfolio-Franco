@@ -1,6 +1,6 @@
 export default function Certificates() {
   return (
-    <div className="space-y-6 max-w-4xl mx-auto">
+  <div className="space-y-6 max-w-4xl mx-auto h-fit">
       <h3 className="text-2xl font-bold text-white text-center">Certificaciones</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Certificado 1 */}

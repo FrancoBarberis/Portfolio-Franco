@@ -182,32 +182,6 @@
   }
 }
 
-/* Scrollbar personalizado para modo oscuro */
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1f2937;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 10px;
-  border: 2px solid #1f2937;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
-}
-
-/* Firefox scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #4b5563 #1f2937;
-}
 
 /* Cursor de Typed.js personalizado */
 .typed-cursor {
@@ -230,7 +204,7 @@
   box-shadow: none;
   border-image: none;
   background: #222;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .animated-inner-border {

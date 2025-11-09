@@ -4,7 +4,7 @@ import rocketGif from "../assets/rocketGIF.webp";
 export default function LoadingScreen({ progress = 0 }) {
   // Paleta de colores: grises oscuros, acentos azul y naranja
   return (
-  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center" style={{ background: 'radial-gradient(circle at 50% 45%, #232946 0%, #18181b 70%, #0a0a0a 100%)' }}>
+  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center h-fit" style={{ background: 'radial-gradient(circle at 50% 45%, #232946 0%, #18181b 70%, #0a0a0a 100%)' }}>
       <div className="flex flex-col items-center justify-center gap-8">
         {/* GIF de cohete centrado */}
         <img
