@@ -36,9 +36,10 @@ export default function HardSkills() {
   }, [isHovering]);
 
   return (
-  <div className="flex flex-col justify-center items-center gap-y-20 p-4 h-fit">
-
-      <div className="grid grid-cols-3 grid-rows-6 gap-3 md:gap-4 w-full max-w-2xl h-[400px] md:h-[600px]">
+    <>
+      <h2 className="text-2xl font-bold text-white text-center mt-0 mb-2">Stack tecnológico</h2>
+      <div className="flex flex-col justify-center items-center gap-y-20 p-4 h-fit">
+        <div className="grid grid-cols-3 grid-rows-6 gap-3 md:gap-4 w-full max-w-2xl h-[400px] md:h-[600px]">
         {/* HTML - Naranja oficial #E34F26 - Termina muy abajo con efecto de aparición */}
   <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 p-3 md:p-6 rounded text-center col-span-2 row-span-1 flex items-center justify-center font-medium text-sm md:text-base lg:font-extrabold lg:text-3xl text-white overflow-hidden group animate-glow" style={{boxShadow: "0 0 12px 2px rgba(227,79,38,0.25), 0 0 16px 2px rgba(227,79,38,0.10)"}}>
           <span className="relative z-10">HTML</span>
@@ -361,7 +362,8 @@ export default function HardSkills() {
             }
           `}</style>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

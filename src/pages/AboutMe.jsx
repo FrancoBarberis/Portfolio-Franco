@@ -27,8 +27,8 @@ export default function AboutMe() {
   }, []);
 
   return (
-  <div className="flex flex-col items-center h-fit w-full mt-10">
-  <div className="relative flex flex-col items-center justify-center mx-auto mb-2 md:mb-5 h-fit" style={{width: '200px', height: '260px'}}>
+  <div className="flex flex-col h-fit w-full mt-0 md:mt-2 md:items-center">
+  <div className="relative flex flex-col items-center justify-center mx-auto mb-0 md:mb-5 h-fit" style={{width: '260px', height: '320px'}}>
         {/* Imagen centrada */}
         <img 
           src={Foto} 
@@ -57,12 +57,12 @@ export default function AboutMe() {
         {/* Eliminado: el gradiente ahora es una máscara sobre la imagen */}
         {/* Texto Typed.js SIEMPRE en la parte baja de la imagen */}
   <div className="absolute bottom-0 left-0 w-full flex justify-center items-end pb-2 h-fit" style={{zIndex: 2, overflow: 'visible'}}>
-          <h3 className="text-xl md:text-5xl lg:text-6xl font-extrabold text-center text-white m-0 p-0 whitespace-nowrap" style={{overflow: 'visible'}}>
+          <h3 className="text-base md:text-3xl lg:text-5xl font-extrabold text-center text-white m-0 p-0 whitespace-nowrap" style={{overflow: 'visible'}}>
             <span ref={typedRef} className="text-white inline-block whitespace-nowrap" style={{overflow: 'visible'}}></span>
           </h3>
         </div>
       </div>
-  <p className="text-gray-300 text-center text-base md:text-2xl md:mt-8 leading-relaxed max-w-md md:max-w-2xl mx-auto h-fit">
+  <p className="text-gray-300 text-left md:text-center text-base md:text-2xl md:mt-8 leading-relaxed max-w-md md:max-w-2xl mx-auto h-fit">
         Soy desarrollador Full Stack con foco en experiencias limpias y usables.
         Tengo algunos proyectos realizados que podrás ver en este portafolio.
       </p>

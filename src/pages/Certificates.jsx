@@ -1,7 +1,7 @@
 export default function Certificates() {
   return (
   <div className="space-y-6 max-w-4xl mx-auto">
-      <h3 className="text-2xl font-bold text-white text-center">Certificaciones</h3>
+  <h3 className="text-2xl font-bold text-white text-center mt-0">Certificaciones</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Certificado 1 */}
   <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/20 p-3 md:p-4 rounded-lg border-2 border-blue-700 animate-glow flex flex-col justify-between" style={{boxShadow: "0 0 12px 2px rgba(59,130,246,0.25), 0 0 16px 2px rgba(59,130,246,0.10)"}}>
