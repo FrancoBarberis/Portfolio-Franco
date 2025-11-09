@@ -37,7 +37,7 @@ function DiscordWindow({
 
   return (
     <div
-      className="w-full bg-gray-800 text-white flex flex-col font-mono"
+      className="w-full bg-gray-800 text-white flex flex-col font-mono overflow-hidden"
       style={{
         height: '100dvh',
         minHeight: '100dvh',
