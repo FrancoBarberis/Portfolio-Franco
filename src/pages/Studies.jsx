@@ -81,40 +81,34 @@ export default function Studies() {
       </div>
 
       {/* MOBILE */}
-      <div className="md:hidden space-y-4">
-  <div className="bg-gray-700 p-4 rounded-lg border-l-4 border-blue-500 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
-          <div className="flex justify-between items-start mb-2 gap-2">
-            <div className="flex-1 min-w-0">
-              <h4 className="text-base font-semibold text-white">Tecnicatura Universitaria en Informática</h4>
-              <p className="text-gray-400 text-xs">Universidad Nacional General Sarmiento (UNGS)</p>
-            </div>
-            <span className="text-xs bg-blue-900 text-white px-2 py-1 rounded-full whitespace-nowrap">2017-2021</span>
+  <div className="md:hidden">
+  <div className="bg-gray-700 py-2 px-4 rounded-lg border-l-4 border-blue-500 animate-glow mx-auto max-w-xs w-fit my-4" style={{boxShadow: "0 0 16px 2px rgba(59,130,246,0.3), 0 0 32px 4px rgba(59,130,246,0.15)"}}>
+          <div className="mb-2">
+            <h4 className="text-base font-semibold text-white">Tecnicatura Universitaria en Informática</h4>
+            <p className="text-gray-400 text-xs">Universidad Nacional General Sarmiento (UNGS)</p>
+            <span className="block mt-1 text-xs bg-blue-900 text-white px-2 py-1 rounded-full whitespace-nowrap w-fit">2017-2021</span>
           </div>
           <p className="text-gray-300 text-sm">
             Desarrollo de software, algoritmos, estructuras de datos y bases de datos.
           </p>
         </div>
 
-  <div className="bg-gray-700 p-4 rounded-lg border-l-4 border-green-500 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
-          <div className="flex justify-between items-start mb-2 gap-2">
-            <div className="flex-1 min-w-0">
-              <h4 className="text-base font-semibold text-white">Web Development Course</h4>
-              <p className="text-gray-400 text-xs">Coderhouse</p>
-            </div>
-            <span className="text-xs bg-green-900 text-white px-2 py-1 rounded-full whitespace-nowrap">2023</span>
+  <div className="bg-gray-700 py-2 px-4 rounded-lg border-l-4 border-green-500 animate-glow mx-auto max-w-xs w-fit my-4" style={{boxShadow: "0 0 16px 2px rgba(34,197,94,0.3), 0 0 32px 4px rgba(34,197,94,0.15)"}}>
+          <div className="mb-2">
+            <h4 className="text-base font-semibold text-white">Web Development Course</h4>
+            <p className="text-gray-400 text-xs">Coderhouse</p>
+            <span className="block mt-1 text-xs bg-green-900 text-white px-2 py-1 rounded-full whitespace-nowrap w-fit">2023</span>
           </div>
           <p className="text-gray-300 text-sm">
             Especialización en desarrollo web moderno con HTML, CSS y JS.
           </p>
         </div>
 
-  <div className="bg-gray-700 p-4 rounded-lg border-l-4 border-purple-500 animate-glow" style={{boxShadow: "0 0 16px 2px rgba(168,85,247,0.3), 0 0 32px 4px rgba(168,85,247,0.15)"}}>
-          <div className="flex justify-between items-start mb-2 gap-2">
-            <div className="flex-1 min-w-0">
-              <h4 className="text-base font-semibold text-white">Full Stack Web Development Bootcamp</h4>
-              <p className="text-gray-400 text-xs">Udemy</p>
-            </div>
-            <span className="text-xs bg-purple-900 text-white px-2 py-1 rounded-full whitespace-nowrap">2025-Actualidad</span>
+  <div className="bg-gray-700 py-2 px-4 rounded-lg border-l-4 border-purple-500 animate-glow mx-auto max-w-xs w-fit my-4" style={{boxShadow: "0 0 16px 2px rgba(168,85,247,0.3), 0 0 32px 4px rgba(168,85,247,0.15)"}}>
+          <div className="mb-2">
+            <h4 className="text-base font-semibold text-white">Full Stack Web Development Bootcamp</h4>
+            <p className="text-gray-400 text-xs">Udemy</p>
+            <span className="block mt-1 text-xs bg-purple-900 text-white px-2 py-1 rounded-full whitespace-nowrap w-fit">2025-Actualidad</span>
           </div>
           <p className="text-gray-300 text-sm">
             Desarrollo con React, NodeJS, bases de datos y APIs.
@@ -123,9 +117,8 @@ export default function Studies() {
       </div>
 
       <div className="mt-8 p-4 bg-blue-900/20 rounded-lg border border-blue-800">
-        <p className="text-sm text-gray-300">
-          📖 <strong>Aprendizaje continuo:</strong> Constantemente actualizándome con cursos online,
-          documentación oficial y participando en comunidades de desarrollo.
+        <p className="text-sm text-gray-300 text-center">
+          Me mantengo actualizado mediante formación online y práctica constante.
         </p>
       </div>
     </div>
