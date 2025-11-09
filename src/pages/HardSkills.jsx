@@ -4,7 +4,7 @@ import JSIcon from "../assets/JS.svg";
 import ReactIcon from "../assets/React-icon.svg";
 import GitIcon from "../assets/GIT.svg";
 import TailwindIcon from "../assets/Tailwind.svg";
-import ViteIcon from "../assets/Vite.svg";
+import ViteIcon from "../assets/vite.svg";
 import NodeIcon from "../assets/Node.svg";
 import SQLIcon from "../assets/SQL.svg";
 import { useRef, useState, useEffect } from "react";
