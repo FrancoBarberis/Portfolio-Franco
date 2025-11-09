@@ -53,8 +53,6 @@ export default function AboutMe() {
             }
           }
         `}</style>
-          }}
-        />
         {/* Gradiente difuminado en la parte inferior */}
         {/* Eliminado: el gradiente ahora es una máscara sobre la imagen */}
         {/* Texto Typed.js SIEMPRE en la parte baja de la imagen */}
