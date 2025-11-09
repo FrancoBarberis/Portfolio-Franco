@@ -57,7 +57,7 @@ export default function AboutMe() {
         {/* Eliminado: el gradiente ahora es una máscara sobre la imagen */}
         {/* Texto Typed.js SIEMPRE en la parte baja de la imagen */}
   <div className="absolute bottom-0 left-0 w-full flex justify-center items-end pb-2 h-fit" style={{zIndex: 2, overflow: 'visible'}}>
-          <h3 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-center text-white m-0 p-0 whitespace-nowrap" style={{overflow: 'visible'}}>
+          <h3 className="text-xl md:text-5xl lg:text-6xl font-extrabold text-center text-white m-0 p-0 whitespace-nowrap" style={{overflow: 'visible'}}>
             <span ref={typedRef} className="text-white inline-block whitespace-nowrap" style={{overflow: 'visible'}}></span>
           </h3>
         </div>
