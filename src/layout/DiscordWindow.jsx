@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { UserProfile } from '../components';
 import rocketGif from '../assets/rocketGIF.webp';
 
@@ -20,16 +20,29 @@ function DiscordWindow({
     onAudioEnabledChange?.(newValue);
   };
 
-  return (
-  <div className="h-screen w-full bg-gray-800 text-white flex flex-col font-mono">
+  // Ref para la barra inferior
+  const bottomBarRef = React.useRef(null);
+  const [bottomBarHeight, setBottomBarHeight] = useState(56);
 
-  {/* Contenido principal */}
-  <div className="flex-1 flex w-full min-h-0">
+  useLayoutEffect(() => {
+    function updateHeight() {
+      if (bottomBarRef.current) {
+        setBottomBarHeight(bottomBarRef.current.offsetHeight);
+      }
+    }
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
+  return (
+    <div className="h-screen w-full bg-gray-800 text-white flex flex-col font-mono" style={{'--bottom-bar-height': `${bottomBarHeight}px`}}>
+      {/* Contenido principal */}
+      <div className="flex-1 flex w-full min-h-0">
         {children}
       </div>
-
       {/* Barra inferior - más compacta en desktop/tablet */}
-  <div className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 px-2 py-2 z-50" style={{zIndex: 50}}>
+      <div ref={bottomBarRef} className="bg-gray-900 border-t-2 border-gray-700 flex items-center gap-2 flex-shrink-0 px-2 py-2 z-50" style={{zIndex: 50}}>
         {/* Perfil: ocupa todo el ancho */}
         <div className="w-full px-2">
           <UserProfile 

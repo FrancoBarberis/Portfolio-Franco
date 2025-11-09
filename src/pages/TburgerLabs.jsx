@@ -4,7 +4,7 @@ export default function TburgerLabs() {
     <div className="flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto px-4 h-fit">
       <div className="flex flex-col w-full max-w-2xl gap-4 h-fit">
         {/* Imagen del proyecto con borde interno animado (igual que Poketris) */}
-  <div className="bg-gradient-to-br from-gray-700 via-gray-600 to-gray-800 rounded-lg overflow-hidden shadow-xl relative h-64 md:h-80 flex items-center justify-center group animated-inner-border">
+  <div className="bg-gradient-to-br from-gray-700 via-gray-600 to-gray-800 rounded-lg overflow-hidden shadow-xl relative h-64 md:h-80 flex items-center justify-center group animated-inner-border p-3 md:p-4">
           <img
             src={TBurgerLabsPicture}
             alt="TBurgerLabs"
@@ -45,7 +45,7 @@ export default function TburgerLabs() {
           </div>
         </div>
         {/* Contenedor oscuro fuera de la imagen */}
-  <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 rounded-xl p-4 mb-6 shadow-lg mt-0 md:p-6 md:text-left relative border-l-4 border-blue-500" style={{boxShadow: '0 0 0 0 rgba(0,0,0,0), -8px 0 24px 2px rgba(59,130,246,0.35)'}}>
+  <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-700 rounded-xl p-3 md:p-6 mb-6 shadow-lg mt-0 md:text-left relative border-l-4 border-blue-500" style={{boxShadow: '0 0 0 0 rgba(0,0,0,0), -8px 0 24px 2px rgba(59,130,246,0.35)'}}>
           <h3 className="text-xl md:text-2xl font-bold mb-3 text-white text-center">
             TburgerLabs - Catálogo online
           </h3>

@@ -1,4 +1,22 @@
-﻿@import "tailwindcss";
+﻿/* Scrollbar personalizado gris oscuro para el chat y secciones */
+.scrollbar-dark {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #18181b;
+}
+
+.scrollbar-dark::-webkit-scrollbar {
+  width: 10px;
+  background: #18181b;
+}
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 8px;
+  border: 2px solid #18181b;
+}
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+@import "tailwindcss";
 
 /* Transiciones globales para cambio de tema suave - ACELERADAS */
 * {
