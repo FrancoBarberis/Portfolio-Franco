@@ -22,8 +22,6 @@ function DiscordWindow({
 
   return (
   <div className="h-screen min-h-0 w-full bg-gray-800 text-white flex flex-col overflow-visible font-mono">
-      {/* Barra de título vacía - solo en desktop/tablet */}
-  <div className="hidden md:block bg-gray-900 h-6 md:h-8 border-b-2 border-gray-700 flex-shrink-0" />
 
   {/* Contenido principal */}
   <div className="flex-1 min-h-0 flex overflow-hidden w-full">

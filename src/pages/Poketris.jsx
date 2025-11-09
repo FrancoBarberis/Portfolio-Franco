@@ -1,8 +1,8 @@
 import TBurgerLabsPicture from "../assets/TBurgerLabs.png";
 export default function Poketris() {
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto px-4">
-      <div className="flex flex-col w-full max-w-2xl gap-4">
+  <div className="flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto px-4">
+  <div className="flex flex-col w-full max-w-2xl gap-4">
         {/* Imagen del proyecto con borde interno animado (igual que TburgerLabs) */}
         <div className="bg-gradient-to-br from-gray-700 via-gray-600 to-gray-800 rounded-lg overflow-hidden shadow-xl relative cursor-pointer h-64 md:h-80 flex items-center justify-center group animated-inner-border">
           <img
@@ -46,7 +46,7 @@ export default function Poketris() {
             Pokétris - Juego de Tetris
           </h3>
           <p className="mb-4 text-gray-300 text-left text-sm md:text-base">
-            El clásico tetris, con un giro inesperado. Se juega horizontalmente, e incorpora la captura de Pokémon, cambiando puntos por Pokéballs. Los sprites y stats se obtienen de la PokéAPI. Desarrollado con React, <strong> React y Firestore Database</strong>.
+            El clásico tetris, con un giro inesperado. Se juega horizontalmente, e incorpora la captura de Pokémon, cambiando puntos por Pokéballs. Los sprites y stats se obtienen de la PokéAPI. Desarrollado con <strong> React y Firestore Database</strong>.
           </p>
           <h4 className="font-semibold mb-3 text-white text-left">Características:</h4>
           <ul className="list-disc pl-4 text-gray-300 space-y-1 mb-4 text-left text-sm md:text-base">
