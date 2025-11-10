@@ -1,4 +1,4 @@
-import TBurgerLabsPicture from "../assets/TBurgerLabs.png";
+import PoketrisPicture from "../assets/Poketris.png";
 export default function Poketris() {
   return (
   <div className="flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto px-4 h-fit">
@@ -6,7 +6,7 @@ export default function Poketris() {
         {/* Imagen del proyecto con borde interno animado (igual que TburgerLabs) */}
   <div className="bg-gradient-to-br from-gray-700 via-gray-600 to-gray-800 rounded-lg overflow-hidden shadow-xl relative h-64 md:h-80 flex items-center justify-center group animated-inner-border p-3 md:p-4">
           <img
-            src={TBurgerLabsPicture}
+            src={PoketrisPicture}
             alt="Poketris"
             className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none transition-[filter] duration-[1800ms] group-hover:brightness-25 group-hover:contrast-100"
           />

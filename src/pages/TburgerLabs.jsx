@@ -50,7 +50,7 @@ export default function TburgerLabs() {
             TburgerLabs - Catálogo online
           </h3>
           <p className="mb-4 text-gray-300 text-left leading-relaxed text-sm md:text-base">
-            Aplicación web para generar pedidos de restaurante con temática de Resident Evil, desarrollada con
+            Aplicación web con temática de Resident Evil hecha para un cliente, sirve para generar pedidos de restaurante, desarrollada con
             <strong> React y Firestore Database</strong>.
           </p>
           <h4 className="font-semibold mb-3 text-white text-left">Características:</h4>
@@ -59,7 +59,7 @@ export default function TburgerLabs() {
             <li>Redirección a Whatsapp para completar pedidos</li>
             <li>Base de datos NoSQL (Firestore)</li>
           </ul>
-          <p className="mb-4 text-gray-300 text-left leading-relaxed text-sm md:text-base">Esta fue la primer aplicación que desarrollé y publiqué, inicialmente la hice con Vanilla JS y luego la refactoricé con React para mejorar su estructura y funcionalidad. Me ayudé con Copilot para implementar la base de datos.</p>
+          <p className="mb-4 text-gray-300 text-left leading-relaxed text-sm md:text-base">Esta fue la primer aplicación que desarrollé y publiqué, inicialmente la hice con Vanilla JS y luego la refactoricé con React para mejorar su estructura y funcionalidad. Me ayudé con Github Copilot para implementar la base de datos.</p>
         </div>
       </div>
     </div>
